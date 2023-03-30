@@ -1,13 +1,12 @@
-# Welcome
+---
+title: Welcome
+#template: home.html
+---
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+### About
+This is a personal website hosted on `github pages` to documentate my ongoing/finished projects, notes, images and such.
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Website is created with `mkDocs` using `material` theme. Images, documents and binaries are hosted on `git LFS`.
 
 ## Site layout
 ````bash
