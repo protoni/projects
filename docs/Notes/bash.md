@@ -5,22 +5,10 @@ description: "Bash notes"
 tags: ["linux"]
 ---
 
-Decided to put my bash notes on here as well.
-
-### Content
-- [Arrays](#arrays)
-- [File parameters](#file-parameters)
-- [File reading](#file-reading)
-- [Functions](#functions)
-- [If statements](#if-statements)
-- [Input](#input)
-- [Variables](#variables)
-
----
 
 ### Arrays
 **add to array:**
-```bash{numberLines: true}
+```bash
 # Declare a new array
 arr=()
 
@@ -35,10 +23,10 @@ echo "Array: "${arr[0]} ${arr[1]}
 Array: Hello World
 ```
 
-&nbsp
+
 
 **Get an array element with index number:**
-```bash{numberLines: true}
+```bash
 # Declare a new array with 3 elements
 arr=("1" "2" "3")
 
@@ -53,10 +41,10 @@ Index 1: 2
 Index 2: 3
 ```
 
-&nbsp
+
 
 **Get an array element with the key:**
-```bash{numberLines: true}
+```bash
 # Create a new Associative array
 declare -A arr2
 
@@ -74,10 +62,10 @@ Key second: 1
 Key third: 2
 ```
 
-&nbsp
+
 
 **Loop through all array items:**
-```bash{numberLines: true}
+```bash
 # Declare a new array with 4 elements
 arr=("1" "2" "3" "4")
 
@@ -94,10 +82,10 @@ done
 4
 ```
 
-&nbsp
+
 
 **Loop through an array by calling the indexes:**
-```bash{numberLines: true}
+```bash
 # Declare a new array with 4 elements
 arr2=("1" "2" "3" "4")
 
@@ -118,7 +106,7 @@ done
 4
 ```
 
-&nbsp
+
 
 ---
 
@@ -126,7 +114,7 @@ done
 
 
 **Get the number of file parameters:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 echo "Number of parameters: "$#
 ```
@@ -138,10 +126,10 @@ $ ./parameterTest.sh param1
 Number of parameters: 1
 ```
 
-&nbsp
+
 
 **Get the current filename:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 echo "Current filename: "$0
 ```
@@ -150,10 +138,10 @@ $ ./parameterTest.sh
 Current filename: ./parameterTest.sh
 ```
 
-&nbsp
+
 
 **Get the first parameter:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 if [ $# -gt 0 ]; then
     echo "First paramater: " $1
@@ -169,7 +157,7 @@ $ ./parameterTest.sh
 0 parameters given
 ```
 
-&nbsp
+
 
 ---
 
@@ -183,7 +171,7 @@ testRow2
 testRow3
 ############################
 ```
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Set the filename to a variable
@@ -215,7 +203,7 @@ testRow2
 testRow3
 ```
 
-&nbsp
+
 
 ---
 
@@ -223,7 +211,7 @@ testRow3
 
 
 **Use a global variable that was defined in a function:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Define a new function
@@ -242,10 +230,10 @@ $ ./globalFunc.sh
 Global variable output: test1
 ```
 
-&nbsp
+
 
 **Use local variable that was declared in a function:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Define a new function that returns a local variable
@@ -265,10 +253,10 @@ $ ./localFunc.sh
 Local variable output: test2
 ```
 
-&nbsp
+
 
 **Use function parameters:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Define a function that receives 1 parameter
@@ -287,11 +275,11 @@ echo "Parameter output: "$ret
 $ ./getWordParam.sh
 Parameter output: Hello World
 ```
-&nbsp
+
 ---
 
 **Return booleans from a function:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Declare a new function that takes a parameter and returns a boolean
@@ -314,10 +302,10 @@ fi
 $ ./retBool.sh
 isZero 0 == 0: True
 ```
-&nbsp
+
 
 **Return numbers from a function:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Define a function that returns a 0
@@ -368,17 +356,17 @@ Get number Zero: True
 Get number One: False
 ```
 
-&nbsp
+
 
 **Return arrays from a function:**
 ```
 No practical way of returning arrays from functions in Bash.
 ```
 
-&nbsp
+
 
 **Use global variables in a function:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Define a variable that prints out a global variable value
@@ -397,14 +385,14 @@ $ ./globalVarInFunc.sh
 printRet() output: test_var
 ```
 
-&nbsp
+
 
 ---
 
 ### If statements
 
 **One if-condition:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Define some variables with a numeric values
@@ -423,10 +411,10 @@ $ ./isGreaterThan.sh
 1 is greater than 0
 ```
 
-&nbsp
+
 
 **Two if-conditions:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Define some variables with a numeric values
@@ -447,10 +435,10 @@ $ ./isGreaterThan.sh
 1 > 0 or 1 > 1
 ```
 
-&nbsp
+
 
 **Four if-conditions:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Define some variables with a numeric values
@@ -471,14 +459,14 @@ $ ./isGreaterThan.sh
 1 <= 0 and 1  <= 1  and 0 <= 1 and 0 <= 1
 ```
 
-&nbsp
+
 
 ---
 
 ### Input
 
 **Read user input from the shell:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Print out the instructions for the user
@@ -497,14 +485,14 @@ Type something:
 You typed: test1
 ```
 
-&nbsp
+
 
 ---
 
 ### Variables
 
 **Increment a counter:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Initialize a counter variable to 0
@@ -536,10 +524,10 @@ Counter: 3
 Counter: 4
 ```
 
-&nbsp
+
 
 **Subtract a counter:**
-```bash{numberLines: true}
+```bash
 #!/bin/bash
 
 # Initialize a counter variable and set the value to 4
@@ -569,7 +557,7 @@ Counter: 1
 Counter: 0
 ```
 
-&nbsp
+
 
 ---
 
