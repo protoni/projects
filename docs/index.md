@@ -8,11 +8,12 @@ This is a personal website hosted on `github pages` to documentate my ongoing/fi
 
 Website is created with `mkDocs` using `material` theme. Images, documents and binaries are hosted on `git LFS`.
 
+Check notes website at -> https://protoni.github.io/notes/
+
 ## Site layout
 ````bash
 docs/
     Links/      # Links that I find useful sometimes
-    Notes/      # Various notes I have written or copy-pasted from somewhere
     Projects/   # Personal projects ( finished and unfinished )
     ...
 ````
