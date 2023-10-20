@@ -1,3 +1,73 @@
 .md-logo {
   content: url("../assets/images/ohYouDogRound48.png");
 }
+
+/* Web page settings */
+body {
+  /* Web page background color */
+  background-color: #1E1E1E;
+
+  /* Web page text font */
+  --md-text-font-family: 'Courier New', Courier, monospace;
+}
+
+/* Code block spacing lines */
+.md-typeset pre {
+line-height: 1.4;
+}
+
+/* Code block background color */
+@media screen {
+[data-md-color-scheme="slate"] {
+  --md-code-bg-color: #161616;
+  --md-accent-fg-color: #4C62E2;
+}}
+
+/* Code block font */
+code, kbd, pre {
+font-family: 'Courier New', Courier, monospace;
+padding: 5px;
+}
+
+code {
+border: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+/* Code block comment text color */
+.md-typeset .codehilite .c,
+.md-typeset .highlight .c, 
+.md-typeset .highlight .c1, 
+.md-typeset .highlight .ch, 
+.md-typeset .highlight .cm,
+.md-typeset .highlight .cs, 
+.md-typeset .codehilite .comment, 
+.md-typeset .highlight .comment {
+  color: #57A64A !important;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5 {
+color: #eff1ef;
+}
+
+.md-nav__link--passed {
+color: #3e3f42;
+}
+
+.md-nav {
+color: #57A64A;
+}
+
+.md-nav__list:not([data-md-component="toc"]) {
+color: #eff1ef;
+}
+
+
+
+
+p {
+font-size: .7rem;
+}

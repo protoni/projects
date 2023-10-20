@@ -8,7 +8,7 @@ edit_uri: edit/main/docs/
 # Set material theme settings
 theme:
   name: material
-#  custom_dir: docs/overrides
+  custom_dir: docs/stylesheets
 #  icon:
 #    edit: material/pencil 
 #    view: material/eye
@@ -31,7 +31,7 @@ theme:
     - content.action.edit
   language: en
   palette:
-    - scheme: default
+    - scheme: slate
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
