@@ -138,7 +138,7 @@ to make Git Pages load images from Git LFS
 
 For example, this page is just a markdown file here:
 
-<https://protoni.fi/Projects/Web/git-pages/>
+<https://github.com/protoni/projects/blob/main/docs/Projects/Web/git-pages.md>
 
 
 ## Setup custom domain name ( e.g. protoni.fi )
