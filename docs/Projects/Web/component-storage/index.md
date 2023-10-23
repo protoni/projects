@@ -29,7 +29,7 @@ That would be pretty costly to run on a VPS.
 
 - Lastly I setup my raspberry pi, hoping that I could run Partkeepr on that. I spent the whole night trying to get the partkeepr to work. I wrote my notes here, although
 they got left unfinished:
-- https://protoni.fi/notes/#partkeepr-setup
+- <https://protoni.github.io/notes/Notes/random/?h=partkeep#partkeepr-setup>
 
 127 lines of notes.
 

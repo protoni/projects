@@ -7,7 +7,7 @@ tags: ["electronics"]
 
 
 I haven't touched my custom Linux board project in a while 
-( https://protoni.fi/osd3358-linux/ ) so I thought that it was
+( <https://protoni.fi/Projects/Electronics/osd3358-linux/> ) so I thought that it was
 about time to start actually doing something with it. 
 
 I ordered a bunch of these
