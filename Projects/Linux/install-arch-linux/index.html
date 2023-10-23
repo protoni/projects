@@ -1,0 +1,2762 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes and tips I have gathered on how to install Arch Linux.">
+      
+      
+      
+        <link rel="canonical" href="https://protoni.github.io/projects/Projects/Linux/install-arch-linux/">
+      
+      
+        <link rel="prev" href="../../Graphics/wow-model-export/">
+      
+      
+        <link rel="next" href="../../Misc/all-the-mods/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>Arch Linux installation notes - Protoni's site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/styles.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#table-of-contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Protoni&#39;s site" class="md-header__button md-logo" aria-label="Protoni's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Protoni's site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Arch Linux installation notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/protoni/projects" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    protoni/projects
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Protoni&#39;s site" class="md-nav__button md-logo" aria-label="Protoni's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Protoni's site
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/protoni/projects" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    protoni/projects
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Electronics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Electronics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Electronics/osd3358-linux/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Osd3358 linux
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Osd3358 linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Electronics/osd3358-linux-and-click-boards/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Osd3358 linux and click boards
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Osd3358 linux and click boards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Electronics/phone-extension/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Phone extension
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Phone extension
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Graphics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Graphics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Graphics/custom-graphics-renderer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Custom graphics renderer
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Custom graphics renderer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Graphics/opengl-experiments/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Opengl experiments
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Opengl experiments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Graphics/vulkan-experiments/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Vulkan experiments
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vulkan experiments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Graphics/wow-model-export/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Wow model export
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Wow model export
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  <span class="md-ellipsis">
+    Install arch linux
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Install arch linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Misc/all-the-mods/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    All the mods
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            All the mods
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Misc/home-assistant/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home assistant
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Home assistant
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Misc/old-projects/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Old projects
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Old projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Test pages
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Test pages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/test-pages/page2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Motorcycles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Motorcycles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Motorcycles/rd350/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Rd350
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Rd350
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/git-pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/component-storage/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Component storage
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Component storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/component-storage-update/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Component storage update
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Component storage update
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_4" id="__nav_2_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Old gatsby site
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Old gatsby site
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/old-gatsby-site/initial-commit/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Initial commit
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Initial commit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/old-gatsby-site/setup-gatsby-site/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Setup gatsby site
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Setup gatsby site
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/old-gatsby-site/site-in-development/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Site in development
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Site in development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/old-gatsby-site/website-update/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Website update
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Website update
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of contents:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    Steps:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    Download:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualbox-setup" class="md-nav__link">
+    VirtualBox setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-machine-setup-notes" class="md-nav__link">
+    Virtual machine setup notes:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#now-on-to-the-sweet-arch-linux-installation-part" class="md-nav__link">
+    Now on to the sweet Arch Linux installation part.
+  </a>
+  
+    <nav class="md-nav" aria-label="Now on to the sweet Arch Linux installation part.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-arch-linux-virtual-machine" class="md-nav__link">
+    Starting Arch Linux virtual machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-network-connection" class="md-nav__link">
+    Setting up network connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-disk-partitions" class="md-nav__link">
+    Setup disk partitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-setup" class="md-nav__link">
+    System setup
+  </a>
+  
+    <nav class="md-nav" aria-label="System setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protip-press-ctrl-w-and-search-for-en_us" class="md-nav__link">
+    ProTip: Press Ctrl + W and search for “en_US”
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-install-intel-microcodes-if-you-have-intel-cpu" class="md-nav__link">
+    ( Optional ) Install intel microcodes if you have Intel CPU:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-if-bootloader-installing-fails-and-you-have-booted-in-efi-mode" class="md-nav__link">
+    ( Optional ) If bootloader installing fails and you have booted in EFI mode:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    Note!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#congratulations-you-have-just-installed-arch-linux" class="md-nav__link">
+    Congratulations! You have just installed Arch Linux!
+  </a>
+  
+    <nav class="md-nav" aria-label="Congratulations! You have just installed Arch Linux!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-network" class="md-nav__link">
+    Configure network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-sound" class="md-nav__link">
+    Install sound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-display-server" class="md-nav__link">
+    Install display server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-desktop-environment" class="md-nav__link">
+    Install desktop environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#once-again-congrats" class="md-nav__link">
+    Once again, Congrats!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tldr" class="md-nav__link">
+    TLDR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/protoni/projects/edit/main/docs/Projects/Linux/install-arch-linux/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Arch Linux installation notes</h1>
+
+<p>This is a re-write of my old Arch Linux installation notes. Originally they were just on different text files on my github repo and
+they became too hard to read at some point so I decided to combine these notes to a proper blog post. The blog post was originally created
+to my old wordpress website a couple of years ago. Decided I would migrate this to here as well.</p>
+<h3 id="table-of-contents">Table of contents:</h3>
+<ul>
+<li>1 <a href="#virtualbox-setup">VirtualBox setup</a></li>
+<li>2 <a href="#starting-arch-linux-virtual-machine">Starting Arch Linux virtual machine</a></li>
+<li>3 <a href="#setting-up-network-connection">Setting up network connection</a></li>
+<li>4 <a href="#setup-disk-partitions">Setup disk partitions</a></li>
+<li>5 <a href="#system-setup">System setup</a></li>
+<li>6 <a href="#configure-network">Configure network</a></li>
+<li>7 <a href="#install-sound">Install sound</a></li>
+<li>8 <a href="#install-display-server">Install display server</a></li>
+<li>9 <a href="#install-desktop-environment">Install desktop environment</a></li>
+<li>10 <a href="#tldr">TLDR</a></li>
+</ul>
+<h3 id="requirements">Requirements:</h3>
+<ul>
+<li>Time and patience.</li>
+<li>Virtual machine ( or why not a real machine )</li>
+<li>Arch Linux image</li>
+<li>1GB RAM</li>
+<li>8GB free hard disk space</li>
+</ul>
+<h3 id="steps">Steps:</h3>
+<ol>
+<li>Install VirtualBox</li>
+<li>Install Arch Linux</li>
+<li>???</li>
+<li>Profit</li>
+</ol>
+<p>Easy, huh? So lets begin by installing the virtual machine so we can actually launch the Arch Linux!</p>
+<h3 id="download">Download:</h3>
+<ul>
+<li>https://www.virtualbox.org/wiki/Downloads</li>
+<li>https://www.archlinux.org/download/</li>
+</ul>
+<p><a class="glightbox" href="setupvm.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox setup" src="setupvm.png" /></a></p>
+<h3 id="virtualbox-setup">VirtualBox setup</h3>
+<ol>
+<li>Click New</li>
+<li>Select the 64-bit Arch Linux and select a machine folder</li>
+<li>Allocate RAM for the virtual machine. Recommended 1024MB should be enough.</li>
+<li>Create a virtual hard disk</li>
+<li>Select hard disk file type: VDI</li>
+<li>Set the storage as dynamically allocated so that it won’t reserve the whole space immediately.</li>
+<li>Type the name for the Virtual disk and allocate the size.Recommended 8GB is just fine for messing around with virtual machine</li>
+</ol>
+<p>Now the virtual machine has been setup and the virtual machine is ready to be started. 
+Click Start, select 64-bit Arch Linux as a start-up disk and click Start. </p>
+<h3 id="virtual-machine-setup-notes">Virtual machine setup notes:</h3>
+<ul>
+<li>If you lose your mouse on VirtualBox, click <strong>right Ctrl</strong></li>
+<li>You can scroll up/down the terminal window with <strong>Shift + PageUp/PageDown</strong></li>
+<li>If you get stuck in scaled mode: click <strong>right Ctrl + C</strong></li>
+<li>Exit full screen mode right <strong>Ctrl + F</strong></li>
+</ul>
+<h2 id="now-on-to-the-sweet-arch-linux-installation-part">Now on to the sweet Arch Linux installation part.</h2>
+<p><a class="glightbox" href="archgrub.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch GRUB bootloader" src="archgrub.png" /></a></p>
+<h3 id="starting-arch-linux-virtual-machine">Starting Arch Linux virtual machine</h3>
+<p>2.1 Click Boot Arch Linux ( x86_64 ). After Linux boots up, you should be sitting at root@archiso shell.</p>
+<p>2.2 ( Optional ) set the keyboardlayout temporarily to finnish. ( Or whatever your language is. Default is english ) 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>loadkeys fi
+</code></pre></div>
+2.3 Check the network connection by pinging a google server
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ping google.com
+</code></pre></div>
+2.4 <strong>If your connection works</strong>, skip to step 4.</p>
+<h3 id="setting-up-network-connection">Setting up network connection</h3>
+<p>3.1 Check the ethernet card status and the drivers it uses. Command lists information about PCI buses and devices. Scroll up and search for Ethernet controller portion.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>lspci -v
+</code></pre></div>
+3.2 To search for Ethernet part, and print 10 lines after that:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lspci -v | grep -A 10 &quot;Ethernet&quot;
+</code></pre></div></p>
+<p><a class="glightbox" href="lspci.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="lspci" src="lspci.png" /></a>
+Kernel driver in use: e1000 – This is your card’s driver </p>
+<p>3.3 Now we can search for the driver in the kernel message buffer to see if it is up.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>dmesg | grep e1000
+</code></pre></div></p>
+<p>Output should look something like this, when the card is up and running:
+<a class="glightbox" href="dmesg.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="dmesg" src="dmesg.png" /></a></p>
+<p>3.4 If the driver is not in use, we need to load the driver. replace [ e1000 ] with your driver shown in lspci.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rmmod e1000
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>modprobe e1000
+</code></pre></div>
+Throw in another ping to google server to test the connection. I have successfully fixed my connection issues this way a few times whenever 
+I have started a fresh Arch install. </p>
+<p>Of course there are many possible reasons why the connection is not working, especially wireless connection, 
+but this is all that I have documented on my notes. If this doesn’t help, some googling is required to go forward I’m afraid.</p>
+<h3 id="setup-disk-partitions">Setup disk partitions</h3>
+<p>4.1 Check the disk name:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>fdisk -l
+</code></pre></div></p>
+<p><a class="glightbox" href="fdisk.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="fdisk" src="fdisk.png" /></a>
+/dev/sda is the one here</p>
+<p>4.2 Open the partitioning tool:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cgdisk /dev/sda
+</code></pre></div></p>
+<p>4.3 Create a boot partition:</p>
+<p><strong>Note! Consider allocating more memory than 5GB for the root file system</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>- Press New
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>- Size -&gt; 512M
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>- Code -&gt; EF00
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>- Name -&gt; boot
+</code></pre></div>
+<p>4.4 Create a swap partition:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>- Press New
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>- Size -&gt; 512M
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>- Code -&gt; 8200
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>- Name -&gt; swap
+</code></pre></div></p>
+<p>4.5 Create a root partition:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>- Press New
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>- Size -&gt; 5G
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>- Code -&gt; 8300
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>- Name -&gt; root
+</code></pre></div></p>
+<p>4.6 Create a home partition:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>- Press New
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>- Size -&gt; Enter ( Uses rest of the space. )
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>- Code -&gt; 8300
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>- Name -&gt; home
+</code></pre></div></p>
+<p>4.7 At this point the partitioning is done and just needs to be written to the disk:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>- Press Write -&gt; Yes.
+</code></pre></div></p>
+<p>4.8 Check that the partition table got written to the disk correctly:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>lsblk
+</code></pre></div></p>
+<p><a class="glightbox" href="cgdisk.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="cgdisk" src="cgdisk.png" /></a>
+Partition table should look something like this.</p>
+<p>4.9 Format the partitions</p>
+<p>Create boot:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>mkfs.fat -F32 /dev/sda1
+</code></pre></div></p>
+<p>Create swap:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>mkswap /dev/sda2
+</code></pre></div></p>
+<p>Turn swap on:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>swapon /dev/sda2
+</code></pre></div></p>
+<p>Create root partition:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>mkfs.ext4 /dev/sda3
+</code></pre></div></p>
+<p>Create home partition:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>mkfs.ext4 /dev/sda4
+</code></pre></div></p>
+<p>Create /mnt directory:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>mkdir /mnt
+</code></pre></div></p>
+<p>Mount root to /mnt:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>mount /dev/sda3 /mnt
+</code></pre></div></p>
+<p>Create boot directory:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>mkdir /mnt/boot
+</code></pre></div></p>
+<p>Create home directory:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>mkdir /mnt/home
+</code></pre></div></p>
+<p>Create home directory:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>mkdir /mnt/home
+</code></pre></div></p>
+<p>Mount sda1 to boot directory:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>mount /dev/sda1 /mnt/boot
+</code></pre></div></p>
+<p>Mount sda4 to home directory:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>mount /dev/sda4 /mnt/home
+</code></pre></div></p>
+<h3 id="system-setup">System setup</h3>
+<p>5.1 Install the system:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>pacstrap -i /mnt base base-devel
+</code></pre></div>
+Press enter to all of the questions ( to install all packages )</p>
+<p>5.2 Generate fstab file:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre></div>
+Fstab-file can be used to define what disks / partitions are going to be mounted to the filesystem.</p>
+<p>5.3 Check that the 4 newly created partitions exists in fstab-file:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>nano /mnt/etc/fstab
+</code></pre></div></p>
+<p><a class="glightbox" href="fstab.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="fstab" src="fstab.png" /></a>
+Fstab should look something like this.</p>
+<p>5.4 Chroot to /mnt.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>arch-chroot /mnt
+</code></pre></div></p>
+<p>5.5 Generate locale files:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>nano /etc/locale.gen
+</code></pre></div>
+Uncomment en_US-UTF-8:</p>
+<h5 id="protip-press-ctrl-w-and-search-for-en_us">ProTip: Press Ctrl + W and search for “en_US”</h5>
+<p>5.6 Generate files:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>locale-gen
+</code></pre></div></p>
+<p>5.7 Setup language:</p>
+<p>Create locale.conf and put en_US.UTF as default language
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>echo LANG=en_US.UTF-8 &gt; /etc/locale.conf
+</code></pre></div></p>
+<p>Export language:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>export LANG=en_US.UTF-8
+</code></pre></div></p>
+<p>5.8. Setup time</p>
+<p>Set the timezone:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>ln -s /usr/share/zoneinfo/Europe/Helsinki /etc/localtime
+</code></pre></div></p>
+<p>Setup hardware clock:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>hwclock --systohc --utc
+</code></pre></div></p>
+<p>5.9 Setup package manager:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>nano /etc/pacman.conf
+</code></pre></div>
+* Uncomment [multilib] and Include below it
+* Add to the end of the file:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>[archlinuxfr]
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>SigLevel = Never
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>Server = http://repo.archlinux.fr/$arch
+</code></pre></div></p>
+<p><a class="glightbox" href="pacman_conf.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="pacman configuration file" src="pacman_conf.png" /></a>
+Pacman.conf should look something like this.</p>
+<p>5.10 Update the system.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>pacman -Syu
+</code></pre></div></p>
+<p>5.11 Setup users and passwords.</p>
+<p>Set the hostname and password:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>echo [YOUR_HOSTNAME_HERE] &gt; /etc/hostname
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>passwd [YOUR_HOSTNAME_HERE]
+</code></pre></div></p>
+<p>Add the new user to group ‘wheel’:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>useradd -m -g users -G wheel -s /bin/bash [YOUR_HOSTNAME_HERE]
+</code></pre></div></p>
+<p>Enable sudo for user:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>EDITOR=nano visudo
+</code></pre></div>
+Remove #-sign from #%wheel ALL=(ALL) ALL</p>
+<p><a class="glightbox" href="visudo.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="visudo" src="visudo.png" /></a>
+Visudo should look something like this.</p>
+<p>Setup root password:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>passwd
+</code></pre></div></p>
+<p>5.12 <strong>( Optional )</strong> Skip if you are not booting in EFI-mode. ( If you followed the VirtualBox tutorial, skip this part. )</p>
+<p>Check that EFI variables are mounted:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+</code></pre></div></p>
+<p>Install EFI to boot:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>bootctl --path=/boot install
+</code></pre></div></p>
+<p>5.13 Configure bootloader:</p>
+<p>Create a folder for conf file:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>mkdir -p /boot/loader/entries/
+</code></pre></div>
+<strong>[ -p ] -tag creates folders recursively</strong></p>
+<p>Open and create a conf file:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>nano /boot/loader/entries/arch.conf
+</code></pre></div>
+* Type to the file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>title Arch Linux
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>linux /vmlinuz-linux
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>initrd /intel-ucode.img      # ( if PC has an Intel CPU )
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>initrd /initramfs-linux.img
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>options root=/dev/sda3 rw
+</code></pre></div>
+<p><a class="glightbox" href="arch_conf.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bootloader configuration file" src="arch_conf.png" /></a>
+Bootloader configuration file should look something like this.</p>
+<p>5.14 Setup bootloader.</p>
+<h5 id="optional-install-intel-microcodes-if-you-have-intel-cpu">( Optional ) Install intel microcodes if you have Intel CPU:</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>pacman -S intel-ucode
+</code></pre></div>
+<p>Install bootloader:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>pacman -S grub-bios
+</code></pre></div></p>
+<h5 id="optional-if-bootloader-installing-fails-and-you-have-booted-in-efi-mode">( Optional ) If bootloader installing fails and you have booted in EFI mode:</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>pacman -Sy efibootmgr
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck
+</code></pre></div>
+<p>Install bootloader to harddrive:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>grub-install /dev/sda
+</code></pre></div></p>
+<h2 id="note">Note!</h2>
+<p>Here I actually got my first error:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>grub-install: warning: this GPT partition label contains no BIOS Boot Partition; embedding won’t be possible.
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>Grub-install: warning: Embedding is not possible. GRUB can only be installed in this setup by using blocklists. However, blockists are UNRELIABLE and their use is discouraged..
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>grub-install: error: will not proceed with blocklists.
+</code></pre></div>
+I solved it by adding --force to the command so that it will use the blocklists. Kind of an ugly way to solve a problem and I might come back to the article and update a proper way to fix this.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>grub-install --force --target=i386-pc /dev/sda
+</code></pre></div></p>
+<p>Create a init ramdisk file for temporary root file system during startup:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>mkinitcpio -p linux
+</code></pre></div></p>
+<p>Create a grub config-file:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre></div></p>
+<p>Exit chroot:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>exit
+</code></pre></div></p>
+<p>Unmount the drive:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>umount /mnt/boot
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>umount /mnt/home
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>umount /mnt
+</code></pre></div></p>
+<p>Reboot the system:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>reboot
+</code></pre></div></p>
+<p>5.15 Boot up the system</p>
+<p>Open the bootloader from the menu:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>- Choose &#39;Boot existing OS&#39; from the menu
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>- Select Arch Linux
+</code></pre></div></p>
+<p><a class="glightbox" href="archgrub-1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch GRUB bootleader" src="archgrub-1.png" /></a>
+Arch Linux boot menu</p>
+<p><a class="glightbox" href="bootloader.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch GRUB bootleader" src="bootloader.png" /></a>
+GRUB bootloader</p>
+<p><a class="glightbox" href="login.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch Linux login" src="login.png" /></a>
+You should be sitting at login prompt.</p>
+<p><a class="glightbox" href="login2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch Linux login" src="login2.png" /></a>
+Login with the username and password that you configured earlier. And once you log in, you can see that there is not much going on, just a black terminal window. Now we just need to install a GUI. </p>
+<h2 id="congratulations-you-have-just-installed-arch-linux">Congratulations! You have just installed Arch Linux!</h2>
+<p>At this point some more steps are going to be needed so that the Arch Linux build would be useful for anything, like installing sound and graphical user interface.</p>
+<p>&amp;nbsp</p>
+<hr />
+<h3 id="configure-network">Configure network</h3>
+<p>Network needs to actually be re-configured, because the network setup during install has no effect on the actual system.</p>
+<p><a class="glightbox" href="ping1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Network down" src="ping1.png" /></a></p>
+<p>Once again, check the name of the network driver:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>lspci<span class="w"> </span>-v
+</code></pre></div></p>
+<p><a class="glightbox" href="lspci-1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="lspci -v output" src="lspci-1.png" /></a></p>
+<p>Check the network interface name from the dmesg output:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>e1000
+</code></pre></div></p>
+<p><a class="glightbox" href="dmesg2-1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Dmesg output" src="dmesg2-1.png" /></a></p>
+<p>So my interface name is enp0s3. Now it needs to be configured to the DHCP client
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>sudo<span class="w"> </span>dhcpcd<span class="w"> </span>enp0s3
+</code></pre></div></p>
+<p><a class="glightbox" href="dhcpcd.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="dhcpcd output" src="dhcpcd.png" /></a></p>
+<p>To make the fix permanent, we need to enable the dhcpcd service, so that we have a network connection at startup.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>dhcpcd.service
+</code></pre></div></p>
+<p>Now the network should be back up, try to ping google servers once again:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>ping<span class="w"> </span>google.com
+</code></pre></div></p>
+<p><a class="glightbox" href="ping.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Network up" src="ping.png" /></a></p>
+<p>Install <strong>net-tools</strong> to get ifconfig working:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>net-tools
+</code></pre></div></p>
+<p>Run <strong>ifconfig</strong> to see network information:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>ifconfig
+</code></pre></div></p>
+<p><a class="glightbox" href="ifconfig.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ifconfig output" src="ifconfig.png" /></a></p>
+<p>&amp;nbsp</p>
+<hr />
+<h3 id="install-sound">Install sound</h3>
+<p>Install sound card drivers ( ALSA ):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>alsa-utils
+</code></pre></div></p>
+<p>&amp;nbsp</p>
+<hr />
+<h3 id="install-display-server">Install display server</h3>
+<ul>
+<li>Choose 1: <strong>libglvnd</strong> ( These containt the latest drivers from the official repo. )</li>
+<li>Press <strong>Y</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>pacman<span class="w"> </span>-S<span class="w"> </span>xorg-server<span class="w"> </span>xorg-xinit<span class="w"> </span>xorg-server-utils
+</code></pre></div></li>
+</ul>
+<p>Install 3D acceleration:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>pacman<span class="w"> </span>-S<span class="w"> </span>mesa
+</code></pre></div></p>
+<p>Choose the correct driver:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Manuf</th>
+<th style="text-align: center;">Driver</th>
+<th style="text-align: center;">If 64bit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>AMD/ATI</strong></td>
+<td style="text-align: center;">xf86-video-ati</td>
+<td style="text-align: center;">lib32-ati-dri</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Intel</strong></td>
+<td style="text-align: center;">xf86-video-intel</td>
+<td style="text-align: center;">lib32-intel-dri</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Nvidia</strong></td>
+<td style="text-align: center;">xf86-video-nouveau</td>
+<td style="text-align: center;">lib32-nouveau-dri</td>
+</tr>
+</tbody>
+</table>
+<p>Install graphics card drivers:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>xf86-video-intel
+<a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>lib32-intel-dri
+</code></pre></div></p>
+<p>Install touchpad drivers, if you have a laptop:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>pacman<span class="w"> </span>-S<span class="w"> </span>xf86-input-synaptics
+</code></pre></div></p>
+<p>&amp;nbsp</p>
+<hr />
+<h3 id="install-desktop-environment">Install desktop environment</h3>
+<p><strong>Choose one</strong> from the wiki:</p>
+<p>https://wiki.archlinux.org/index.php/desktop_environment.</p>
+<p>I usually go with the <strong>Xfce4</strong>.</p>
+<p>Click <strong>enter</strong> to all prompts ( defaults )
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>pacman<span class="w"> </span>-S<span class="w"> </span>xfce4<span class="w"> </span>xfce4-goodies
+</code></pre></div></p>
+<p>Configure desktop environment:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>cp<span class="w"> </span>/etc/X11/xinit/xinitrc<span class="w"> </span>~/.xinitrc
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>~/.xinitrc
+</code></pre></div></p>
+<p>To load your keyboard layout add <strong>before exec line</strong>: ( change the <strong>fi</strong> to your language )
+<div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>setxkbmap<span class="w"> </span>-layout<span class="w"> </span><span class="k">fi</span>
+</code></pre></div></p>
+<p><strong>Add line</strong> to the end of the file: ( Replace <strong>startxfce4</strong> with your DE. for example startlxde )
+<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="nb">exec</span><span class="w"> </span>startxfce4
+</code></pre></div></p>
+<p>Edit bash profile file:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>~/.bash_profile
+</code></pre></div></p>
+<p><strong>Add line</strong> to the end of the file:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="o">[[</span><span class="w"> </span>-z<span class="w"> </span><span class="nv">$DISPLAY</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">$XDG_VTNR</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">exec</span><span class="w"> </span>startx
+</code></pre></div></p>
+<p><strong>Now the Desktop Environment has been set up. You can run the DE by running:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>startxfce4
+</code></pre></div></p>
+<p>Keyboard layout hasn’t been loaded yet, the system needs to be rebooted once for the keyboard layout to take effect.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>sudo<span class="w"> </span>reboot
+</code></pre></div></p>
+<p>Install fonts:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>pacman<span class="w"> </span>-S<span class="w"> </span>ttf-dejavu
+</code></pre></div></p>
+<p>&amp;nbsp</p>
+<hr />
+<h3 id="once-again-congrats">Once again, Congrats!</h3>
+<p>You should now have a working Arch Linux installation with GUI and everything.
+I might do some follow up articles for the Arch Linux installation, for example customizing Xmonad Desktop Environment.</p>
+<p><a class="glightbox" href="xfce4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch Linux working" src="xfce4.png" /></a></p>
+<p>Now that I have everything setup, the root partition is taking 63% of the allocated 5GB size.
+You really might want to allocate a lot more for the partitions.</p>
+<p><a class="glightbox" href="df.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Disk usage" src="df.png" /></a></p>
+<h3 id="notes">Notes:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>If you get stuck on login screen ( X server crashing ):
+<a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a>Press Ctrl + ALT + F2 so you can go to reconfigure ~/.xinitrc for example # (F1 - F7) F1 has the X server running.
+</code></pre></div>
+<p>&amp;nbsp</p>
+<hr />
+<h3 id="tldr">TLDR</h3>
+<p>These are my raw notes, terminology might not be 100% correct, might contain more typos etc.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>1. loadkeys fi
+<a id="__codelineno-83-2" name="__codelineno-83-2" href="#__codelineno-83-2"></a>
+<a id="__codelineno-83-3" name="__codelineno-83-3" href="#__codelineno-83-3"></a>2. ping google.com
+<a id="__codelineno-83-4" name="__codelineno-83-4" href="#__codelineno-83-4"></a>
+<a id="__codelineno-83-5" name="__codelineno-83-5" href="#__codelineno-83-5"></a>
+<a id="__codelineno-83-6" name="__codelineno-83-6" href="#__codelineno-83-6"></a>    if network is not working try:
+<a id="__codelineno-83-7" name="__codelineno-83-7" href="#__codelineno-83-7"></a>
+<a id="__codelineno-83-8" name="__codelineno-83-8" href="#__codelineno-83-8"></a>    - lspci -v: search for ethernet driver name for example &#39;tg3&#39;
+<a id="__codelineno-83-9" name="__codelineno-83-9" href="#__codelineno-83-9"></a>
+<a id="__codelineno-83-10" name="__codelineno-83-10" href="#__codelineno-83-10"></a>    -dmesg | grep tg3:
+<a id="__codelineno-83-11" name="__codelineno-83-11" href="#__codelineno-83-11"></a>
+<a id="__codelineno-83-12" name="__codelineno-83-12" href="#__codelineno-83-12"></a>        if driver is down run:
+<a id="__codelineno-83-13" name="__codelineno-83-13" href="#__codelineno-83-13"></a>
+<a id="__codelineno-83-14" name="__codelineno-83-14" href="#__codelineno-83-14"></a>            - rmmod tg3
+<a id="__codelineno-83-15" name="__codelineno-83-15" href="#__codelineno-83-15"></a>
+<a id="__codelineno-83-16" name="__codelineno-83-16" href="#__codelineno-83-16"></a>            - modprobe tg3
+<a id="__codelineno-83-17" name="__codelineno-83-17" href="#__codelineno-83-17"></a>
+<a id="__codelineno-83-18" name="__codelineno-83-18" href="#__codelineno-83-18"></a>3. fdisk -l # check the harddrive name for the next command
+<a id="__codelineno-83-19" name="__codelineno-83-19" href="#__codelineno-83-19"></a>
+<a id="__codelineno-83-20" name="__codelineno-83-20" href="#__codelineno-83-20"></a>4. gdisk /dev/sda # *possibly not needed*
+<a id="__codelineno-83-21" name="__codelineno-83-21" href="#__codelineno-83-21"></a>
+<a id="__codelineno-83-22" name="__codelineno-83-22" href="#__codelineno-83-22"></a>
+<a id="__codelineno-83-23" name="__codelineno-83-23" href="#__codelineno-83-23"></a>
+<a id="__codelineno-83-24" name="__codelineno-83-24" href="#__codelineno-83-24"></a>---------------- THIS IS FOR SSD DRIVES -------------------
+<a id="__codelineno-83-25" name="__codelineno-83-25" href="#__codelineno-83-25"></a>
+<a id="__codelineno-83-26" name="__codelineno-83-26" href="#__codelineno-83-26"></a>----- Use alternative (cfdisk) below if you have HDD ------
+<a id="__codelineno-83-27" name="__codelineno-83-27" href="#__codelineno-83-27"></a>
+<a id="__codelineno-83-28" name="__codelineno-83-28" href="#__codelineno-83-28"></a>
+<a id="__codelineno-83-29" name="__codelineno-83-29" href="#__codelineno-83-29"></a>
+<a id="__codelineno-83-30" name="__codelineno-83-30" href="#__codelineno-83-30"></a>5. cgdisk 
+<a id="__codelineno-83-31" name="__codelineno-83-31" href="#__codelineno-83-31"></a>
+<a id="__codelineno-83-32" name="__codelineno-83-32" href="#__codelineno-83-32"></a>    - new 1gb boot section (EF00) # 1024MiB
+<a id="__codelineno-83-33" name="__codelineno-83-33" href="#__codelineno-83-33"></a>
+<a id="__codelineno-83-34" name="__codelineno-83-34" href="#__codelineno-83-34"></a>    - new (half of ram) sized swap (8200) # 2048MiB
+<a id="__codelineno-83-35" name="__codelineno-83-35" href="#__codelineno-83-35"></a>
+<a id="__codelineno-83-36" name="__codelineno-83-36" href="#__codelineno-83-36"></a>    - new 20gb root (8300) # 20000MiB
+<a id="__codelineno-83-37" name="__codelineno-83-37" href="#__codelineno-83-37"></a>
+<a id="__codelineno-83-38" name="__codelineno-83-38" href="#__codelineno-83-38"></a>    - new rest of the space sized home (8300) # the rest of the space
+<a id="__codelineno-83-39" name="__codelineno-83-39" href="#__codelineno-83-39"></a>
+<a id="__codelineno-83-40" name="__codelineno-83-40" href="#__codelineno-83-40"></a>
+<a id="__codelineno-83-41" name="__codelineno-83-41" href="#__codelineno-83-41"></a>
+<a id="__codelineno-83-42" name="__codelineno-83-42" href="#__codelineno-83-42"></a>type lsblk to check partition names
+<a id="__codelineno-83-43" name="__codelineno-83-43" href="#__codelineno-83-43"></a>
+<a id="__codelineno-83-44" name="__codelineno-83-44" href="#__codelineno-83-44"></a>
+<a id="__codelineno-83-45" name="__codelineno-83-45" href="#__codelineno-83-45"></a>
+<a id="__codelineno-83-46" name="__codelineno-83-46" href="#__codelineno-83-46"></a>6. mkfs.fat -F32 /dev/sda1 # create boot
+<a id="__codelineno-83-47" name="__codelineno-83-47" href="#__codelineno-83-47"></a>
+<a id="__codelineno-83-48" name="__codelineno-83-48" href="#__codelineno-83-48"></a>7. mkswap /dev/sda2 # create swap
+<a id="__codelineno-83-49" name="__codelineno-83-49" href="#__codelineno-83-49"></a>
+<a id="__codelineno-83-50" name="__codelineno-83-50" href="#__codelineno-83-50"></a>8. swapon /dev/sda2 # turn swap on
+<a id="__codelineno-83-51" name="__codelineno-83-51" href="#__codelineno-83-51"></a>
+<a id="__codelineno-83-52" name="__codelineno-83-52" href="#__codelineno-83-52"></a>9. mkfs.ext4 /dev/sda3 # create root partition
+<a id="__codelineno-83-53" name="__codelineno-83-53" href="#__codelineno-83-53"></a>
+<a id="__codelineno-83-54" name="__codelineno-83-54" href="#__codelineno-83-54"></a>10. mkfs.ext4 /dev/sda4 # create home partition
+<a id="__codelineno-83-55" name="__codelineno-83-55" href="#__codelineno-83-55"></a>
+<a id="__codelineno-83-56" name="__codelineno-83-56" href="#__codelineno-83-56"></a>11. mkdir /mnt # create /mnt directory
+<a id="__codelineno-83-57" name="__codelineno-83-57" href="#__codelineno-83-57"></a>
+<a id="__codelineno-83-58" name="__codelineno-83-58" href="#__codelineno-83-58"></a>12. mount /dev/sda3 /mnt # mount root to /mnt
+<a id="__codelineno-83-59" name="__codelineno-83-59" href="#__codelineno-83-59"></a>
+<a id="__codelineno-83-60" name="__codelineno-83-60" href="#__codelineno-83-60"></a>13. mkdir /mnt/boot 
+<a id="__codelineno-83-61" name="__codelineno-83-61" href="#__codelineno-83-61"></a>
+<a id="__codelineno-83-62" name="__codelineno-83-62" href="#__codelineno-83-62"></a>14. mkdir /mnt/home
+<a id="__codelineno-83-63" name="__codelineno-83-63" href="#__codelineno-83-63"></a>
+<a id="__codelineno-83-64" name="__codelineno-83-64" href="#__codelineno-83-64"></a>15. mount /dev/sda1 /mnt/boot
+<a id="__codelineno-83-65" name="__codelineno-83-65" href="#__codelineno-83-65"></a>
+<a id="__codelineno-83-66" name="__codelineno-83-66" href="#__codelineno-83-66"></a>16. mount /dev/sda4 /mnt/home
+<a id="__codelineno-83-67" name="__codelineno-83-67" href="#__codelineno-83-67"></a>
+<a id="__codelineno-83-68" name="__codelineno-83-68" href="#__codelineno-83-68"></a>
+<a id="__codelineno-83-69" name="__codelineno-83-69" href="#__codelineno-83-69"></a>(5. alternaitve) cfdisk /dev/sda
+<a id="__codelineno-83-70" name="__codelineno-83-70" href="#__codelineno-83-70"></a>
+<a id="__codelineno-83-71" name="__codelineno-83-71" href="#__codelineno-83-71"></a>    - delete all existing partitions
+<a id="__codelineno-83-72" name="__codelineno-83-72" href="#__codelineno-83-72"></a>
+<a id="__codelineno-83-73" name="__codelineno-83-73" href="#__codelineno-83-73"></a>    - create new partition sized half of your ram size
+<a id="__codelineno-83-74" name="__codelineno-83-74" href="#__codelineno-83-74"></a>
+<a id="__codelineno-83-75" name="__codelineno-83-75" href="#__codelineno-83-75"></a>        - set type to primari and linux swap
+<a id="__codelineno-83-76" name="__codelineno-83-76" href="#__codelineno-83-76"></a>
+<a id="__codelineno-83-77" name="__codelineno-83-77" href="#__codelineno-83-77"></a>    - create new partition with the remaining disk space
+<a id="__codelineno-83-78" name="__codelineno-83-78" href="#__codelineno-83-78"></a>
+<a id="__codelineno-83-79" name="__codelineno-83-79" href="#__codelineno-83-79"></a>        - set type to primary and linux bootable
+<a id="__codelineno-83-80" name="__codelineno-83-80" href="#__codelineno-83-80"></a>
+<a id="__codelineno-83-81" name="__codelineno-83-81" href="#__codelineno-83-81"></a>    - hit write
+<a id="__codelineno-83-82" name="__codelineno-83-82" href="#__codelineno-83-82"></a>
+<a id="__codelineno-83-83" name="__codelineno-83-83" href="#__codelineno-83-83"></a>
+<a id="__codelineno-83-84" name="__codelineno-83-84" href="#__codelineno-83-84"></a>
+<a id="__codelineno-83-85" name="__codelineno-83-85" href="#__codelineno-83-85"></a>        - mkfs.ext4 /dev/sda2 # format to ext4
+<a id="__codelineno-83-86" name="__codelineno-83-86" href="#__codelineno-83-86"></a>
+<a id="__codelineno-83-87" name="__codelineno-83-87" href="#__codelineno-83-87"></a>        - mount /dev/sda2 /mnt # mount root
+<a id="__codelineno-83-88" name="__codelineno-83-88" href="#__codelineno-83-88"></a>
+<a id="__codelineno-83-89" name="__codelineno-83-89" href="#__codelineno-83-89"></a>        - mkswap /dev/sda1 # make swap partition
+<a id="__codelineno-83-90" name="__codelineno-83-90" href="#__codelineno-83-90"></a>
+<a id="__codelineno-83-91" name="__codelineno-83-91" href="#__codelineno-83-91"></a>        - swapon /dev/sda1 # init swap partition
+<a id="__codelineno-83-92" name="__codelineno-83-92" href="#__codelineno-83-92"></a>
+<a id="__codelineno-83-93" name="__codelineno-83-93" href="#__codelineno-83-93"></a>
+<a id="__codelineno-83-94" name="__codelineno-83-94" href="#__codelineno-83-94"></a>17. cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup # create a backup of the mirrorlist
+<a id="__codelineno-83-95" name="__codelineno-83-95" href="#__codelineno-83-95"></a>
+<a id="__codelineno-83-96" name="__codelineno-83-96" href="#__codelineno-83-96"></a>18. sed -i &#39;s/^#Server/Server/&#39; /etc/pacman.d/mirrorlist.backup # uncomments all the servers in the mirrorlist.backup
+<a id="__codelineno-83-97" name="__codelineno-83-97" href="#__codelineno-83-97"></a>
+<a id="__codelineno-83-98" name="__codelineno-83-98" href="#__codelineno-83-98"></a>19. rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup &gt; /etc/pacman.d/mirrorlist # ping through the mirrors
+<a id="__codelineno-83-99" name="__codelineno-83-99" href="#__codelineno-83-99"></a>
+<a id="__codelineno-83-100" name="__codelineno-83-100" href="#__codelineno-83-100"></a>#in mirrorlist.backup and stdout them into real mirrorlist (this will take about 5-10minutes)
+<a id="__codelineno-83-101" name="__codelineno-83-101" href="#__codelineno-83-101"></a>
+<a id="__codelineno-83-102" name="__codelineno-83-102" href="#__codelineno-83-102"></a>20. pacstrap -i /mnt base base-devel # install arch linux base and base-devel packages (install all)
+<a id="__codelineno-83-103" name="__codelineno-83-103" href="#__codelineno-83-103"></a>
+<a id="__codelineno-83-104" name="__codelineno-83-104" href="#__codelineno-83-104"></a>21. genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab # generate fstab file
+<a id="__codelineno-83-105" name="__codelineno-83-105" href="#__codelineno-83-105"></a>
+<a id="__codelineno-83-106" name="__codelineno-83-106" href="#__codelineno-83-106"></a>22. nano /mnt/etc/fstab # cheack that the 4 partitions exists in here. Or 2 if you used the alternative partitioning example.
+<a id="__codelineno-83-107" name="__codelineno-83-107" href="#__codelineno-83-107"></a>
+<a id="__codelineno-83-108" name="__codelineno-83-108" href="#__codelineno-83-108"></a>23. arch-chroot /mnt # chroot into /mnt
+<a id="__codelineno-83-109" name="__codelineno-83-109" href="#__codelineno-83-109"></a>
+<a id="__codelineno-83-110" name="__codelineno-83-110" href="#__codelineno-83-110"></a>24. nano /etc/locale.gen # uncomment en_US-UTF8
+<a id="__codelineno-83-111" name="__codelineno-83-111" href="#__codelineno-83-111"></a>
+<a id="__codelineno-83-112" name="__codelineno-83-112" href="#__codelineno-83-112"></a>25. locale-gen # generate locale files
+<a id="__codelineno-83-113" name="__codelineno-83-113" href="#__codelineno-83-113"></a>
+<a id="__codelineno-83-114" name="__codelineno-83-114" href="#__codelineno-83-114"></a>26. echo LANG=en_US.UTF-8 &gt; /etc/locale.conf # create locale.conf and put en_US.UTF as default language
+<a id="__codelineno-83-115" name="__codelineno-83-115" href="#__codelineno-83-115"></a>
+<a id="__codelineno-83-116" name="__codelineno-83-116" href="#__codelineno-83-116"></a>27. export LANG=en_US.UTF-8
+<a id="__codelineno-83-117" name="__codelineno-83-117" href="#__codelineno-83-117"></a>
+<a id="__codelineno-83-118" name="__codelineno-83-118" href="#__codelineno-83-118"></a>28. nano /etc/vconsole.conf
+<a id="__codelineno-83-119" name="__codelineno-83-119" href="#__codelineno-83-119"></a>
+<a id="__codelineno-83-120" name="__codelineno-83-120" href="#__codelineno-83-120"></a># write in the file:
+<a id="__codelineno-83-121" name="__codelineno-83-121" href="#__codelineno-83-121"></a>
+<a id="__codelineno-83-122" name="__codelineno-83-122" href="#__codelineno-83-122"></a>    #KEYMAP=fi
+<a id="__codelineno-83-123" name="__codelineno-83-123" href="#__codelineno-83-123"></a>
+<a id="__codelineno-83-124" name="__codelineno-83-124" href="#__codelineno-83-124"></a>    #FONT=Lat2-Terminus16
+<a id="__codelineno-83-125" name="__codelineno-83-125" href="#__codelineno-83-125"></a>
+<a id="__codelineno-83-126" name="__codelineno-83-126" href="#__codelineno-83-126"></a>29. ls /usr/share/zoneinfo/Europe/ # check that Helsinki is in the folder
+<a id="__codelineno-83-127" name="__codelineno-83-127" href="#__codelineno-83-127"></a>
+<a id="__codelineno-83-128" name="__codelineno-83-128" href="#__codelineno-83-128"></a>30. ln -s /usr/share/zoneinfo/Europe/Helsinki /etc/localtime # set timezone
+<a id="__codelineno-83-129" name="__codelineno-83-129" href="#__codelineno-83-129"></a>
+<a id="__codelineno-83-130" name="__codelineno-83-130" href="#__codelineno-83-130"></a>31. hwclock --systohc --utc
+<a id="__codelineno-83-131" name="__codelineno-83-131" href="#__codelineno-83-131"></a>
+<a id="__codelineno-83-132" name="__codelineno-83-132" href="#__codelineno-83-132"></a>32. echo &lt;hostname&gt; &gt; /etc/hostname
+<a id="__codelineno-83-133" name="__codelineno-83-133" href="#__codelineno-83-133"></a>
+<a id="__codelineno-83-134" name="__codelineno-83-134" href="#__codelineno-83-134"></a>33. nano /etc/pacman.conf
+<a id="__codelineno-83-135" name="__codelineno-83-135" href="#__codelineno-83-135"></a>
+<a id="__codelineno-83-136" name="__codelineno-83-136" href="#__codelineno-83-136"></a># uncomment [multilib] and Include below it
+<a id="__codelineno-83-137" name="__codelineno-83-137" href="#__codelineno-83-137"></a>
+<a id="__codelineno-83-138" name="__codelineno-83-138" href="#__codelineno-83-138"></a># add to the end of the file:
+<a id="__codelineno-83-139" name="__codelineno-83-139" href="#__codelineno-83-139"></a>
+<a id="__codelineno-83-140" name="__codelineno-83-140" href="#__codelineno-83-140"></a>    [archlinuxfr]
+<a id="__codelineno-83-141" name="__codelineno-83-141" href="#__codelineno-83-141"></a>
+<a id="__codelineno-83-142" name="__codelineno-83-142" href="#__codelineno-83-142"></a>    SigLevel = Never
+<a id="__codelineno-83-143" name="__codelineno-83-143" href="#__codelineno-83-143"></a>
+<a id="__codelineno-83-144" name="__codelineno-83-144" href="#__codelineno-83-144"></a>    Server = http://repo.archlinux.fr/$arch
+<a id="__codelineno-83-145" name="__codelineno-83-145" href="#__codelineno-83-145"></a>
+<a id="__codelineno-83-146" name="__codelineno-83-146" href="#__codelineno-83-146"></a>34. pacman -Syu # update system
+<a id="__codelineno-83-147" name="__codelineno-83-147" href="#__codelineno-83-147"></a>
+<a id="__codelineno-83-148" name="__codelineno-83-148" href="#__codelineno-83-148"></a>35. pacman -S yaourt # install user repository package
+<a id="__codelineno-83-149" name="__codelineno-83-149" href="#__codelineno-83-149"></a>
+<a id="__codelineno-83-150" name="__codelineno-83-150" href="#__codelineno-83-150"></a>36. passwd # setup new root password
+<a id="__codelineno-83-151" name="__codelineno-83-151" href="#__codelineno-83-151"></a>
+<a id="__codelineno-83-152" name="__codelineno-83-152" href="#__codelineno-83-152"></a>37. useradd -m -g users -G wheel -s /bin/bash &lt;username&gt; # add new user to group &#39;wheel&#39;
+<a id="__codelineno-83-153" name="__codelineno-83-153" href="#__codelineno-83-153"></a>
+<a id="__codelineno-83-154" name="__codelineno-83-154" href="#__codelineno-83-154"></a>38. EDITOR=nano visudo # enable sudo for user. Remove #-sign from #%wheel ALL=(ALL) ALL 
+<a id="__codelineno-83-155" name="__codelineno-83-155" href="#__codelineno-83-155"></a>
+<a id="__codelineno-83-156" name="__codelineno-83-156" href="#__codelineno-83-156"></a>39. passwd &lt;user&gt; # change newly created user password
+<a id="__codelineno-83-157" name="__codelineno-83-157" href="#__codelineno-83-157"></a>
+<a id="__codelineno-83-158" name="__codelineno-83-158" href="#__codelineno-83-158"></a>40. pacman -S bash-completion # helps complete package names in the shell
+<a id="__codelineno-83-159" name="__codelineno-83-159" href="#__codelineno-83-159"></a>
+<a id="__codelineno-83-160" name="__codelineno-83-160" href="#__codelineno-83-160"></a>
+<a id="__codelineno-83-161" name="__codelineno-83-161" href="#__codelineno-83-161"></a>
+<a id="__codelineno-83-162" name="__codelineno-83-162" href="#__codelineno-83-162"></a>----------------------------------------------------
+<a id="__codelineno-83-163" name="__codelineno-83-163" href="#__codelineno-83-163"></a>
+<a id="__codelineno-83-164" name="__codelineno-83-164" href="#__codelineno-83-164"></a>----- SKIP IF YOU ARE NOT INSTALLING FROM EFI ------
+<a id="__codelineno-83-165" name="__codelineno-83-165" href="#__codelineno-83-165"></a>
+<a id="__codelineno-83-166" name="__codelineno-83-166" href="#__codelineno-83-166"></a>----------------------------------------------------
+<a id="__codelineno-83-167" name="__codelineno-83-167" href="#__codelineno-83-167"></a>
+<a id="__codelineno-83-168" name="__codelineno-83-168" href="#__codelineno-83-168"></a>
+<a id="__codelineno-83-169" name="__codelineno-83-169" href="#__codelineno-83-169"></a>
+<a id="__codelineno-83-170" name="__codelineno-83-170" href="#__codelineno-83-170"></a>41. mount -t efivarfs efivarfs /sys/firmware/efi/efivars # check that EFI variables are mounted
+<a id="__codelineno-83-171" name="__codelineno-83-171" href="#__codelineno-83-171"></a>
+<a id="__codelineno-83-172" name="__codelineno-83-172" href="#__codelineno-83-172"></a>42. bootctl --path=/boot install # install EFI to boot
+<a id="__codelineno-83-173" name="__codelineno-83-173" href="#__codelineno-83-173"></a>
+<a id="__codelineno-83-174" name="__codelineno-83-174" href="#__codelineno-83-174"></a>----------------------------------------------------
+<a id="__codelineno-83-175" name="__codelineno-83-175" href="#__codelineno-83-175"></a>
+<a id="__codelineno-83-176" name="__codelineno-83-176" href="#__codelineno-83-176"></a>----------------------------------------------------
+<a id="__codelineno-83-177" name="__codelineno-83-177" href="#__codelineno-83-177"></a>
+<a id="__codelineno-83-178" name="__codelineno-83-178" href="#__codelineno-83-178"></a>----------------------------------------------------
+<a id="__codelineno-83-179" name="__codelineno-83-179" href="#__codelineno-83-179"></a>
+<a id="__codelineno-83-180" name="__codelineno-83-180" href="#__codelineno-83-180"></a>
+<a id="__codelineno-83-181" name="__codelineno-83-181" href="#__codelineno-83-181"></a>
+<a id="__codelineno-83-182" name="__codelineno-83-182" href="#__codelineno-83-182"></a>43. nano /boot/loader/entries/arch.conf
+<a id="__codelineno-83-183" name="__codelineno-83-183" href="#__codelineno-83-183"></a>
+<a id="__codelineno-83-184" name="__codelineno-83-184" href="#__codelineno-83-184"></a># type to the file:
+<a id="__codelineno-83-185" name="__codelineno-83-185" href="#__codelineno-83-185"></a>
+<a id="__codelineno-83-186" name="__codelineno-83-186" href="#__codelineno-83-186"></a>    title Arch Linux
+<a id="__codelineno-83-187" name="__codelineno-83-187" href="#__codelineno-83-187"></a>
+<a id="__codelineno-83-188" name="__codelineno-83-188" href="#__codelineno-83-188"></a>    linux /vmlinuz-linux
+<a id="__codelineno-83-189" name="__codelineno-83-189" href="#__codelineno-83-189"></a>
+<a id="__codelineno-83-190" name="__codelineno-83-190" href="#__codelineno-83-190"></a>    initrd /intel-ucode.img # if pc has intel cpu
+<a id="__codelineno-83-191" name="__codelineno-83-191" href="#__codelineno-83-191"></a>
+<a id="__codelineno-83-192" name="__codelineno-83-192" href="#__codelineno-83-192"></a>    initrd /initramfs-linux.img
+<a id="__codelineno-83-193" name="__codelineno-83-193" href="#__codelineno-83-193"></a>
+<a id="__codelineno-83-194" name="__codelineno-83-194" href="#__codelineno-83-194"></a>    options root=/dev/sda3 rw
+<a id="__codelineno-83-195" name="__codelineno-83-195" href="#__codelineno-83-195"></a>
+<a id="__codelineno-83-196" name="__codelineno-83-196" href="#__codelineno-83-196"></a>44. pacman -S intel-ucode # if pc has intel cpu
+<a id="__codelineno-83-197" name="__codelineno-83-197" href="#__codelineno-83-197"></a>
+<a id="__codelineno-83-198" name="__codelineno-83-198" href="#__codelineno-83-198"></a>45. pacman -S grub-bios # download bootloader
+<a id="__codelineno-83-199" name="__codelineno-83-199" href="#__codelineno-83-199"></a>
+<a id="__codelineno-83-200" name="__codelineno-83-200" href="#__codelineno-83-200"></a>    if this doesnt work try:
+<a id="__codelineno-83-201" name="__codelineno-83-201" href="#__codelineno-83-201"></a>
+<a id="__codelineno-83-202" name="__codelineno-83-202" href="#__codelineno-83-202"></a>        pacman -Sy efibootmgr
+<a id="__codelineno-83-203" name="__codelineno-83-203" href="#__codelineno-83-203"></a>
+<a id="__codelineno-83-204" name="__codelineno-83-204" href="#__codelineno-83-204"></a>        grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck
+<a id="__codelineno-83-205" name="__codelineno-83-205" href="#__codelineno-83-205"></a>
+<a id="__codelineno-83-206" name="__codelineno-83-206" href="#__codelineno-83-206"></a>46. grub-install /dev/sda # install bootloader to harddrive
+<a id="__codelineno-83-207" name="__codelineno-83-207" href="#__codelineno-83-207"></a>
+<a id="__codelineno-83-208" name="__codelineno-83-208" href="#__codelineno-83-208"></a>47. mkinitcpio -p linux # create init file for root
+<a id="__codelineno-83-209" name="__codelineno-83-209" href="#__codelineno-83-209"></a>
+<a id="__codelineno-83-210" name="__codelineno-83-210" href="#__codelineno-83-210"></a>48. exit
+<a id="__codelineno-83-211" name="__codelineno-83-211" href="#__codelineno-83-211"></a>
+<a id="__codelineno-83-212" name="__codelineno-83-212" href="#__codelineno-83-212"></a>49. grub-mkconfig -o /boot/grub/grub.cfg # create grub config file
+<a id="__codelineno-83-213" name="__codelineno-83-213" href="#__codelineno-83-213"></a>
+<a id="__codelineno-83-214" name="__codelineno-83-214" href="#__codelineno-83-214"></a>50. umount /mnt # unmount the drive
+<a id="__codelineno-83-215" name="__codelineno-83-215" href="#__codelineno-83-215"></a>
+<a id="__codelineno-83-216" name="__codelineno-83-216" href="#__codelineno-83-216"></a>51. reboot
+</code></pre></div></p>
+<p>&amp;nbsp</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-23T22:35:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-23</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-23T22:35:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-23</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-> Protoni. Contant at &#116;&#111;&#110;&#105;&#032;[&#064;]&#032;&#112;&#114;&#111;&#116;&#111;&#110;&#105;&#046;&#102;&#105;
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../../js/timeago.min.js"></script>
+      
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
