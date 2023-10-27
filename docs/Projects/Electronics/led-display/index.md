@@ -24,66 +24,66 @@ better than in these pictures and videos.
 ## Preview
 
 It's like a moving painting
-![Preview](./preview.JPG)
+![Preview](https://i.imgur.com/yEz3WTu.jpg)
 
 <dl>
   <video width="1024" height="480" controls>
-    <source src="MOV_1657.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/X82MYjw.mp4" type="video/mp4">
   </video>
 </dl>
 
 ## Ordering panels
 Initial order. 24 LED panels, 4 power supplies and 4 receiver boards + cables
-![Order](./order.JPG)
+![Order](https://i.imgur.com/0rvW1J2.jpg)
 
 Panel back side
-![panelBackSide](./panelBackSide.JPG)
+![panelBackSide](https://i.imgur.com/IqYzawL.jpg)
 
 ## Testing the panels
 
 Some initial testing with a few panels
-![Testing](./testing.JPG)
+![Testing](https://i.imgur.com/q5QnMwL.jpg)
 <dl>
   <video width="1024" height="480" controls>
-    <source src="initialTesting1.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/1GfA1y6.mp4" type="video/mp4">
   </video>
 </dl>
 
 Bending LED panel
-![bendingPanel](./bendingPanel.JPG)
+![bendingPanel](https://i.imgur.com/yhHgkap.jpg)
 
 Asynchronous at this point, so I can only send a bunch of files for it to
 display. 
 <dl>
   <video width="1024" height="480" controls>
-    <source src="initialTesting2.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/aw2CwCr.mp4" type="video/mp4">
   </video>
 </dl>
 
 Also I made an art
 <dl>
   <video width="1024" height="480" controls>
-    <source src="anArt.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/qTEkhXG.mp4" type="video/mp4">
   </video>
 </dl>
 
 Measure the cheap switching power supplies. Seems ok, some small few millivolt noise can be seen. Just wanted to quickly make sure that there's no crazy spikes.
-![testPower](./measureTransformer.JPG)
+![testPower](https://i.imgur.com/DV01Ndo.jpg)
 
 Test connecting multiple panels
-![connectTest](./connectTest.JPG)
+![connectTest](https://i.imgur.com/W0igBUf.jpg)
 
 ## Testing multiple receiver cards
 Receiver cards can be chained together with RJ45. There's 6 panels per receiver
 card
-![testChaining](./testChaining.JPG)
+![testChaining](https://i.imgur.com/z5wNeSB.jpg)
 
 Testing power consumption from the switching power supply's mains side. ( 30.4W )
-![powerConsumption](./powerConsumption.JPG)
+![powerConsumption](https://i.imgur.com/PlXzk8J.jpg)
 
 Test chaining more panels/receivers
-![testChaining2](./testChaining2.JPG)
-![testChaining3](./testChaining3.JPG)
+![testChaining2](https://i.imgur.com/6d4Qit5.jpg)
+![testChaining3](https://i.imgur.com/yqVthRk.jpg)
 
 ## Installing
 
@@ -91,52 +91,52 @@ Initially my idea was to build this structure that holds flat iron bars
 horizontally
 
 Getting parts for the fame
-![frameParts](./frameParts.JPG)
+![frameParts](https://i.imgur.com/LDJzEO8.jpg)
 
 Panels resting on flat iron bars
-![panelsOnFrame](./panelsOnFrame.JPG)
-![hideBolts](./hideBolts.JPG)
+![panelsOnFrame](https://i.imgur.com/gp9jjiQ.jpg)
+![hideBolts](https://i.imgur.com/J1wqB35.jpg)
 
 Something to attach the power supplies and receiver cards to
-![powerAndReceiverOnFrame](./powerAndReceiverOnFrame.JPG)
-![cutting](./cutting.JPG)
+![powerAndReceiverOnFrame](https://i.imgur.com/mgtQf2U.jpg)
+![cutting](https://i.imgur.com/9Ws7iQO.jpg)
 
 ## Updated installing plan
 I got lazy cutting building the frame for the original idea and I also had an
 idea to try and install the panels to this shelf rack that's been sitting here
 without actual shelves for about 2 years now.
-![shelf](./shelf.JPG)
+![shelf](https://i.imgur.com/GSkitoV.jpg)
 
 I thought I would install the power supplies to these boxes, but then decided not
 to because they are expensive and the ventilation is bad.
-![powerSupplyBox](./powerSupplyBox.JPG)
+![powerSupplyBox](https://i.imgur.com/C9Jm6Of.jpg)
 
 So I just put the parts directly to the shelf's frame. That'll do for now.
-![install](./install.JPG)
+![install](https://i.imgur.com/qbxu9qj.jpg)
 
 Wiring
-![wiring](./wiring.JPG)
+![wiring](https://i.imgur.com/joQvqB9.jpg)
 
 ## Test HDMI
 
 I got this video processor ( Colorlight X1 ) so that the panels would act as an
 actual display rather than as a billboard.
-![videoProcessor](./videoProcessor.JPG)
+![videoProcessor](https://i.imgur.com/BWAu5xm.jpg)
 
 Power on and test chaining the receiver cards
-![powerOn](./powerOn.JPG)
+![powerOn](https://i.imgur.com/G7A5SDJ.jpg)
 
 Setup dual display
-![testingHdmi](./testingHdmi.JPG)
+![testingHdmi](https://i.imgur.com/N60GJdv.jpg)
 
 More panels
-![morePanels](./morePanels.JPG)
-![morePanels2](./morePanels2.JPG)
-![morePanels3](./morePanels3.JPG)
-![morePanels4](./morePanels4.JPG)
+![morePanels](https://i.imgur.com/2zoQjAG.jpg)
+![morePanels2](https://i.imgur.com/WMElrzX.jpg)
+![morePanels3](https://i.imgur.com/QW4IyY2.jpg)
+![morePanels4](https://i.imgur.com/CUPTSY8.jpg)
 
 Ran out of panels
-![morePanels5](./morePanels5.JPG)
+![morePanels5](https://i.imgur.com/JlsdWzz.jpg)
 
 ## Configuration
 
@@ -144,13 +144,13 @@ Without configuring the panels, they do not look too good with HDMI because it
 doesn't shut off the LEDs when the image has a "black pixel". I had to change
 this 'better gray' setting in Colorlight's iSet software and also adjust the
 GPU's settings to enable this 'YCbCr' option.
-![gpuSettings](./gpuSettings.JPG)
+![gpuSettings](https://i.imgur.com/O0fI38j.jpg)
 
 With the initial configuration, you can see that the black parts look more like
 gray.
 <dl>
   <video width="1024" height="480" controls>
-    <source src="grayBlack.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/VSMW47g.mp4" type="video/mp4">
   </video>
 </dl>
 
@@ -158,7 +158,7 @@ After adjusting the settings, the black levels are better because the LED's are
 turned off
 <dl>
   <video width="1024" height="480" controls>
-    <source src="pixelsOff.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/UwWQvHb.mp4" type="video/mp4">
   </video>
 </dl>
 
@@ -305,7 +305,7 @@ bending ones.
 Here's some WoW lofi beats
 <dl>
   <video width="1024" height="480" controls>
-    <source src="wowLofiBeats.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/sWwFXMX.mp4" type="video/mp4">
   </video>
 </dl>
 Credits to: <https://www.youtube.com/watch?v=Lg21MW4_suQ>
