@@ -6,7 +6,7 @@ tags: ["Misc"]
 ---
 
 ## Description
-Found these few old GIFs from the classic wow launch when I was testing the
+Found these few old videos from the classic wow launch when I was testing the
 WoW LUA API. 
 
 Idea was to create a `Purge addon` similar to `Steal&Purge` from later expansions.
@@ -17,10 +17,17 @@ The second addon was more of a general framework for rendering addon UIs. Or at
 least that's how it ended up as.
 
 ## Testing
-![Preview](./addon1.gif)
+<dl>
+  <video width="1024" height="480" controls>
+    <source src="addon1.mp4" type="video/mp4">
+  </video>
+</dl>
 
-![Preview](./addon2.gif)
-
+<dl>
+  <video width="1024" height="480" controls>
+    <source src="addon2.mp4" type="video/mp4">
+  </video>
+</dl>
 
 ## Code
 - World of Warcraft API
@@ -34,4 +41,4 @@ least that's how it ended up as.
       sort of interface for the window rendering stuff, separate from the addon
       functionality. Also resizable windows etc.
     - <https://github.com/protoni/aasi-addon>
-    - I don't have pictures of this addon
+    - I don't have pictures/videos of this addon
