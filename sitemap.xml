@@ -46,6 +46,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://protoni.github.io/projects/Projects/Linux/beaglebone_yocto/</loc>
+         <lastmod>2023-10-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://protoni.github.io/projects/Projects/Linux/diy-setup/</loc>
+         <lastmod>2023-10-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://protoni.github.io/projects/Projects/Linux/install-arch-linux/</loc>
          <lastmod>2023-10-27</lastmod>
          <changefreq>daily</changefreq>
@@ -67,6 +77,11 @@
     </url>
     <url>
          <loc>https://protoni.github.io/projects/Projects/Misc/test-pages/page2/</loc>
+         <lastmod>2023-10-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://protoni.github.io/projects/Projects/Misc/wow-addons/</loc>
          <lastmod>2023-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>

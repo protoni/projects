@@ -1,0 +1,2719 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Create Linux image for BeagleBone black from scratch">
+      
+      
+      
+        <link rel="canonical" href="https://protoni.github.io/projects/Projects/Linux/diy-setup/">
+      
+      
+        <link rel="prev" href="../beaglebone_yocto/">
+      
+      
+        <link rel="next" href="../install-arch-linux/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>DIY Linux - Protoni's site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/styles.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#description" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Protoni&#39;s site" class="md-header__button md-logo" aria-label="Protoni's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Protoni's site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DIY Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/protoni/projects" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    protoni/projects
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Protoni&#39;s site" class="md-nav__button md-logo" aria-label="Protoni's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Protoni's site
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/protoni/projects" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    protoni/projects
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Electronics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Electronics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Electronics/led-display/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Led display
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Led display
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Electronics/osd3358-linux/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Osd3358 linux
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Osd3358 linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Electronics/osd3358-linux-and-click-boards/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Osd3358 linux and click boards
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Osd3358 linux and click boards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Electronics/phone-extension/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Phone extension
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Phone extension
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Graphics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Graphics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Graphics/custom-graphics-renderer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Custom graphics renderer
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Custom graphics renderer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Graphics/opengl-experiments/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Opengl experiments
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Opengl experiments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Graphics/vulkan-experiments/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Vulkan experiments
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vulkan experiments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Graphics/wow-model-export/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Wow model export
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Wow model export
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beaglebone_yocto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yocto Linux for BeagleBone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    DIY Linux
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    DIY Linux
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain" class="md-nav__link">
+    Toolchain
+  </a>
+  
+    <nav class="md-nav" aria-label="Toolchain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toolchain-types-gnueabi-gnueabihf" class="md-nav__link">
+    Toolchain types ( gnueabi / gnueabihf )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-toolchain" class="md-nav__link">
+    Build toolchain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-toolchain" class="md-nav__link">
+    Setup toolchain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolchain-usage" class="md-nav__link">
+    Toolchain usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootloader" class="md-nav__link">
+    Bootloader
+  </a>
+  
+    <nav class="md-nav" aria-label="Bootloader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-process" class="md-nav__link">
+    Boot process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-u-boot" class="md-nav__link">
+    Build u-boot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash-u-boot-to-target-device" class="md-nav__link">
+    Flash u-boot to target device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot-linux-image" class="md-nav__link">
+    Boot linux image
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    Terminal
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-terminal" class="md-nav__link">
+    Open terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel" class="md-nav__link">
+    Kernel
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-kernel" class="md-nav__link">
+    Setup kernel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-kernel" class="md-nav__link">
+    Build kernel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-tree" class="md-nav__link">
+    Device tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rootfs" class="md-nav__link">
+    Rootfs
+  </a>
+  
+    <nav class="md-nav" aria-label="Rootfs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-rootfs" class="md-nav__link">
+    Create rootfs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-busybox" class="md-nav__link">
+    Build busybox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-ramdisk-image" class="md-nav__link">
+    Create a ramdisk image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beaglebone" class="md-nav__link">
+    Beaglebone
+  </a>
+  
+    <nav class="md-nav" aria-label="Beaglebone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-from-sd-card" class="md-nav__link">
+    Boot from SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-size" class="md-nav__link">
+    Image size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-files" class="md-nav__link">
+    Image files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../install-arch-linux/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Install arch linux
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Install arch linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Misc/all-the-mods/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    All the mods
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            All the mods
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Misc/home-assistant/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home assistant
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Home assistant
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Misc/old-projects/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Old projects
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Old projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Test pages
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Test pages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/test-pages/page2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Misc/wow-addons/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Wow addons
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Wow addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Motorcycles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Motorcycles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Motorcycles/rd350/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Rd350
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Rd350
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/git-pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/component-storage/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Component storage
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Component storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/component-storage-update/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Component storage update
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Component storage update
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_4" id="__nav_2_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Old gatsby site
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Old gatsby site
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/old-gatsby-site/initial-commit/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Initial commit
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Initial commit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/old-gatsby-site/setup-gatsby-site/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Setup gatsby site
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Setup gatsby site
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/old-gatsby-site/site-in-development/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Site in development
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Site in development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Web/old-gatsby-site/website-update/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Website update
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Website update
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain" class="md-nav__link">
+    Toolchain
+  </a>
+  
+    <nav class="md-nav" aria-label="Toolchain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toolchain-types-gnueabi-gnueabihf" class="md-nav__link">
+    Toolchain types ( gnueabi / gnueabihf )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-toolchain" class="md-nav__link">
+    Build toolchain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-toolchain" class="md-nav__link">
+    Setup toolchain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolchain-usage" class="md-nav__link">
+    Toolchain usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootloader" class="md-nav__link">
+    Bootloader
+  </a>
+  
+    <nav class="md-nav" aria-label="Bootloader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-process" class="md-nav__link">
+    Boot process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-u-boot" class="md-nav__link">
+    Build u-boot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash-u-boot-to-target-device" class="md-nav__link">
+    Flash u-boot to target device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot-linux-image" class="md-nav__link">
+    Boot linux image
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    Terminal
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-terminal" class="md-nav__link">
+    Open terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel" class="md-nav__link">
+    Kernel
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-kernel" class="md-nav__link">
+    Setup kernel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-kernel" class="md-nav__link">
+    Build kernel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-tree" class="md-nav__link">
+    Device tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rootfs" class="md-nav__link">
+    Rootfs
+  </a>
+  
+    <nav class="md-nav" aria-label="Rootfs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-rootfs" class="md-nav__link">
+    Create rootfs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-busybox" class="md-nav__link">
+    Build busybox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-ramdisk-image" class="md-nav__link">
+    Create a ramdisk image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beaglebone" class="md-nav__link">
+    Beaglebone
+  </a>
+  
+    <nav class="md-nav" aria-label="Beaglebone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-from-sd-card" class="md-nav__link">
+    Boot from SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-size" class="md-nav__link">
+    Image size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-files" class="md-nav__link">
+    Image files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/protoni/projects/edit/main/docs/Projects/Linux/diy-setup.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h2 id="description">Description</h2>
+<p>Bootable Linux image for BeagleBone black from sratch, "from scracth" here
+means building the toolchain that builds the bootloader, kernel, device tree.
+Also create rootfs by hand and build busybox to have some basic features enabled.</p>
+<h2 id="toolchain">Toolchain</h2>
+<h5 id="toolchain-types-gnueabi-gnueabihf">Toolchain types ( gnueabi / gnueabihf )</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- GNU Extended Application Binary Interface / --||-- hardware floating point support
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Passes 
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- gnueabi relies on software floating-point library
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- gnueabihf uses floating point registers instead of integer registers
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>- in function calls, the hardware floating point support makes calling with float and double type parameters faster
+</code></pre></div>
+<h5 id="build-toolchain">Build toolchain</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/crosstool-ng/crosstool-ng.git
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>crosstool-ng-1.25.0
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>./bootstrap
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>make
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>make<span class="w"> </span>install
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>bin/ct-ng<span class="w"> </span>arm-cortex_a8-linux-gnueabi
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>bin/ct-ng<span class="w"> </span>build
+</code></pre></div>
+<h5 id="setup-toolchain">Setup toolchain</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Setup toolchain env</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">PATH</span><span class="o">=</span>~/x-tools/arm-cortex_a8-linux-gnueabi/bin:<span class="nv">$PATH</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-cortex_a8-linux-gnueabi-
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm
+</code></pre></div>
+<h5 id="toolchain-usage">Toolchain usage</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Toolchain install location</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>~/x-tools/arm-cortex_a8-linux-gnueabi
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># List default configurations</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>bin/ct-ng<span class="w"> </span>list-samples
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># View default configuration</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>bin/ct-ng<span class="w"> </span>show-arm-cortex_a8-linux-gnueabi
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># View default configuration</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>bin/ct-ng<span class="w"> </span>show-arm-cortex_a8-linux-gnueabi
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># Disable read-only toolchain ( CT_PREFIX_DIR_RO )</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1"># Enable hardware floating points ( CT_ARCH_FLOAT_HW )</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># Target options -&gt; Use specific FPU -&gt; &#39;neon&#39;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>bin/ct-ng<span class="w"> </span>menuconfig
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1"># Get toolchain info</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>arm-cortex_a8-linux-gnueabi-gcc<span class="w"> </span>--version
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>arm-cortex_a8-linux-gnueabi-gcc<span class="w"> </span>-v
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="c1"># Toolchain compiling</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>arm-cortex_a8-linux-gnueabi-gcc<span class="w"> </span>test.c<span class="w"> </span>-o<span class="w"> </span>test_bin
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="c1"># Override toolchain compiler settings</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>arm-cortex_a8-linux-gnueabi-gcc<span class="w"> </span>-mcpu<span class="o">=</span>cortex-a5<span class="w"> </span>test.c<span class="w"> </span>-o<span class="w"> </span>test_bin
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="c1"># Read linked libraries</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>arm-cortex_a8-linux-gnueabi-readelf<span class="w"> </span>-a<span class="w"> </span>test_bin<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Shared library&quot;</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="c1"># Get location of shared library runtime linker</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>arm-cortex_a8-linux-gnueabi-readelf<span class="w"> </span>-a<span class="w"> </span>test_bin<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;program interpreter&quot;</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="c1"># Print toolchain sysroot</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>arm-cortex_a8-linux-gnueabi-gcc<span class="w"> </span>-print-sysroot
+</code></pre></div>
+<h2 id="bootloader">Bootloader</h2>
+<h5 id="boot-process">Boot process</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="m">1</span>.<span class="w"> </span>ROM<span class="w"> </span>code
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="m">2</span>.<span class="w"> </span>Secondary<span class="w"> </span>Program<span class="w"> </span>Loader<span class="w"> </span><span class="o">(</span><span class="w"> </span>SPL<span class="w"> </span><span class="o">)</span><span class="w"> </span>running<span class="w"> </span><span class="k">in</span><span class="w"> </span>SRAM<span class="w"> </span>Initializes<span class="w"> </span>DRAM
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="m">3</span>.<span class="w"> </span>SPL<span class="w"> </span>loads<span class="w"> </span>u-boot<span class="w"> </span><span class="o">(</span><span class="w"> </span>Tertiary<span class="w"> </span>Program<span class="w"> </span>Loader<span class="w"> </span><span class="o">(</span>TPL<span class="o">)</span><span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>and<span class="w"> </span>jumps<span class="w"> </span><span class="k">in</span><span class="w"> </span>there
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="m">4</span>.<span class="w"> </span>Loads<span class="w"> </span>kernel<span class="w"> </span>into<span class="w"> </span>DRAM
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="m">5</span>.<span class="w"> </span>Kernel<span class="w"> </span>loads<span class="w"> </span>root<span class="w"> </span>file<span class="w"> </span>system
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="m">6</span>.<span class="w"> </span>Init<span class="w"> </span>program<span class="w"> </span>is<span class="w"> </span>executed<span class="w"> </span>with<span class="w"> </span>PID<span class="w"> </span><span class="m">1</span>
+</code></pre></div>
+<h5 id="build-u-boot">Build u-boot</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://git.denx.de/u-boot.git
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">cd</span><span class="w"> </span>u-boot
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>v2021.01
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nv">PATH</span><span class="o">=</span>~/x-tools/arm-cortex_a8-linux-gnueabi/bin:<span class="nv">$PATH</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-cortex_a8-linux-gnueabi-
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>make<span class="w"> </span>am335x_evm_defconfig
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>make
+</code></pre></div>
+<h5 id="flash-u-boot-to-target-device">Flash u-boot to target device</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>format sdcard to have a 64MB boot section and a 1GB rootfs
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>copy MLO and u-boot.img to the /media/user/boot/ folder
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>umount the boot mount point
+</code></pre></div>
+<h5 id="boot-linux-image">Boot linux image</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>fatload<span class="w"> </span>mmc<span class="w"> </span><span class="m">0</span>:1<span class="w"> </span>0x80200000<span class="w"> </span>zImage
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>fatload<span class="w"> </span>mmc<span class="w"> </span><span class="m">0</span>:1<span class="w"> </span>0x80f00000<span class="w"> </span>am335x-boneblack.dtb
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>fatload<span class="w"> </span>mmc<span class="w"> </span><span class="m">0</span>:1<span class="w"> </span>0x80f00000<span class="w"> </span>nova.dtb
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>setenv<span class="w"> </span>bootargs<span class="w"> </span><span class="nv">console</span><span class="o">=</span>ttyO0,115200n8
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>bootz<span class="w"> </span>0x80200000<span class="w"> </span>-<span class="w"> </span>0x80f00000
+</code></pre></div>
+<h2 id="terminal">Terminal</h2>
+<h5 id="open-terminal">Open terminal</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>gtkterm<span class="w"> </span>-p<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span>-s<span class="w"> </span><span class="m">115200</span>
+</code></pre></div>
+<h2 id="kernel">Kernel</h2>
+<h5 id="setup-kernel">Setup kernel</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">## Get kernel sources</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>wget<span class="w"> </span>https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.4.50.tar.xz
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Create a kernel config based on defaults</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span>multi_v7_defconfig
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Modify kernel config</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span>menuconfig
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="o">(</span><span class="w"> </span>config<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>saved<span class="w"> </span>to<span class="w"> </span>.config<span class="w"> </span>file,<span class="w"> </span>use<span class="w"> </span>ls<span class="w"> </span>-a<span class="w"> </span>to<span class="w"> </span>view<span class="w"> </span>it<span class="w"> </span>on<span class="w"> </span>disk<span class="w"> </span><span class="o">)</span>
+</code></pre></div>
+<h5 id="build-kernel">Build kernel</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Build kernel</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libssl-dev
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>make<span class="w"> </span>-j<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-cortex_a8-linux-gnueabi-<span class="w"> </span>zImage
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1"># Build kernel with verbose logging</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libssl-dev
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>make<span class="w"> </span>-j<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-cortex_a8-linux-gnueabi-<span class="w"> </span><span class="nv">V</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>zImage
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1"># Build kernel modules separately</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>make<span class="w"> </span>-j<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-cortex_a8-linux-gnueabi-<span class="w"> </span>modules
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="c1"># Install kernel modules</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>make<span class="w"> </span>-j8<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-cortex_a8-linux-gnueabi-
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">  </span><span class="nv">INSTALL_MOD_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/rootfs<span class="w"> </span>modules_install
+</code></pre></div>
+<h2 id="device-tree">Device tree</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">## Build device tree ( based on the multi_v7_defconfig )</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span>dtbs
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1">##### Copy kernel and device tree to the boot media</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="sb">````</span>bash
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>cp<span class="w"> </span>arch/arm/boot/zImage<span class="w"> </span>arch/arm/boot/dts/am335x-boneblack.dtb<span class="w"> </span>/media/ton/boot/
+</code></pre></div>
+<h1 id="rootfs">Rootfs</h1>
+<h3 id="create-rootfs">Create rootfs</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mkdir<span class="w"> </span>~/rootfs
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">cd</span><span class="w"> </span>~/rootfs
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>mkdir<span class="w"> </span>bin<span class="w"> </span>dev<span class="w"> </span>etc<span class="w"> </span>home<span class="w"> </span>lib<span class="w"> </span>proc<span class="w"> </span>sbin<span class="w"> </span>sys<span class="w"> </span>tmp<span class="w"> </span>usr<span class="w"> </span>var
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>mkdir<span class="w"> </span>usr/bin<span class="w"> </span>usr/lib<span class="w"> </span>usr/sbin
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>var/log
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>root:root<span class="w"> </span>*
+</code></pre></div>
+<h1 id="build-busybox">Build busybox</h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://busybox.net/busybox.git
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">cd</span><span class="w"> </span>busybox
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>1_36_0
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>make<span class="w"> </span>distclean
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>make<span class="w"> </span>defconfig
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="o">(</span><span class="w"> </span>Optional,<span class="w"> </span><span class="k">do</span><span class="w"> </span>changes<span class="w"> </span>here<span class="w"> </span><span class="o">)</span><span class="w"> </span>make<span class="w"> </span>menuconfig
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>nano<span class="w"> </span>.config<span class="w"> </span>-&gt;<span class="w"> </span>change<span class="w"> </span><span class="s1">&#39;CONFIG_PREFIX&#39;</span><span class="w"> </span>to:<span class="w"> </span>/home/ton/rootfs
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-cortex_a8-linux-gnueabi-
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-cortex_a8-linux-gnueabi-<span class="w"> </span>install
+</code></pre></div>
+<h1 id="create-a-ramdisk-image">Create a ramdisk image</h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">cd</span><span class="w"> </span>~/rootfs
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>find<span class="w"> </span>.<span class="w"> </span><span class="p">|</span><span class="w"> </span>cpio<span class="w"> </span>-H<span class="w"> </span>newc<span class="w"> </span>-ov<span class="w"> </span>--owner<span class="w"> </span>root:root<span class="w"> </span>&gt;<span class="w"> </span>../initramfs.cpio
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">cd</span><span class="w"> </span>..
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>gzip<span class="w"> </span>initramfs.cpio
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>mkimage<span class="w"> </span>-A<span class="w"> </span>arm<span class="w"> </span>-O<span class="w"> </span>linux<span class="w"> </span>-T<span class="w"> </span>ramdisk<span class="w"> </span>-d<span class="w"> </span>initramfs.cpio.gz<span class="w"> </span>uRamdisk
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>attach<span class="w"> </span>SD<span class="w"> </span>card<span class="w"> </span>to<span class="w"> </span>host<span class="w"> </span>machine
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>cp<span class="w"> </span>uRamdisk<span class="w"> </span>/media/ton/boot
+</code></pre></div>
+<h1 id="beaglebone">Beaglebone</h1>
+<h3 id="boot-from-sd-card">Boot from SD card</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Hold down the button near the SD card slot, power on the device, hold the button down for 5 seconds and release
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Optionally press reset button
+</code></pre></div>
+<h3 id="image-size">Image size</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>uboot&gt;<span class="w"> </span>bootz<span class="w"> </span>0x80200000<span class="w"> </span>0x81000000<span class="w"> </span>0x80f00000
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1">## Loading init Ramdisk from Legacy Image at 81000000 ...</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">   </span>Image<span class="w"> </span>Name:<span class="w">   </span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">   </span>Created:<span class="w">      </span><span class="m">2023</span>-04-26<span class="w">  </span><span class="m">15</span>:29:33<span class="w"> </span>UTC
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">   </span>Image<span class="w"> </span>Type:<span class="w">   </span>ARM<span class="w"> </span>Linux<span class="w"> </span>RAMDisk<span class="w"> </span>Image<span class="w"> </span><span class="o">(</span>gzip<span class="w"> </span>compressed<span class="o">)</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">   </span>Data<span class="w"> </span>Size:<span class="w">    </span><span class="m">1612931</span><span class="w"> </span><span class="nv">Bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>.5<span class="w"> </span>MiB
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">   </span>Load<span class="w"> </span>Address:<span class="w"> </span><span class="m">00000000</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">   </span>Entry<span class="w"> </span>Point:<span class="w">  </span><span class="m">00000000</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">   </span>Verifying<span class="w"> </span>Checksum<span class="w"> </span>...<span class="w"> </span>OK
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="c1">## Flattened Device Tree blob at 80f00000</span>
+</code></pre></div>
+<h3 id="image-files">Image files</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>debian@beaglebone:~$<span class="w"> </span>ls<span class="w"> </span>-laih<span class="w"> </span>/media/boot/
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>total<span class="w"> </span>24M
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="m">1</span><span class="w"> </span>drwx------<span class="w"> </span><span class="m">2</span><span class="w"> </span>debian<span class="w"> </span>debian<span class="w">  </span>16K<span class="w"> </span>Apr<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">20</span>:21<span class="w"> </span>.
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w"> </span><span class="m">18</span><span class="w"> </span>drwxr-xr-x<span class="w"> </span><span class="m">3</span><span class="w"> </span>root<span class="w">   </span>root<span class="w">   </span><span class="m">4</span>.0K<span class="w"> </span>Apr<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">20</span>:20<span class="w"> </span>..
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="m">183</span><span class="w"> </span>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>debian<span class="w"> </span>debian<span class="w">  </span>57K<span class="w"> </span>Apr<span class="w"> </span><span class="m">26</span><span class="w">  </span><span class="m">2023</span><span class="w"> </span>am335x-boneblack.dtb<span class="w"> </span><span class="c1"># Device tree</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="m">180</span><span class="w"> </span>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>debian<span class="w"> </span>debian<span class="w"> </span>106K<span class="w"> </span>Apr<span class="w"> </span><span class="m">25</span><span class="w">  </span><span class="m">2023</span><span class="w"> </span>MLO<span class="w">                  </span><span class="c1"># Secondary program loader ( SPL )</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="m">184</span><span class="w"> </span>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>debian<span class="w"> </span>debian<span class="w"> </span>128K<span class="w"> </span>Jan<span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">1980</span><span class="w"> </span>uboot.env<span class="w">            </span><span class="c1"># Uboot environment variables</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="m">181</span><span class="w"> </span>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>debian<span class="w"> </span>debian<span class="w"> </span>872K<span class="w"> </span>Apr<span class="w"> </span><span class="m">25</span><span class="w">  </span><span class="m">2023</span><span class="w"> </span>u-boot.img<span class="w">           </span><span class="c1"># Uboot binary + header</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="m">186</span><span class="w"> </span>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>debian<span class="w"> </span>debian<span class="w">  </span>14M<span class="w"> </span>Apr<span class="w"> </span><span class="m">26</span><span class="w">  </span><span class="m">2023</span><span class="w"> </span>uRamdisk<span class="w">             </span><span class="c1"># Root file system in ramdisk format</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="m">182</span><span class="w"> </span>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>debian<span class="w"> </span>debian<span class="w"> </span><span class="m">8</span>.7M<span class="w"> </span>Apr<span class="w"> </span><span class="m">26</span><span class="w">  </span><span class="m">2023</span><span class="w"> </span>zImage<span class="w">               </span><span class="c1"># Compressed kernel image</span>
+</code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-27T18:39:44+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-27</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-27T18:39:44+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-27</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-> Protoni. Contant at &#116;&#111;&#110;&#105;&#032;[&#064;]&#032;&#112;&#114;&#111;&#116;&#111;&#110;&#105;&#046;&#102;&#105;
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../../js/timeago.min.js"></script>
+      
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
