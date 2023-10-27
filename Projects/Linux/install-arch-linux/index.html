@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#table-of-contents" class="md-skip">
+        <a href="#requirements" class="md-skip">
           Skip to content
         </a>
       
@@ -1972,29 +1972,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    Table of contents:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
-    Requirements:
+    Requirements
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#steps" class="md-nav__link">
-    Steps:
+    Steps
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#download" class="md-nav__link">
-    Download:
+    Download
   </a>
   
 </li>
@@ -2178,20 +2171,7 @@
 <p>This is a re-write of my old Arch Linux installation notes. Originally they were just on different text files on my github repo and
 they became too hard to read at some point so I decided to combine these notes to a proper blog post. The blog post was originally created
 to my old wordpress website a couple of years ago. Decided I would migrate this to here as well.</p>
-<h3 id="table-of-contents">Table of contents:</h3>
-<ul>
-<li>1 <a href="#virtualbox-setup">VirtualBox setup</a></li>
-<li>2 <a href="#starting-arch-linux-virtual-machine">Starting Arch Linux virtual machine</a></li>
-<li>3 <a href="#setting-up-network-connection">Setting up network connection</a></li>
-<li>4 <a href="#setup-disk-partitions">Setup disk partitions</a></li>
-<li>5 <a href="#system-setup">System setup</a></li>
-<li>6 <a href="#configure-network">Configure network</a></li>
-<li>7 <a href="#install-sound">Install sound</a></li>
-<li>8 <a href="#install-display-server">Install display server</a></li>
-<li>9 <a href="#install-desktop-environment">Install desktop environment</a></li>
-<li>10 <a href="#tldr">TLDR</a></li>
-</ul>
-<h3 id="requirements">Requirements:</h3>
+<h3 id="requirements">Requirements</h3>
 <ul>
 <li>Time and patience.</li>
 <li>Virtual machine ( or why not a real machine )</li>
@@ -2199,7 +2179,7 @@ to my old wordpress website a couple of years ago. Decided I would migrate this 
 <li>1GB RAM</li>
 <li>8GB free hard disk space</li>
 </ul>
-<h3 id="steps">Steps:</h3>
+<h3 id="steps">Steps</h3>
 <ol>
 <li>Install VirtualBox</li>
 <li>Install Arch Linux</li>
@@ -2207,12 +2187,12 @@ to my old wordpress website a couple of years ago. Decided I would migrate this 
 <li>Profit</li>
 </ol>
 <p>Easy, huh? So lets begin by installing the virtual machine so we can actually launch the Arch Linux!</p>
-<h3 id="download">Download:</h3>
+<h3 id="download">Download</h3>
 <ul>
-<li>https://www.virtualbox.org/wiki/Downloads</li>
-<li>https://www.archlinux.org/download/</li>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></li>
+<li><a href="https://www.archlinux.org/download/">https://www.archlinux.org/download/</a></li>
 </ul>
-<p><a class="glightbox" href="setupvm.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox setup" src="setupvm.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/FP3cWSF.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox setup" src="https://i.imgur.com/FP3cWSF.png" /></a></p>
 <h3 id="virtualbox-setup">VirtualBox setup</h3>
 <ol>
 <li>Click New</li>
@@ -2233,7 +2213,7 @@ Click Start, select 64-bit Arch Linux as a start-up disk and click Start. </p>
 <li>Exit full screen mode right <strong>Ctrl + F</strong></li>
 </ul>
 <h2 id="now-on-to-the-sweet-arch-linux-installation-part">Now on to the sweet Arch Linux installation part.</h2>
-<p><a class="glightbox" href="archgrub.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch GRUB bootloader" src="archgrub.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/BvSYhfJ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch GRUB bootloader" src="https://i.imgur.com/BvSYhfJ.png" /></a></p>
 <h3 id="starting-arch-linux-virtual-machine">Starting Arch Linux virtual machine</h3>
 <p>2.1 Click Boot Arch Linux ( x86_64 ). After Linux boots up, you should be sitting at root@archiso shell.</p>
 <p>2.2 ( Optional ) set the keyboardlayout temporarily to finnish. ( Or whatever your language is. Default is english ) 
@@ -2250,13 +2230,13 @@ Click Start, select 64-bit Arch Linux as a start-up disk and click Start. </p>
 3.2 To search for Ethernet part, and print 10 lines after that:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lspci -v | grep -A 10 &quot;Ethernet&quot;
 </code></pre></div></p>
-<p><a class="glightbox" href="lspci.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="lspci" src="lspci.png" /></a>
+<p><a class="glightbox" href="https://i.imgur.com/F9rPcmz.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="lspci" src="https://i.imgur.com/F9rPcmz.png" /></a>
 Kernel driver in use: e1000 – This is your card’s driver </p>
 <p>3.3 Now we can search for the driver in the kernel message buffer to see if it is up.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>dmesg | grep e1000
 </code></pre></div></p>
 <p>Output should look something like this, when the card is up and running:
-<a class="glightbox" href="dmesg.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="dmesg" src="dmesg.png" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/2hHRAtF.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="dmesg" src="https://i.imgur.com/2hHRAtF.png" /></a></p>
 <p>3.4 If the driver is not in use, we need to load the driver. replace [ e1000 ] with your driver shown in lspci.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rmmod e1000
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>modprobe e1000
@@ -2269,7 +2249,7 @@ but this is all that I have documented on my notes. If this doesn’t help, some
 <p>4.1 Check the disk name:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>fdisk -l
 </code></pre></div></p>
-<p><a class="glightbox" href="fdisk.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="fdisk" src="fdisk.png" /></a>
+<p><a class="glightbox" href="https://i.imgur.com/qZAgkDc.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="fdisk" src="https://i.imgur.com/qZAgkDc.png" /></a>
 /dev/sda is the one here</p>
 <p>4.2 Open the partitioning tool:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cgdisk /dev/sda
@@ -2305,7 +2285,7 @@ but this is all that I have documented on my notes. If this doesn’t help, some
 <p>4.8 Check that the partition table got written to the disk correctly:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>lsblk
 </code></pre></div></p>
-<p><a class="glightbox" href="cgdisk.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="cgdisk" src="cgdisk.png" /></a>
+<p><a class="glightbox" href="https://i.imgur.com/EqO5fIs.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="cgdisk" src="https://i.imgur.com/EqO5fIs.png" /></a>
 Partition table should look something like this.</p>
 <p>4.9 Format the partitions</p>
 <p>Create boot:
@@ -2356,7 +2336,7 @@ Fstab-file can be used to define what disks / partitions are going to be mounted
 <p>5.3 Check that the 4 newly created partitions exists in fstab-file:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>nano /mnt/etc/fstab
 </code></pre></div></p>
-<p><a class="glightbox" href="fstab.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="fstab" src="fstab.png" /></a>
+<p><a class="glightbox" href="https://i.imgur.com/RGzGX71.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="fstab" src="https://i.imgur.com/RGzGX71.png" /></a>
 Fstab should look something like this.</p>
 <p>5.4 Chroot to /mnt.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>arch-chroot /mnt
@@ -2392,7 +2372,7 @@ Uncomment en_US-UTF-8:</p>
 <a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>SigLevel = Never
 <a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>Server = http://repo.archlinux.fr/$arch
 </code></pre></div></p>
-<p><a class="glightbox" href="pacman_conf.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="pacman configuration file" src="pacman_conf.png" /></a>
+<p><a class="glightbox" href="https://i.imgur.com/SouSY8j.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="pacman configuration file" src="https://i.imgur.com/SouSY8j.png" /></a>
 Pacman.conf should look something like this.</p>
 <p>5.10 Update the system.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>pacman -Syu
@@ -2409,7 +2389,7 @@ Pacman.conf should look something like this.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>EDITOR=nano visudo
 </code></pre></div>
 Remove #-sign from #%wheel ALL=(ALL) ALL</p>
-<p><a class="glightbox" href="visudo.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="visudo" src="visudo.png" /></a>
+<p><a class="glightbox" href="https://i.imgur.com/LtfFdo5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="visudo" src="https://i.imgur.com/LtfFdo5.png" /></a>
 Visudo should look something like this.</p>
 <p>Setup root password:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>passwd
@@ -2436,7 +2416,7 @@ Visudo should look something like this.</p>
 <a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>initrd /initramfs-linux.img
 <a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>options root=/dev/sda3 rw
 </code></pre></div>
-<p><a class="glightbox" href="arch_conf.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bootloader configuration file" src="arch_conf.png" /></a>
+<p><a class="glightbox" href="https://i.imgur.com/kCXTqyx.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bootloader configuration file" src="https://i.imgur.com/kCXTqyx.png" /></a>
 Bootloader configuration file should look something like this.</p>
 <p>5.14 Setup bootloader.</p>
 <h5 id="optional-install-intel-microcodes-if-you-have-intel-cpu">( Optional ) Install intel microcodes if you have Intel CPU:</h5>
@@ -2483,13 +2463,13 @@ I solved it by adding --force to the command so that it will use the blocklists.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>- Choose &#39;Boot existing OS&#39; from the menu
 <a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>- Select Arch Linux
 </code></pre></div></p>
-<p><a class="glightbox" href="archgrub-1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch GRUB bootleader" src="archgrub-1.png" /></a>
-Arch Linux boot menu</p>
-<p><a class="glightbox" href="bootloader.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch GRUB bootleader" src="bootloader.png" /></a>
-GRUB bootloader</p>
-<p><a class="glightbox" href="login.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch Linux login" src="login.png" /></a>
+<p>Arch Linux boot menu
+<a class="glightbox" href="https://i.imgur.com/UYQ9cQn.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch GRUB bootmenu" src="https://i.imgur.com/UYQ9cQn.png" /></a></p>
+<p>GRUB bootloader
+<a class="glightbox" href="https://i.imgur.com/YDXkKvs.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch GRUB bootloader" src="https://i.imgur.com/YDXkKvs.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/EreE4R7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch Linux login" src="https://i.imgur.com/EreE4R7.png" /></a>
 You should be sitting at login prompt.</p>
-<p><a class="glightbox" href="login2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch Linux login" src="login2.png" /></a>
+<p><a class="glightbox" href="https://i.imgur.com/gy1OM74.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch Linux login" src="https://i.imgur.com/gy1OM74.png" /></a>
 Login with the username and password that you configured earlier. And once you log in, you can see that there is not much going on, just a black terminal window. Now we just need to install a GUI. </p>
 <h2 id="congratulations-you-have-just-installed-arch-linux">Congratulations! You have just installed Arch Linux!</h2>
 <p>At this point some more steps are going to be needed so that the Arch Linux build would be useful for anything, like installing sound and graphical user interface.</p>
@@ -2497,33 +2477,33 @@ Login with the username and password that you configured earlier. And once you l
 <hr />
 <h3 id="configure-network">Configure network</h3>
 <p>Network needs to actually be re-configured, because the network setup during install has no effect on the actual system.</p>
-<p><a class="glightbox" href="ping1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Network down" src="ping1.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/BQ46MjE.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Network down" src="https://i.imgur.com/BQ46MjE.png" /></a></p>
 <p>Once again, check the name of the network driver:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>lspci<span class="w"> </span>-v
 </code></pre></div></p>
-<p><a class="glightbox" href="lspci-1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="lspci -v output" src="lspci-1.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/GqjFxcL.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="lspci -v output" src="https://i.imgur.com/GqjFxcL.png" /></a></p>
 <p>Check the network interface name from the dmesg output:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>e1000
 </code></pre></div></p>
-<p><a class="glightbox" href="dmesg2-1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Dmesg output" src="dmesg2-1.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/dw1IBKE.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Dmesg output" src="https://i.imgur.com/dw1IBKE.png" /></a></p>
 <p>So my interface name is enp0s3. Now it needs to be configured to the DHCP client
 <div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>sudo<span class="w"> </span>dhcpcd<span class="w"> </span>enp0s3
 </code></pre></div></p>
-<p><a class="glightbox" href="dhcpcd.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="dhcpcd output" src="dhcpcd.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/RXeNdiS.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="dhcpcd output" src="https://i.imgur.com/RXeNdiS.png" /></a></p>
 <p>To make the fix permanent, we need to enable the dhcpcd service, so that we have a network connection at startup.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>dhcpcd.service
 </code></pre></div></p>
 <p>Now the network should be back up, try to ping google servers once again:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>ping<span class="w"> </span>google.com
 </code></pre></div></p>
-<p><a class="glightbox" href="ping.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Network up" src="ping.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/9gQmdTp.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Network up" src="https://i.imgur.com/9gQmdTp.png" /></a></p>
 <p>Install <strong>net-tools</strong> to get ifconfig working:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>net-tools
 </code></pre></div></p>
 <p>Run <strong>ifconfig</strong> to see network information:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>ifconfig
 </code></pre></div></p>
-<p><a class="glightbox" href="ifconfig.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ifconfig output" src="ifconfig.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/QYBcFcv.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ifconfig output" src="https://i.imgur.com/QYBcFcv.png" /></a></p>
 <p>&amp;nbsp</p>
 <hr />
 <h3 id="install-sound">Install sound</h3>
@@ -2616,10 +2596,10 @@ Login with the username and password that you configured earlier. And once you l
 <h3 id="once-again-congrats">Once again, Congrats!</h3>
 <p>You should now have a working Arch Linux installation with GUI and everything.
 I might do some follow up articles for the Arch Linux installation, for example customizing Xmonad Desktop Environment.</p>
-<p><a class="glightbox" href="xfce4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch Linux working" src="xfce4.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/5vGXogb.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arch Linux working" src="https://i.imgur.com/5vGXogb.png" /></a></p>
 <p>Now that I have everything setup, the root partition is taking 63% of the allocated 5GB size.
 You really might want to allocate a lot more for the partitions.</p>
-<p><a class="glightbox" href="df.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Disk usage" src="df.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/rezeZnu.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Disk usage" src="https://i.imgur.com/rezeZnu.png" /></a></p>
 <h3 id="notes">Notes:</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>If you get stuck on login screen ( X server crashing ):
 <a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a>Press Ctrl + ALT + F2 so you can go to reconfigure ~/.xinitrc for example # (F1 - F7) F1 has the X server running.
@@ -2852,7 +2832,7 @@ You really might want to allocate a lot more for the partitions.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-03-30T22:33:51+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-03-30</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-27T23:12:43+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-27</span>
       
         <br>
         Created:

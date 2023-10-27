@@ -2049,11 +2049,12 @@
 ( <a href="https://protoni.fi/Projects/Electronics/osd3358-linux/">https://protoni.fi/Projects/Electronics/osd3358-linux/</a> ) so I thought that it was
 about time to start actually doing something with it. </p>
 <p>I ordered a bunch of these
-prototyping/development boards from MikroElektronika ( https://www.mikroe.com/ ) 
+prototyping/development boards from MikroElektronika 
+( <a href="https://www.mikroe.com/">https://www.mikroe.com/</a> ) 
 called <strong>"Click boards"</strong> and started messing around with them.</p>
 <p>A lot of configuring and figuring out was required so here are some notes on that.</p>
 <p><strong>Click boards</strong>
-<a class="glightbox" href="clickBoards.JPG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Click boards" src="clickBoards.JPG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/3NG6pB4.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Click boards" src="https://i.imgur.com/3NG6pB4.jpg" /></a></p>
 <hr />
 <h3 id="ethernet">Ethernet</h3>
 <p>Not a Click board, but the first issue I had was that I couldn't really move files over to the Linux 
@@ -2062,15 +2063,15 @@ system and command line editors didn't work all that well over UART.</p>
 as a COM port using Putty so I bought this ~9€ USB -&gt; Ethernet adapter to solve this issue. 
 It just works out of the box. Just needed to plug it in, figure out the IP address of the Linux board and SSH in to it.</p>
 <p><strong>Ethernet adapter</strong>
-<a class="glightbox" href="adapter.JPG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="adapter" src="adapter.JPG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/2XBHhBp.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="adapter" src="https://i.imgur.com/2XBHhBp.jpg" /></a></p>
 <p><strong>Internet connection works</strong></p>
 <p>The RJ45 adapter is also great because the beaglebone Linux has a package management system so I can just install whatever
 I need using apt-get now that I have internet connection working.
-<a class="glightbox" href="ping.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Ping" src="ping.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/yrx6dIp.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Ping" src="https://i.imgur.com/yrx6dIp.png" /></a></p>
 <p><strong>Getting the IP</strong></p>
 <p>There is no ifconfig on beaglebone linux, apparently it only has a <strong>ip a</strong> command.
 ( IP highlighted in yellow )
-<a class="glightbox" href="ip_a.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Ip a command" src="ip_a.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/OqPkOwN.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Ip a command" src="https://i.imgur.com/OqPkOwN.png" /></a></p>
 <p><strong>SSH in to the device</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># Open Putty
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -2084,7 +2085,7 @@ I need using apt-get now that I have internet connection working.
 <p>I have a router where my computer and the Linux board is connected so I didn't have to set any
 IP settings on the host machine. But here are some notes on that as well.</p>
 <p><strong>Get the IP</strong></p>
-<p><a class="glightbox" href="ip_a2.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Ip a usb" src="ip_a2.PNG" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/SPlik9d.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Ip a usb" src="https://i.imgur.com/SPlik9d.png" /></a></p>
 <p><strong>Configure the IP and connect</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>- Connect the cable to the host machine
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>- Win + R -&gt; ncpa.cpl
@@ -2100,15 +2101,15 @@ Not sure if this is due to some Windows firewall settings or what.</p>
 <hr />
 <h3 id="lte-modem">LTE modem</h3>
 <p>The LTE modem Click board that I have is this one:
-* https://www.mikroe.com/lte-cat1-eu-click-for-europe</p>
+* <a href="https://www.mikroe.com/lte-cat1-eu-click-for-europe">https://www.mikroe.com/lte-cat1-eu-click-for-europe</a></p>
 <p>It has an <strong>Cinterion ELS61</strong> modem chip in it. Docs:
-* https://m2m.dk/wp-content/uploads/2019/12/ELS61-E-AT-Command-Set-V02.000-15.08.2018.pdf</p>
+* <a href="https://m2m.dk/wp-content/uploads/2019/12/ELS61-E-AT-Command-Set-V02.000-15.08.2018.pdf">https://m2m.dk/wp-content/uploads/2019/12/ELS61-E-AT-Command-Set-V02.000-15.08.2018.pdf</a></p>
 <p>I had a lot of issues with getting a mobile interface on linux setup with the modem and in the end I didn't get it
 to work through the UART pins that are in the Click board headers. It probably requires some drivers to actually work.</p>
 <p>Instead I connected a micro USB cable from the Linux board's USB host port to the
 Click board's USB client port.</p>
 <p><strong>USB connected to modem</strong>
-<a class="glightbox" href="usbModem.JPG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="USB connected to modem" src="usbModem.JPG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/BSyXS8C.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="USB connected to modem" src="https://i.imgur.com/BSyXS8C.jpg" /></a></p>
 <p><strong>Setting up the mobile interface</strong></p>
 <p>I spent quite a while hopelessly searching the net to solve the issues that I had with the modem internet connection setup.
 The modem itself worked right away. I got a pre-paid SIM card from the nearest kiosk just before it closed at 10pm 
@@ -2116,7 +2117,7 @@ so I got to test the modem right away. I tested the modem by calling from it to 
 <p>The first port on Linux board that I tested was <strong>/dev/ttyACM0</strong>. The <strong>minicom</strong>
 connection seemed to open and all of the AT commands seemed to work except <strong>AT^SWWAN</strong> that is supposed to open the internet connection.</p>
 <p><strong>Minicom modem connection works</strong>
-<a class="glightbox" href="atiResponse.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ATI response" src="atiResponse.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/rEGlMls.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ATI response" src="https://i.imgur.com/rEGlMls.png" /></a></p>
 <p>By default, it just gave an error called <strong>"Error"</strong>, but after digging around I was able to set an
 extended error mode on, which can be set on with this command:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>AT+CMEE=2
@@ -2142,9 +2143,9 @@ And the other one was:
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>7. ip a
 </code></pre></div></p>
 <p><strong>The mobile connection works</strong>
-<a class="glightbox" href="pingMobile.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Ping mobile" src="pingMobile.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/R8ZbdAR.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Ping mobile" src="https://i.imgur.com/R8ZbdAR.png" /></a></p>
 <p><strong>Mobile interface</strong>
-<a class="glightbox" href="mobileInterface.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Mobile interface" src="mobileInterface.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/HllarlL.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Mobile interface" src="https://i.imgur.com/HllarlL.png" /></a></p>
 <p>Before I decided to test the USB, I spent hours on trying to make the UART route work.
 I found only 2 other people on some forums who seemed to have a similar error. Last posts to those threads
 were from years ago and no responses after that.. frustrating. I guess they gave up too.</p>
@@ -2189,7 +2190,7 @@ and that was an whole nother journey. I'll probably do a separate post for the d
 <p><strong>Probe i2c1 bus</strong></p>
 <p>Here we can see that the temperature sensor <strong>0x3f</strong> is detected. <strong>"--"</strong> means that
 no devices were found. <strong>"UU"</strong> can also be found sometimes, it means that it is an reserved address.
-<a class="glightbox" href="i2c1probe.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Prove i2c bus" src="i2c1probe.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/FOIwgRM.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Prove i2c bus" src="https://i.imgur.com/FOIwgRM.png" /></a></p>
 <p><strong>Reading temperature values</strong></p>
 <p>I found a python program for some other I2C temperature sensor online, so I modified it to
 be able to read the temperature from the <strong>STTS22H</strong> as well.
@@ -2244,7 +2245,7 @@ be able to read the temperature from the <strong>STTS22H</strong> as well.
 <a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></p>
 <p><strong>Running the script</strong>
-<a class="glightbox" href="temperature.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Tempearture values" src="temperature.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/vSIaYn9.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Tempearture values" src="https://i.imgur.com/vSIaYn9.png" /></a></p>
 <hr />
 <h3 id="gps">GPS</h3>
 <p>The Click board that I got for GPS location reading is this one:
@@ -2286,20 +2287,20 @@ port is used.
 </code></pre></div></p>
 <p><strong>gpsmon</strong></p>
 <p>I don't have a GPS antenna, so gps can't see any satellites ( Quality and Sats field )
-<a class="glightbox" href="gpsmon.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="gpsmon output" src="gpsmon.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/6VwiqnP.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="gpsmon output" src="https://i.imgur.com/6VwiqnP.png" /></a></p>
 <hr />
 <h3 id="wifi">Wifi</h3>
 <p>Not a Click board, but I remembered that I bought this wifi module some years ago and decided
 to test it as well:
-* https://components101.com/development-boards/nodemcu-esp8266-pinout-features-and-datasheet</p>
+* <a href="https://components101.com/development-boards/nodemcu-esp8266-pinout-features-and-datasheet">https://components101.com/development-boards/nodemcu-esp8266-pinout-features-and-datasheet</a></p>
 <p>It has an <strong>ESP-12E</strong> module containing a <strong>ESP8266</strong> chip which includes a 
 <strong>Tensilica Xtensa 32-bit LX106</strong> RISC microprocessor. NodeMCU has 128 KB RAM and 4MB of Flash memory.</p>
 <p><strong>Connected via UART pins</strong>
-<a class="glightbox" href="ESP8266.JPG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ESP8266 connected" src="ESP8266.JPG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/HkzqyG3.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ESP8266 connected" src="https://i.imgur.com/HkzqyG3.jpg" /></a></p>
 <p><strong>Flashing the firmware</strong></p>
 <p>I found this <strong>"slip router"</strong> project from github which allows me to
 setup a Linux interface to communicate with the Wifi chip.
-* https://github.com/martin-ger/esp_slip_router</p>
+* <a href="https://github.com/martin-ger/esp_slip_router">https://github.com/martin-ger/esp_slip_router</a></p>
 <p>I went on and started setting up the <strong>ESP SDK</strong> so that I could build the slip router. Later on I realized that
 the github repo has the pre built binaries already. But now that I have the SDK setup, I can
 for example change the UART baud rate and so on.</p>
@@ -2332,10 +2333,10 @@ for example change the UART baud rate and so on.</p>
 <a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>CMD&gt;reset
 </code></pre></div></p>
 <p><strong>The "slip" interface on Linux</strong>
-<a class="glightbox" href="slip_ip_a.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="slip interface" src="slip_ip_a.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/zbHfFWy.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="slip interface" src="https://i.imgur.com/zbHfFWy.png" /></a></p>
 <p><strong>Testing SSH with termux on Android, it works !</strong></p>
 <p>I enabled wifi on my phone, the ESP8266 access point showed up and I was able to connect to it.
-<a class="glightbox" href="termux.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Termux wifi test" src="termux.png" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/lIcAgQr.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Termux wifi test" src="https://i.imgur.com/lIcAgQr.png" /></a></p>
 <p><strong>I also tried to flash the firmware on the target Linux board</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>termios.error: (25, &#39;Inappropriate ioctl for device&#39;)
 </code></pre></div></p>
@@ -2361,7 +2362,7 @@ Need to investigate more.</p>
 <p>Couldn't get the accelerometer working yet. I'll update this post if and when I can see
 some progress with this.</p>
 <p>I was able to build this driver for the chip:
-* https://github.com/BoschSensortec/BMI270-Sensor-API</p>
+* <a href="https://github.com/BoschSensortec/BMI270-Sensor-API">https://github.com/BoschSensortec/BMI270-Sensor-API</a></p>
 <p><strong>Initialization results in error</strong></p>
 <p>The driver is able to at least read some I2C registers before failing to 
 this configuration loading check with this error:
@@ -2383,7 +2384,7 @@ on the board.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-23T22:35:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-23</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-27T23:12:43+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-27</span>
       
         <br>
         Created:
