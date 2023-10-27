@@ -140,10 +140,10 @@ Ran out of panels
 
 ## Configuration
 
-Without configuring the panels do not look too good with HDMI because it doesn't
-shut off the LED's when the image has a "black pixel". I had to change this
-'better gray' setting in Colorlight's iSet software and also adjust the GPU's
-settings to enable this 'YCbCr' setting.
+Without configuring the panels, they do not look too good with HDMI because it
+doesn't shut off the LEDs when the image has a "black pixel". I had to change
+this 'better gray' setting in Colorlight's iSet software and also adjust the
+GPU's settings to enable this 'YCbCr' option.
 ![gpuSettings](./gpuSettings.JPG)
 
 With the initial configuration, you can see that the black parts look more like
