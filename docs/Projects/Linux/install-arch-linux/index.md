@@ -9,26 +9,14 @@ This is a re-write of my old Arch Linux installation notes. Originally they were
 they became too hard to read at some point so I decided to combine these notes to a proper blog post. The blog post was originally created
 to my old wordpress website a couple of years ago. Decided I would migrate this to here as well.
 
-### Table of contents:
-- 1 [VirtualBox setup](#virtualbox-setup)
-- 2 [Starting Arch Linux virtual machine](#starting-arch-linux-virtual-machine)
-- 3 [Setting up network connection](#setting-up-network-connection)
-- 4 [Setup disk partitions](#setup-disk-partitions)
-- 5 [System setup](#system-setup)
-- 6 [Configure network](#configure-network)
-- 7 [Install sound](#install-sound)
-- 8 [Install display server](#install-display-server)
-- 9 [Install desktop environment](#install-desktop-environment)
-- 10 [TLDR](#tldr)
-
-### Requirements:
+### Requirements
 * Time and patience.
 * Virtual machine ( or why not a real machine )
 * Arch Linux image
 * 1GB RAM
 * 8GB free hard disk space
 
-### Steps:
+### Steps
 1. Install VirtualBox
 2. Install Arch Linux
 3. ???
@@ -37,11 +25,11 @@ to my old wordpress website a couple of years ago. Decided I would migrate this 
 Easy, huh? So lets begin by installing the virtual machine so we can actually launch the Arch Linux!
 
 
-### Download:
-* https://www.virtualbox.org/wiki/Downloads
-* https://www.archlinux.org/download/
+### Download
+* <https://www.virtualbox.org/wiki/Downloads>
+* <https://www.archlinux.org/download/>
 
-![VirtualBox setup](./setupvm.png)
+![VirtualBox setup](https://i.imgur.com/FP3cWSF.png)
 
 ### VirtualBox setup
 1. Click New
@@ -64,7 +52,7 @@ Click Start, select 64-bit Arch Linux as a start-up disk and click Start.
 
 ## Now on to the sweet Arch Linux installation part.
 
-![Arch GRUB bootloader](./archgrub.png)
+![Arch GRUB bootloader](https://i.imgur.com/BvSYhfJ.png)
 
 ### Starting Arch Linux virtual machine
 2.1 Click Boot Arch Linux ( x86_64 ). After Linux boots up, you should be sitting at root@archiso shell.
@@ -90,7 +78,7 @@ lspci -v
 lspci -v | grep -A 10 "Ethernet"
 ```
 
-![lspci](./lspci.png)
+![lspci](https://i.imgur.com/F9rPcmz.png)
 Kernel driver in use: e1000 – This is your card’s driver 
 
 3.3 Now we can search for the driver in the kernel message buffer to see if it is up.
@@ -99,7 +87,7 @@ dmesg | grep e1000
 ```
 
 Output should look something like this, when the card is up and running:
-![dmesg](./dmesg.png)
+![dmesg](https://i.imgur.com/2hHRAtF.png)
 
 3.4 If the driver is not in use, we need to load the driver. replace [ e1000 ] with your driver shown in lspci.
 ```
@@ -119,7 +107,7 @@ but this is all that I have documented on my notes. If this doesn’t help, some
 fdisk -l
 ```
 
-![fdisk](./fdisk.png)
+![fdisk](https://i.imgur.com/qZAgkDc.png)
 /dev/sda is the one here
 
 4.2 Open the partitioning tool:
@@ -172,7 +160,7 @@ cgdisk /dev/sda
 lsblk
 ```
 
-![cgdisk](./cgdisk.png)
+![cgdisk](https://i.imgur.com/EqO5fIs.png)
 Partition table should look something like this.
 
 4.9 Format the partitions
@@ -255,7 +243,7 @@ Fstab-file can be used to define what disks / partitions are going to be mounted
 nano /mnt/etc/fstab
 ```
 
-![fstab](./fstab.png)
+![fstab](https://i.imgur.com/RGzGX71.png)
 Fstab should look something like this.
 
 5.4 Chroot to /mnt.
@@ -312,7 +300,7 @@ SigLevel = Never
 Server = http://repo.archlinux.fr/$arch
 ```
 
-![pacman configuration file](./pacman_conf.png)
+![pacman configuration file](https://i.imgur.com/SouSY8j.png)
 Pacman.conf should look something like this.
 
 5.10 Update the system.
@@ -339,7 +327,7 @@ EDITOR=nano visudo
 ```
 Remove #-sign from #%wheel ALL=(ALL) ALL
 
-![visudo](./visudo.png)
+![visudo](https://i.imgur.com/LtfFdo5.png)
 Visudo should look something like this.
 
 Setup root password:
@@ -381,7 +369,7 @@ initrd /initramfs-linux.img
 options root=/dev/sda3 rw
 ```
 
-![Bootloader configuration file](./arch_conf.png)
+![Bootloader configuration file](https://i.imgur.com/kCXTqyx.png)
 Bootloader configuration file should look something like this.
 
 5.14 Setup bootloader.
@@ -454,16 +442,17 @@ Open the bootloader from the menu:
 - Select Arch Linux
 ```
 
-![Arch GRUB bootleader](./archgrub-1.png)
 Arch Linux boot menu
+![Arch GRUB bootmenu](https://i.imgur.com/UYQ9cQn.png)
 
-![Arch GRUB bootleader](./bootloader.png)
 GRUB bootloader
+![Arch GRUB bootloader](https://i.imgur.com/YDXkKvs.png)
 
-![Arch Linux login](./login.png)
+
+![Arch Linux login](https://i.imgur.com/EreE4R7.png)
 You should be sitting at login prompt.
 
-![Arch Linux login](./login2.png)
+![Arch Linux login](https://i.imgur.com/gy1OM74.png)
 Login with the username and password that you configured earlier. And once you log in, you can see that there is not much going on, just a black terminal window. Now we just need to install a GUI. 
 
 ## Congratulations! You have just installed Arch Linux!
@@ -477,28 +466,28 @@ At this point some more steps are going to be needed so that the Arch Linux buil
 ### Configure network
 Network needs to actually be re-configured, because the network setup during install has no effect on the actual system.
 
-![Network down](./ping1.png)
+![Network down](https://i.imgur.com/BQ46MjE.png)
 
 Once again, check the name of the network driver:
 ```bash
 lspci -v
 ```
 
-![lspci -v output](./lspci-1.png)
+![lspci -v output](https://i.imgur.com/GqjFxcL.png)
 
 Check the network interface name from the dmesg output:
 ```bash
 dmesg | grep e1000
 ```
 
-![Dmesg output](./dmesg2-1.png)
+![Dmesg output](https://i.imgur.com/dw1IBKE.png)
 
 So my interface name is enp0s3. Now it needs to be configured to the DHCP client
 ```bash
 sudo dhcpcd enp0s3
 ```
 
-![dhcpcd output](./dhcpcd.png)
+![dhcpcd output](https://i.imgur.com/RXeNdiS.png)
 
 To make the fix permanent, we need to enable the dhcpcd service, so that we have a network connection at startup.
 ```bash
@@ -510,7 +499,7 @@ Now the network should be back up, try to ping google servers once again:
 ping google.com
 ```
 
-![Network up](./ping.png)
+![Network up](https://i.imgur.com/9gQmdTp.png)
 
 Install **net-tools** to get ifconfig working:
 ```bash
@@ -522,7 +511,7 @@ Run **ifconfig** to see network information:
 ifconfig
 ```
 
-![ifconfig output](./ifconfig.png)
+![ifconfig output](https://i.imgur.com/QYBcFcv.png)
 
 &nbsp
 
@@ -640,12 +629,12 @@ pacman -S ttf-dejavu
 You should now have a working Arch Linux installation with GUI and everything.
 I might do some follow up articles for the Arch Linux installation, for example customizing Xmonad Desktop Environment.
 
-![Arch Linux working](./xfce4.png)
+![Arch Linux working](https://i.imgur.com/5vGXogb.png)
 
 Now that I have everything setup, the root partition is taking 63% of the allocated 5GB size.
 You really might want to allocate a lot more for the partitions.
 
-![Disk usage](./df.png)
+![Disk usage](https://i.imgur.com/rezeZnu.png)
 
 ### Notes:
 ```

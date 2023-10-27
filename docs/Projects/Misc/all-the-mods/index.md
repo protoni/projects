@@ -22,37 +22,37 @@ around quotes above the image.
 ### "rear light in action at night."
 I actually still have this bike and a few years ago I changed the battery to test it and it still works! Though I
 had changed the LED to ultra bright red pretty quickly after I made the light. 
-![Rearlight dark](./rearlightDark.jpg)
+![Rearlight dark](https://i.imgur.com/zu7Rdi3.jpg)
 
 
 ### "my bicycle rear light with alpinestars logo, flashes different colors."
-![Rearlight bright](./rearlightBright.jpg)
+![Rearlight bright](https://i.imgur.com/OhFJ5Ho.jpg)
 
 
 ### "glowpad with red lightswitch"
-![Glowpad dark](./glowPadDark.jpg)
+![Glowpad dark](https://i.imgur.com/M8h7poQ.jpg)
 
 
 ### "not a daylight pic, but took it with flash and that allsop is just temporarily there."
-![Glowpad day](./glowPadDay.jpg)
+![Glowpad day](https://i.imgur.com/2s30uQr.jpg)
 
 
 ### Top item in mouse/mousepad category
 Found this picture from my cloud service where I had backed up stuff from around this time.
-![Top item](./topitem.JPG)
+![Top item](https://i.imgur.com/wZWQpyS.jpg)
 
 
 ### "oooold moped :|"
 My old moped. Derbi senda R -97
-![Moped](./moped.jpg)
+![Moped](https://i.imgur.com/YDiGp7X.jpg)
 
 
 ### "DERBI !!"
-![Derbi logo](./derbiLogo.jpg)
+![Derbi logo](https://i.imgur.com/e4DMyBZ.jpg)
 
 
 ### "Found it in my closet, I made it years ago in school. I still don't know what is it."
-![Crocodile thing](./crocodileThing.jpg)
+![Crocodile thing](https://i.imgur.com/AGBRxPb.jpg)
 
 
 That's all I posted in there unfortunately 😀

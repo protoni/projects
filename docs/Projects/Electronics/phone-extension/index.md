@@ -69,10 +69,10 @@ some formatting. Also nothing is tested or properly reviewed at this point.
 ````
 
 ## Some pictures of schematics
-![Schematic root](./schematicsPage1.png)
-![Schematic MCU](./schematicsPage2.png)
-![Schematic interfaces](./schematicsPage3.png)
-![Schematic power](./schematicsPage4.png)
+![Schematic root](https://i.imgur.com/CjOYekK.png)
+![Schematic MCU](https://i.imgur.com/NGntsul.png)
+![Schematic interfaces](https://i.imgur.com/UMnnDUm.png)
+![Schematic power](https://i.imgur.com/wHTmkpN.png)
 
 
 ## Investigations

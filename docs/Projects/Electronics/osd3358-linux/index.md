@@ -7,7 +7,7 @@ tags: ["electronics"]
 
 This is a project I made some time ago.
 
-![Board finished](./boardFinished.jpg)
+![Board finished](https://i.imgur.com/qpthRon.jpg)
 Board rev. v1. 
 
 Almost finished board straight out of a reflow oven. USB host port and Click board-header connectors still 
@@ -35,11 +35,11 @@ board design files and order the boards and components.
 
 
 ### After reflow soldering, under a magnifying glass
-![Board finished](./boardFinished2.jpg)
+![Board finished](https://i.imgur.com/D35plUn.jpg)
 
 
 ### Board preview in EAGLE
-![Board preview](./OSD3358_linux.png)
+![Board preview](https://i.imgur.com/jCWdFKr.png)
 
 
 ### Board layout in EAGLE
@@ -47,76 +47,76 @@ board design files and order the boards and components.
 - 3V3 and GND layers hidden.
 - RED = top signal layer
 - BLUE = bottom signal layer.
-![EAGLE](./eagle.png)
+![EAGLE](https://i.imgur.com/Z5zri5H.png)
 
 
 ### Board manufacturing process
-Ordering process was easy from https://jlcpcb.com/. They have this detailed process log.
-![Manufacturing](./pcbManufProcess.PNG)
+Ordering process was easy from <https://jlcpcb.com/>. They have this detailed process log.
+![Manufacturing](https://i.imgur.com/vNUT9a3.png)
 
 You can also view videos of each step of the process which was interesting.
-![Manufacturing](./pcbManufProcessVideo.PNG)
+![Manufacturing](https://i.imgur.com/xm1ly8m.png)
 
 ### Bottom side of the board
-![Bottom side](./boardBotNoComponents.jpg)
+![Bottom side](https://i.imgur.com/AAtCZp0.jpg)
 
 
 ### Top side of the board without components
-![Top side](./boardTopNoComponents.jpg)
+![Top side](https://i.imgur.com/C9pLmPc.jpg)
 
 
 ### Board taped down to hold it in place
-![Board taped to the desk](./tape.jpg)
+![Board taped to the desk](https://i.imgur.com/DAMdS1V.jpg)
 
 
 ### Board stencil
-![Board stencil](./stencil.jpg)
+![Board stencil](https://i.imgur.com/NYv8Nbq.jpg)
 
 
 ### About to spread some solder paste
-![Solder paste](./solderPaste.jpg)
+![Solder paste](https://i.imgur.com/ikOwwEP.jpg)
 
 
 ### Spreading the solder paste on to the board
-![Spreading solder paste](./spreadPaste.jpg)
+![Spreading solder paste](https://i.imgur.com/xaG2wMy.jpg)
 
 
 ### Solder paste spread on to the board
 Picture taken through a magnifying glass.
-![Solder paste on board](./solderPasteOnBoard.jpg)
+![Solder paste on board](https://i.imgur.com/kMgXv5W.jpg)
 
 
 ### Some of the components used in the board
-![Components](./components.jpg)
+![Components](https://i.imgur.com/aYE0Fad.jpg)
 
 
 ### All the components placed, before reflowing
-![Components placed](./componentsPlaced.jpg)
+![Components placed](https://i.imgur.com/B4ItlPw.jpg)
 
 
 ### Reflowing the board
 Custom reflow controller board controlling **4 x 230V infrared heating** elements through a **3v DC -> 230V AC SSR** ( Solid State Relay ).
 Temperature is read through a **K-type thermocouple** connected to **MAX31855** thermocouple-to-digital IC.
-![Reflow oven](./reflowOven.jpg)
+![Reflow oven](https://i.imgur.com/3xgO90I.jpg)
 
 
 ### Testing reflow oven temperature plot
 - ORANGE line = target temperature
 - BLUE line = actual temperature.
-![Temperature plot](./reflowGraph.png)
+![Temperature plot](https://i.imgur.com/K4t66NT.png)
 
 
 ### Debugging linux not booting up issue
 U-boot not recognizing the board ID because the EEPROM is empty. I had to skip the EEPROM board ID check on u-boot and re-build it.
-![Debugging](./debugging.jpg)
+![Debugging](https://i.imgur.com/XihTQhR.jpg)
 
 
 ### Building u-boot and linux kernel in the middle of the night
-![Build U-boot](./buildUboot.jpg)
+![Build U-boot](https://i.imgur.com/SHyBWCT.jpg)
 
 
 ### Linux booting up for the first time
-![Linux booting up](./booting.jpg)
+![Linux booting up](https://i.imgur.com/xUylbel.jpg)
 
 
 ### Links

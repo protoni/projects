@@ -11,13 +11,14 @@ I haven't touched my custom Linux board project in a while
 about time to start actually doing something with it. 
 
 I ordered a bunch of these
-prototyping/development boards from MikroElektronika ( https://www.mikroe.com/ ) 
+prototyping/development boards from MikroElektronika 
+( <https://www.mikroe.com/> ) 
 called **"Click boards"** and started messing around with them.
 
 A lot of configuring and figuring out was required so here are some notes on that.
 
 **Click boards**
-![Click boards](./clickBoards.JPG)
+![Click boards](https://i.imgur.com/3NG6pB4.jpg)
 
 
 ---
@@ -34,7 +35,7 @@ It just works out of the box. Just needed to plug it in, figure out the IP addre
 
 
 **Ethernet adapter**
-![adapter](./adapter.JPG)
+![adapter](https://i.imgur.com/2XBHhBp.jpg)
 
 
 
@@ -42,7 +43,7 @@ It just works out of the box. Just needed to plug it in, figure out the IP addre
 
 The RJ45 adapter is also great because the beaglebone Linux has a package management system so I can just install whatever
 I need using apt-get now that I have internet connection working.
-![Ping](./ping.PNG)
+![Ping](https://i.imgur.com/yrx6dIp.png)
 
 
 
@@ -50,7 +51,7 @@ I need using apt-get now that I have internet connection working.
 
 There is no ifconfig on beaglebone linux, apparently it only has a **ip a** command.
 ( IP highlighted in yellow )
-![Ip a command](./ip_a.PNG)
+![Ip a command](https://i.imgur.com/OqPkOwN.png)
 
 
 
@@ -77,7 +78,7 @@ IP settings on the host machine. But here are some notes on that as well.
 
 **Get the IP**
 
-![Ip a usb](./ip_a2.PNG)
+![Ip a usb](https://i.imgur.com/SPlik9d.png)
 
 
 
@@ -105,10 +106,10 @@ Not sure if this is due to some Windows firewall settings or what.
 ### LTE modem
 
 The LTE modem Click board that I have is this one:
-* https://www.mikroe.com/lte-cat1-eu-click-for-europe
+* <https://www.mikroe.com/lte-cat1-eu-click-for-europe>
 
 It has an **Cinterion ELS61** modem chip in it. Docs:
-* https://m2m.dk/wp-content/uploads/2019/12/ELS61-E-AT-Command-Set-V02.000-15.08.2018.pdf
+* <https://m2m.dk/wp-content/uploads/2019/12/ELS61-E-AT-Command-Set-V02.000-15.08.2018.pdf>
 
 I had a lot of issues with getting a mobile interface on linux setup with the modem and in the end I didn't get it
 to work through the UART pins that are in the Click board headers. It probably requires some drivers to actually work.
@@ -119,7 +120,7 @@ Click board's USB client port.
 
 
 **USB connected to modem**
-![USB connected to modem](./usbModem.JPG)
+![USB connected to modem](https://i.imgur.com/BSyXS8C.jpg)
 
 
 
@@ -133,7 +134,7 @@ The first port on Linux board that I tested was **/dev/ttyACM0**. The **minicom*
 connection seemed to open and all of the AT commands seemed to work except **AT^SWWAN** that is supposed to open the internet connection.
 
 **Minicom modem connection works**
-![ATI response](./atiResponse.PNG)
+![ATI response](https://i.imgur.com/rEGlMls.png)
 
 
 
@@ -179,12 +180,12 @@ The **internet** parameter is the **APN** of the operator.
 
 
 **The mobile connection works**
-![Ping mobile](./pingMobile.PNG)
+![Ping mobile](https://i.imgur.com/R8ZbdAR.png)
 
 
 
 **Mobile interface**
-![Mobile interface](./mobileInterface.PNG)
+![Mobile interface](https://i.imgur.com/HllarlL.png)
 
 
 
@@ -256,7 +257,7 @@ i2c-0   i2c             OMAP I2C adapter                        I2C adapter
 
 Here we can see that the temperature sensor **0x3f** is detected. **"--"** means that
 no devices were found. **"UU"** can also be found sometimes, it means that it is an reserved address.
-![Prove i2c bus](./i2c1probe.PNG)
+![Prove i2c bus](https://i.imgur.com/FOIwgRM.png)
 
 
 
@@ -319,7 +320,7 @@ while True:
 
 
 **Running the script**
-![Tempearture values](./temperature.PNG)
+![Tempearture values](https://i.imgur.com/vSIaYn9.png)
 
 ---
 
@@ -402,7 +403,7 @@ sudo cgps -s
 **gpsmon**
 
 I don't have a GPS antenna, so gps can't see any satellites ( Quality and Sats field )
-![gpsmon output](./gpsmon.PNG)
+![gpsmon output](https://i.imgur.com/6VwiqnP.png)
 
 ---
 
@@ -410,7 +411,7 @@ I don't have a GPS antenna, so gps can't see any satellites ( Quality and Sats f
 
 Not a Click board, but I remembered that I bought this wifi module some years ago and decided
 to test it as well:
-* https://components101.com/development-boards/nodemcu-esp8266-pinout-features-and-datasheet
+* <https://components101.com/development-boards/nodemcu-esp8266-pinout-features-and-datasheet>
 
 It has an **ESP-12E** module containing a **ESP8266** chip which includes a 
 **Tensilica Xtensa 32-bit LX106** RISC microprocessor. NodeMCU has 128 KB RAM and 4MB of Flash memory.
@@ -418,7 +419,7 @@ It has an **ESP-12E** module containing a **ESP8266** chip which includes a
 
 
 **Connected via UART pins**
-![ESP8266 connected](./ESP8266.JPG)
+![ESP8266 connected](https://i.imgur.com/HkzqyG3.jpg)
 
 
 
@@ -426,7 +427,7 @@ It has an **ESP-12E** module containing a **ESP8266** chip which includes a
 
 I found this **"slip router"** project from github which allows me to
 setup a Linux interface to communicate with the Wifi chip.
-* https://github.com/martin-ger/esp_slip_router
+* <https://github.com/martin-ger/esp_slip_router>
 
 I went on and started setting up the **ESP SDK** so that I could build the slip router. Later on I realized that
 the github repo has the pre built binaries already. But now that I have the SDK setup, I can
@@ -474,14 +475,14 @@ CMD>reset
 
 
 **The "slip" interface on Linux**
-![slip interface](./slip_ip_a.PNG)
+![slip interface](https://i.imgur.com/zbHfFWy.png)
 
 
 
 **Testing SSH with termux on Android, it works !**
 
 I enabled wifi on my phone, the ESP8266 access point showed up and I was able to connect to it.
-![Termux wifi test](./termux.png)
+![Termux wifi test](https://i.imgur.com/lIcAgQr.png)
 
 
 
@@ -533,7 +534,7 @@ Couldn't get the accelerometer working yet. I'll update this post if and when I 
 some progress with this.
 
 I was able to build this driver for the chip:
-* https://github.com/BoschSensortec/BMI270-Sensor-API
+* <https://github.com/BoschSensortec/BMI270-Sensor-API>
 
 
 

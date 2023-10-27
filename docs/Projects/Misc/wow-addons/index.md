@@ -19,13 +19,13 @@ least that's how it ended up as.
 ## Testing
 <dl>
   <video width="1024" height="480" controls>
-    <source src="addon1.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/maNrCGA.mp4" type="video/mp4">
   </video>
 </dl>
 
 <dl>
   <video width="1024" height="480" controls>
-    <source src="addon2.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/uQqriZf.mp4" type="video/mp4">
   </video>
 </dl>
 

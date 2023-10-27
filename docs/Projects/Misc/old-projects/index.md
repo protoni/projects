@@ -5,6 +5,7 @@ description: "Old projects I did when I was learning programming."
 tags: ["misc"]
 ---
 
+## Description
 I was browsing my cloud storage and found some old stuff from years 2014-2015, around when I started to learn programming.
 They are scattered all over the place inside countless of sub folders and tar archives so I thought it would be nice to organize some
 of them for easier access.
@@ -16,22 +17,16 @@ all them to GitHub for example in the future.
 
 ---
 
-### Python games
+## Python games
 After some work I got these python 'games' to run. These are basically the first things I did when I  first started to learn programming. 
 I did some CodeCademy course first to get started with the syntax and then moved to doing something on my own. They use **pygame** to draw the graphics.
 
 I put these in order based on when I made them, oldest is first one in the list.
 
-- [Ball thing](#ball-thing)
-- [Block thing](#block-thing)
-- [Block game](#block-game)
-- [Shooter game](#shooter-game)
-- [RPG](#rpg)
-
-### Ball thing
+##### Ball thing
 
 Not really a game but first test on how to draw things to the screen. Seems to have at least collision detection in the borders.
-![Ball thing](./ballThing.gif)
+![Ball thing](https://i.imgur.com/AmcDjGP.gif)
 
 The code seems to be a weird mixture of finnish and english.
 ````python
@@ -109,10 +104,10 @@ while True:
 
 
 
-### Block thing
+##### Block thing
 This is basically the same as **ball thing**, but has collision detection between objects flying around and the color
 changes on collision.
-![Block thing](./blockThing.gif)
+![Block thing](https://i.imgur.com/6cgDwqw.gif)
 
 Ze code
 ````python
@@ -236,9 +231,9 @@ while True:
 
 
 
-### Block game
+##### Block game
 Getting some sort of game elements in
-![Block game](./blockGame.gif)
+![Block game](https://i.imgur.com/9RAdTHX.gif)
 
 ````python
 import pygame, sys
@@ -506,18 +501,23 @@ while True:
 
 
 
-### Shooter game
+##### Shooter game
 Out of all these pygame programs this is the only one that really can be counted as a game because it has some sort of game mechanics.
 The game even has a hiscore saving/loading system and difficulty levels! The idea is to kill as many monsters as possible, the rate they spawn in increases
 as the game goes on.
-![Shooter](./shooter.gif)
+
+<dl>
+  <video width="1024" height="480" controls>
+    <source src="https://i.imgur.com/TyKZQAO.mp4" type="video/mp4">
+  </video>
+</dl>
 
 The code begins to be pretty spaghetti at this point. Also theres 700+ code lines so I added this to github for easier reading.
 - <https://github.com/protoni/legacy-stuff/blob/master/python_games/shooter/rpg.py>
 
 
 
-### RPG
+##### RPG
 I managed to get this to work after some setting up. Had to setup python 2.7 environment and install python 2.7 modules alongside my python v3.8 setup.
 
 I still remember that I had difficulties getting the world and camera coordinate system to work in this one.
@@ -526,8 +526,8 @@ Also the character animation was difficult for me to implement.
 Unfortunately the game never got finished.
 
 <dl>
-  <video width="640" height="480" controls>
-    <source src="rpg.mp4" type="video/mp4">
+  <video width="1024" height="480" controls>
+    <source src="http://localhost:8000/projects/Projects/Misc/old-projects/rpg.mp4" type="video/mp4">
   </video>
 </dl>
 
@@ -536,11 +536,9 @@ At this point I had already started to split the project into smaller files as t
 
 
 
-### Web stuff
-- [Raspberry Pi system monitor](#raspberry-pi-system-monitor)
-- [Music controller](#music-controller)
+## Web stuff
 
-### Raspberry Pi system monitor
+##### Raspberry Pi system monitor
 I had no idea about modern web development techniques so I was building website with pure **HTML**, **CSS** and some **PHP**.
 
 I really liked messing around with **raspberry pi's** back then and I wanted to monitor them more easily as they were running 24/7 and was publicly accessible.
@@ -551,19 +549,19 @@ correctly there was more tabs with more features on later versions, but I guess 
 This is the version 1.1. There is another earlier version 1.0 as well, but I don't have any pictures of that and I don't have any system to run it properly at this time.
 
 Some earlier version:
-![Pi monitor](./pi_monitor.png)
+![Pi monitor](https://i.imgur.com/lvt14wO.png)
 
 Monitor page:
-![Pi monitor2](./pi_monitor2.png)
+![Pi monitor2](https://i.imgur.com/a2OAL3D.png)
 
-![Pi monitor3](./pi_monitor3.png)
+![Pi monitor3](https://i.imgur.com/EwC1BwZ.png)
 
 Repository:
 <https://github.com/protoni/legacy-stuff/tree/master/www/monitor1.1>
 
 
 
-### Music controller
+##### Music controller
 This is a simple PHP web page that would control music player through a FIFO system on linux. I don't really 
 remember much about this or how it worked, but the FIFO system seems interesting.
 
@@ -640,14 +638,12 @@ exec('sudo omxplayer -ohdmi /home/pitoni/fuel.mp3 < /tmp/omx');
 
 
 
-### Linux stuff
+## Linux stuff
 
-- [Linux command helper](#linux-command-helper)
-
-### Linux command helper
+##### Linux command helper
 I was starting to use Linux for the first time around the same time when I was learning programming 
 and I couldn't remember many of the commands so I made this to help me.
-![Linux commands](./command.PNG)
+![Linux commands](https://i.imgur.com/dIjvFqH.png)
 
 Sources:
 ````python
@@ -921,13 +917,9 @@ else:
 
 ````
 
-### Other
+## Other
 
-- [BBS image scraper](#bbs-image-scraper)
-- [Clapswitch](#clapswitch)
-- [Radial drill controller fix](#radial-drill-controller-fix)
-
-### BBS image scraper
+##### BBS image scraper
 
 I wrote this image scraper for MuroBBS, a finnish BBS forum I used to read back then. I just tested it and seems to work still.
 
@@ -935,14 +927,14 @@ I guess the idea was that I would be able to limit my time on the forum if I jus
 I could go straight to that page as the images are named as the page number.
 
 **Usage:**
-![Image scraper](./scraper.PNG)
+![Image scraper](https://i.imgur.com/UqzWEr6.png)
 
 **Images found on pages 110 - 119**
-![Images scraped](./scraped.PNG)
+![Images scraped](https://i.imgur.com/eiTBLI1.png)
 
 
 
-### Clapswitch
+##### Clapswitch
 Testing a clapswitch made with 8bit PIC microcontroller. I think the condenser microphone acted as a way to pull a 
 pull-up resistor low and then PIC would count low IO pin as a clap.
 
@@ -952,16 +944,16 @@ a music player.
 **Testing the clapswitch.**
 <dl>
   <video width="640" height="480" controls>
-    <source src="clapswitch.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/6Ih2kkU.mp4" type="video/mp4">
   </video>
 </dl>
 
 **Flashing the microcontroller**
-![Flashing PIC](./flashingPIC.jpg)
+![Flashing PIC](https://i.imgur.com/WQ6J0Np.jpg)
 
 
 
-### Radial drill controller fix
+##### Radial drill controller fix
 Not programming related but this happened around the same time as everything else on this page and it's pretty interesting so I'll add this as well.
 
 I was in this short automation installer training course and they made me fix this old radial drill. The schedule on the course was tight and we had very limited
@@ -969,34 +961,34 @@ time in the workshop to put in practice what we had learned in the theory class,
 radial drill controller circuit.
 
 **Foradia radial drill**
-![Foradia drill](./drill.jpg)
+![Foradia drill](https://i.imgur.com/giwXHzP.jpg)
 
 **Old controller circuit**
 
 Those aren't normal copper wires, they are very thick and solid iron wires with some insulator on.
-![Old controller circuit](./oldCircuit.jpg)
+![Old controller circuit](https://i.imgur.com/HRhHjyU.jpg)
 
 **Wiring the new board**
-![Wiring](./wiring.jpg)
+![Wiring](https://i.imgur.com/NPb4COs.jpg)
 
 **Fitting the new controller in**
-![Fitting new controller](./fitting.jpg)
+![Fitting new controller](https://i.imgur.com/nwEMbOH.jpg)
 
 **New controller fitted in**
-![New controller fitted](./fitted.jpg)
+![New controller fitted](https://i.imgur.com/ZPERfnE.jpg)
 
 
 **Old hand drawn schematics**
-![Schematics](./oldSchematics.jpg)
+![Schematics](https://i.imgur.com/iyyphUi.jpg)
 
 **Schematics dating back to december 1967**
-![Schematics date](./schematicsDate.jpg)
+![Schematics date](https://i.imgur.com/i4ZytFI.jpg)
 
 **Rectifier bridge and a capacitor**
 
 Some debugging was needed.
 Old 230V -> 24V AC to AC transformer was used and I think one of the new contactor coils required DC voltage.
-![Diode bridge](./diodeBridge.jpg)
+![Diode bridge](https://i.imgur.com/UyJdLoA.jpg)
 
 
 

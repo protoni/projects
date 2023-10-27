@@ -15,29 +15,37 @@ Had to setup first:
 - GLFW ( OpenGL FrameWork )
 - Code to init GLEW and GLFW
 
-![Window open](./windowOpen.PNG)
+![Window open](https://i.imgur.com/WUSWYxo.png)
 
 ### Got a triangle to the screen 😀
-![Triangle](./triangle.PNG)
+![Triangle](https://i.imgur.com/wsLsHNw.png)
 
 ### Triangle moving
-![Triangle moving](./triangleMoving.gif)
+![Triangle moving](https://i.imgur.com/U8K1Vne.gif)
 
 ### Interpolate
-Triangle got some color and a z axis. The GIF looks a bit weird on this one.
+Triangle got some color and a z axis. The image looks a bit weird on this one.
 
-![Triangle rotating](./triangleRotating3d.gif)
+<dl>
+  <video width="1024" height="480" controls>
+    <source src="https://i.imgur.com/MWMohqv.mp4" type="video/mp4">
+  </video>
+</dl>
 
 ### Camera
 Camera, keyboard and mouse control added.
 
-![Camera](./triangleCamera.gif)
+![Textures](https://i.imgur.com/y6Eg7Ap.gif)
 
 ### Texture
 Texture loading done using stb_image.h loader.
 Also forgot to mention earlier that I'm using math library called glm.
 
-![Textures](./textures.gif)
+<dl>
+  <video width="1024" height="480" controls>
+    <source src="https://i.imgur.com/4esZmG4.mp4" type="video/mp4">
+  </video>
+</dl>
 
 ### Lighting
 Got some lights going on.
@@ -47,20 +55,33 @@ Got some lights going on.
 - Specular lighting
 - Point lights
 
-![Lights](./PointLights2.gif)
+<dl>
+  <video width="1024" height="480" controls>
+    <source src="https://i.imgur.com/4wZSBkc.mp4" type="video/mp4">
+  </video>
+</dl>
 
 ### Spotlight following a camera.
 
-![Spotlight](./SpotLight4.gif)
+<dl>
+  <video width="1024" height="480" controls>
+    <source src="https://i.imgur.com/57E3JKU.mp4" type="video/mp4">
+  </video>
+</dl>
 
 ### Model importing
 Random models from <https://free3d.com>
-![Model importing](./modelImport3.gif)
+
+<dl>
+  <video width="1024" height="480" controls>
+    <source src="https://i.imgur.com/p4x2ito.mp4" type="video/mp4">
+  </video>
+</dl>
 
 Orgrimmar from World of Warcraft
 <dl>
   <video width="640" height="480" controls>
-    <source src="orgrimmar.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/ktDADTy.mp4" type="video/mp4">
   </video>
 </dl>
 

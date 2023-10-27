@@ -39,19 +39,19 @@ home network and power on my PC from the home assistant control panel.
 
 ## Pictures
 Current state. Here most of the sensors are turned off since I moved recently.
-![home assistant current](homeAssistantCurrent.png)
+![home assistant current](https://i.imgur.com/6Duc9kC.png)
 
 Older picture with more devices online
-![home assistant online](homeAssistant2.PNG)
+![home assistant online](https://i.imgur.com/xaQ8d3a.png)
 
 Temperature sensor graphs
-![home assistant graph](homeAssistant_history.PNG)
+![home assistant graph](https://i.imgur.com/FeA60P6.png)
 
 I setup this old Android tablet as a control panel
-![home assistant wall](homeAssistantWallControlPanel.JPG)
+![home assistant wall](https://i.imgur.com/bNdl9DU.jpg)
 
 Setting up home assistant and testing some weather cards
-![home assistant testing](homeAssistant.PNG)
+![home assistant testing](https://i.imgur.com/Xm3ZaAS.png)
 
 Testing some christmas light automations
-![home assistant automations](homeAssistantAutomations.PNG)
+![home assistant automations](https://i.imgur.com/BDIE6KD.png)

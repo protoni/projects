@@ -10,14 +10,14 @@ I have been following this Udemy course on Vulkan API and managed to get somethi
 after about 11 hours worth of lessons. 
 
 A triangle:
-![First triangle](./firstTriangle.PNG)
+![First triangle](https://i.imgur.com/42UOxHp.png)
 
 It's a pretty low level graphics API, the triangle required around 1.2k lines of code + headers.
-![Lines of code](./codeLinesOnFirstTriangle.PNG)
+![Lines of code](https://i.imgur.com/57RBoGR.png)
 
 Vulkan is very verbose and alot of code is required to set it up initially. Big portion of the code is just 
 filling structure types with a bunch of settings for the Vulkan.
-![Structs](./structs.PNG)
+![Structs](https://i.imgur.com/V3ViVlt.png)
 
 I also got into learning OpenGL a while back and for reference the amount of code required to draw a triangle to the screen
 was around 170 lines.
