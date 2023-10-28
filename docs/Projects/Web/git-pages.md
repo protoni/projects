@@ -7,9 +7,6 @@ Upsides are that it's pretty effortless to maintain and add new content with
 Github CI pipeline ( auto build/deploy site ) and it is free ( if using default
 'user.github.io/repo' domain ). 
 
-Downside is that the free-tier of Git LFS storage and bandwidth limits exceed
-pretty fast ( 1 GiB of storage and 1 GiB a month bandwidth ).
-I pay $5/month for 50GB storage and 50GB bandwidth.
 
 ```bash
 # My workflow with this setup if usually something like this:
@@ -73,6 +70,9 @@ mkdocs new .
 
 # Run local page:
 mkdocs serve
+
+# Note: If you are hosting images externally, access the website using localhost,
+# instead of 127.0.0.1, otherwise the images won't show up for some reason.
 ```
 
 
