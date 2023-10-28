@@ -11,7 +11,7 @@ Static websites are easy to setup, secure, low maintenance and they are fast.
 They can also be hosted on for example GitHub, so no need to pay for a host machine.
 
 Google PageSpeed Insights:
-![PageSpeed](./pageSpeeds.PNG)
+![PageSpeed](https://i.imgur.com/XvEHHVZ.png)
 
 I was a bit confused at first on what is the best way to set this thing up.
 At first I followed the netlifycms "get started"-guide, but found out later that it's so much easier to setup straight
@@ -25,7 +25,7 @@ from the Gatsby Starter Library. So I thought I would add some notes on how to a
 gatsby-starter-blog because it's minimal and fast.
 
 3. Scroll down a bit and click the little **Netlify** icon under the preview image to set it up
-![Starter](./setupStarter.PNG)
+![Starter](https://i.imgur.com/JZcBCZN.jpg)
 
 4. Click **Connect to GitHub** ( Or GitLab ).
 
@@ -36,7 +36,7 @@ gatsby-starter-blog because it's minimal and fast.
 7. Wait for the site to deploy
 
 8. Follow the 3 step process to setup domain and SSL for your site.
-![Setup process](./process.PNG)
+![Setup process](https://i.imgur.com/GJZdan9.png)
 
 9. At this point, after finishing the 3 step process, the setup is already done. 
 Allow some time for the DNS changes to take effect and your site will be online.

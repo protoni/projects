@@ -167,17 +167,17 @@ So will have to see when I get back to adding more tests.
 
 Added radio buttons to select a thumbnail image for the item. It will probably be added to the 'all components' table view later on.
 The radio button is disabled on files that are not images, like .zip file here.
-![Thumbnail select](./thumbnailSelect.PNG)
+![Thumbnail select](https://i.imgur.com/ixGe1NT.png)
 
 **Delete files**
 
 I Added an option to delete files and created a custom button style for it.
-![Delete files](./deleteFiles.gif)
+![Delete files](https://i.imgur.com/KmL31Au.gif)
 
 **Styling images**
 
 Changed the image corners to rounded ones, added some borders to them and tried to line them up a little bit better.
-![Round corners](./roundBorderImages.PNG)
+![Round corners](https://i.imgur.com/9ZcQ2Jx.png)
 
 
 
@@ -191,12 +191,12 @@ I disabled the modal closing if the outside of the modal is clicked.
 
 Also added a close confirmation prompt when there is text written in some of the fields. In the .gif I write text to ID field, but later on I disabled the
 ID field entirely. The ID field is now called 'Part number' and it is auto-generated in the backend based on the previous part number.
-![Close prompt](./closePrompt.gif)
+![Close prompt](https://i.imgur.com/LG2TOyw.gif)
 
 **Add prompt**
 
 Added a confirmation prompt when about to save the item to the database.
-![Save prompt](./savePrompt.gif)
+![Save prompt](https://i.imgur.com/rpmKlNm.gif)
 
 
 
@@ -210,14 +210,14 @@ Added tabs where you can select which type of item to add. So far I was planning
 The input fields and available categories will probably be different for each item type in the future.
 
 Also added an comment field where some other information can be written about the item. For example tags for a specific project where the item is used.
-![Tabs](./tabs2.gif)
+![Tabs](https://i.imgur.com/Jp053OJ.gif)
 
 **Part numbers**
 
 Here I have disabled the part number field and in the .gif I click refresh to demonstrate that when the component loads, a request is created to the backend
 for generating next part numbers for each item type. Next part number is created by reading the latest part numbers from the database for each item, the part number
 is parsed and the index number is incremented by one.
-![Generate part numbers](./generatePartNumbers.gif)
+![Generate part numbers](https://i.imgur.com/M73Chhb.gif)
 
 
 
@@ -232,7 +232,7 @@ Files can still be downloaded by clicking the preview image in the file listing 
 
 It would be cool to do some sort of popup modal to view the images and pdf files for example, so that there is no need to download them every time.
 
-![Component view](./componentView.PNG)
+![Component view](https://i.imgur.com/69l0Of5.png)
 
 
 
@@ -243,7 +243,7 @@ It would be cool to do some sort of popup modal to view the images and pdf files
 **Edit items window**
 
 Added a button to the top of the page view to edit an item. Edit view is a modified version of the 'Add components' window.
-![Edit components](./editComponent.gif)
+![Edit components](https://i.imgur.com/K7071yh.gif)
 
 
 
@@ -256,21 +256,21 @@ The preview image list in the edit window is handling the recently uploaded file
 image parameter that is shown here and also it handles the already uploaded files that are served from the backend. So there are a bit of difference
 in how the image scales.
 
-![Edit component preview](./editComponentDeleteFiles.gif)
+![Edit component preview](https://i.imgur.com/7Yjtdt6.gif)
 
 
 
 **Add file**
 
 A new file can be added when editing an item.
-![Add file](./editItemAddFile3.gif)
+![Add file](https://i.imgur.com/AWdyZXp.gif)
 
 
 
 **Delete file**
 
 Files can be deleted also. I will probably add a some sort of 'undo' option when deleting files.
-![Delete file](./editItemDelFile.gif)
+![Delete file](https://i.imgur.com/q5GyDam.gif)
 
 
 
@@ -322,6 +322,6 @@ Not a complete list, just throwing things here from the top of my head.
 - [ ] DigiKey API support
 
 **Handling the tasks on trello**
-![Trello tasks](./trello.PNG)
+![Trello tasks](https://i.imgur.com/WfUtdxj.png)
 
 

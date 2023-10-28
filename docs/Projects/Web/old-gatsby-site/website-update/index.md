@@ -11,7 +11,7 @@ A short update on what I have been working on with this site.
 ### Back to top button
 It got old pretty fast to have to scroll back up every time I reached the bottom of 
 the bage so I added this little icon to the bottom right corner to help with this issue.
-![Back to top button](./backToTop.gif)
+![Back to top button](https://i.imgur.com/AtIJ20a.gif)
 
 I tried some npm packages at first which would do this but they seemed overly complex for what the component actually does.
 
@@ -31,10 +31,10 @@ It it seemed like it would take some time to implement that sort of functionalit
 I used **gatsby-remark-autolink-headers**-gatsby plugin to achieve this. It works well and it is easy to setup the links on posts page.
 
 Added **skip to content** -links functionality for the website.
-![Anchor links](./anchorLinks.gif)
+![Anchor links](https://i.imgur.com/2AsSswZ.gif)
 
 Simple to use:
-![Anchor links how to](./anchorLinks.PNG)
+![Anchor links how to](https://i.imgur.com/rDWCxF2.png)
 
 I had a problem with the links at first and I spent like 3 hours figuring that one out. I got the links setup right away and
 they actually did something as well, but they didn't still work. When I clicked one of the links, it did add the anchor to the URL bar (#-tag)
@@ -49,15 +49,15 @@ I decided to modify the default code blocks a bit. Changed the color theme and a
 code was added to it so I added a max height for it and a scroll bar.
 
 Default code blocks:
-![Default code block](./codeBlockDefault.PNG)
+![Default code block](https://i.imgur.com/7Ouc6je.png)
 
 Changed to :
-![Modified code block](./codeBlock.PNG)
+![Modified code block](https://i.imgur.com/IUFgDiQ.png)
 
 As always, I had some problems setting this thing up.
 
 The code block would do this annoying highlight on equal and plus signs:
-![Default code block](./codeBlockHighlight.PNG)
+![Default code block](https://i.imgur.com/B7YmzVk.png)
 
 And another issue was that when I deployed the website, the theme would not work and the published website would just show the default theme.
 
@@ -82,7 +82,7 @@ I'll probably create these short updates on some projects and I guess it would b
 the updates can be found and it would be easier to follow one specific project.
 
 Categories on the front page:
-![Categories](./categories.PNG)
+![Categories](https://i.imgur.com/vW0ZvjH.png)
 
 ### Links
 - <https://github.com/v4iv/gatsby-starter-business/issues/23>

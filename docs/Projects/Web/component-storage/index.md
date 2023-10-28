@@ -54,7 +54,7 @@ It's probably not going to be very fancy, just a simple website that supports th
 
 **Old component management system (.csv file)**
 
-![csv file](./components.PNG)
+![csv file](https://i.imgur.com/mFxoMdz.png)
 
 
 
@@ -66,14 +66,14 @@ The numbers just increment from 1.
 
 In the component storage system I'll probably add zero padding to the front of the part number to make them all equal lengths.
 So the part numbers will be something like B0000137, B0000007 and so on. The label it self doesn't need the zero padding.
-![items](./items.JPG)
+![items](https://i.imgur.com/PsGOmSZ.jpg)
 
 
 
 **Storage organizers for the parts**
 
 Bought these storage organizers for this project + theres a bunch of boxes and bags waiting to get in to the system.
-![lockers](./lockers.JPG)
+![lockers](https://i.imgur.com/L7PI4WB.jpg)
 
 
 
@@ -89,7 +89,7 @@ just had to scrap some stuff away to make it a good starting point for
 this project. 
 
 Added some input fields for the component. These field names and component info will most likely change as I develop this further.
-![website at the beginning](./website.PNG)
+![website at the beginning](https://i.imgur.com/SN74HMT.png)
 
 
 
@@ -97,7 +97,7 @@ Added some input fields for the component. These field names and component info 
 
 Got a basic NodeJS backend setup  up and testing the connection with React to the backend.
 Front-end is running on http://localhost:3000/ and Backend on http://localhost:3001/.
-![First backend call](./websiteBackendCall.PNG)
+![First backend call](https://i.imgur.com/zYeJm4f.png)
 
 
 
@@ -108,7 +108,7 @@ a few struggles I got a data flowing from the front end to the database.
 
 I just noticed that also the database seems to still include a table called 'blog_posts' from the old project, even though I just installed
 the MySQL server 😁 Not sure if old backend code managed to do a backend call or are the databases saved to the same place and the old tables were loaded.
-![Add component to database](./add2.png)
+![Add component to database](https://i.imgur.com/wnc6vGU.png)
 
 
 
@@ -128,7 +128,7 @@ on there as well but building the code is so slow so I moved my dev environment 
 Couldn't really decide on what to work on first, so I decided to build a dynamic table to show all the components. 
 There is no pagination yet though, I'll probably do that later when I start to have lots of actual components in the database. 
 I'm using React bootstrap front-end framework for the project and it seemed to have a ready made pagination component so I'll probably use that one.
-![Get all components](./getAll.png)
+![Get all components](https://i.imgur.com/M0ddCm5.png)
 
 
 
@@ -139,21 +139,21 @@ page for example. Also some sort of drop downs for long forms are annoying.
 
 ..I really have no idea how to develop websites or what is a good user experience, I just
 try to get things to work first and then make them better (maybe).
-![Add components modal](./addModal.PNG)
+![Add components modal](https://i.imgur.com/dDMzP1H.png)
 
 
 
 **Component view**
 
 The component listing without any input fields is a bit more clear now I think. Clicking 'Add' button will open the modal that contains input fields to add a component.
-![Without text inputs](./withoutTextInputs.PNG)
+![Without text inputs](https://i.imgur.com/yz5roIQ.png)
 
 
 
 **New layout**
 
 Native html fields were ugly and the layout was kind of all over the place so I decided to work on that a little. This uses the React bootstrap input forms.
-![New input forms](./inputFormChange.PNG)
+![New input forms](https://i.imgur.com/MYoX0fG.png)
 
 
 
@@ -167,12 +167,12 @@ datasheets, example code/drives and various zip files.
 **Testig drag and drop file upload**
 
 Dragging and dropping a file on the "Try dropping files here.."-text and console logging the file object.
-![Add file](./addFile.PNG)
+![Add file](https://i.imgur.com/bWY3NAl.png)
 
 
 
 **Preview images when dropped**
-![Preview image](./dragAndDropPreview.gif)
+![Preview image](https://i.imgur.com/Eg6V1nH.gif)
 
 
 
@@ -180,17 +180,17 @@ Dragging and dropping a file on the "Try dropping files here.."-text and console
 
 Using **requests** from superagent package to handle the file upload. File storage is a folder on the repository for now ( added in .gitignore).
 
-![File upload](./dragAndDropUpload2.gif)
+![File upload](https://i.imgur.com/1HVlfOM.gif)
 
 
 
 **Preview support for other file types**
-![File types](./fileTypes.PNG)
+![File types](https://i.imgur.com/bZTDd4I.png)
 
 
 
 **Styling the drag and drop box**
-![Drag and drop style](./dragAndDropStyle.gif)
+![Drag and drop style](https://i.imgur.com/W1ZC0t8.gif)
 
 
 
@@ -198,7 +198,7 @@ Using **requests** from superagent package to handle the file upload. File stora
 
 A folder is created to the main filestorage for each component that has file attachments. 
 Folder name is the part number ( ID field in the table ) of the component.
-![File structure](./fileStructure.PNG)
+![File structure](https://i.imgur.com/Igg9RN1.png)
 
 
 
@@ -217,21 +217,21 @@ The file upload still needs some work, but it's good enough at least for now.
 ### View component
 
 **Part number ( 'ID' column currently ) is a clickable link that is routed to a component's own view**
-![Select item](./selectItem.PNG)
+![Select item](https://i.imgur.com/8g5xHDv.png)
 
 
 
 **Component view + storage folder**
 
 A placeholder layout for a single component view page + component's file structure
-![Storage item files](./storageItemFiles.PNG)
+![Storage item files](https://i.imgur.com/kjc3p0N.png)
 
 
 
 **Download files**
 
 Attachment file can be downloaded by clicking the filename.
-![Download a file](./dlFile.gif)
+![Download a file](https://i.imgur.com/bT4Piog.gif)
 
 
 

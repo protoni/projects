@@ -11,7 +11,7 @@ I added an notification to the index page to indicate that, it will popup every 
 
 Decided to make a post about that too to get some content to the empty home page.
 
-![Notification popup](./popup.gif)
+![Notification popup](https://i.imgur.com/tFGJs10.gif)
 
 Tried a bunch of different notification React packages but couldn't get them to work the way I wanted.
 I also did my own notification component to refresh my memory on how this react and javascript stuff works 
@@ -22,18 +22,18 @@ The notification doesn't really look good on mobile at the moment tho.
 
 
 Did this with a few lines of code:
-![Notification codes](./notificationCode.PNG)
+![Notification codes](https://i.imgur.com/0fy9h2b.png)
 
 ### Update 23.07.2020
 I also added tag system to the website for easier access to related content.
-![Tags](./tags.PNG)
+![Tags](https://i.imgur.com/k1kcs88.png)
 
 Tags can be seen on the front site below the post name and also on the individual blog post pages.
 
 Basically the tags are added to the frontmatter of the markdown files and so they can be queried using graphql.
 
 The visual layout still might need some decorating but it works.
-![Minimal tags](./tagsMinimal.PNG)
+![Minimal tags](https://i.imgur.com/7P4jj2f.png)
 
 ### Links
 - <https://www.npmjs.com/package/react-toastify>

@@ -17,7 +17,7 @@ and adding new content is really easy, just git push new content to github and n
 the changes.
 
 Here, have a look at this confusing gif I made:
-![Netlifycms thing](./netlifycms.gif)
+![Netlifycms thing](https://i.imgur.com/wLRytSj.gif)
 
 
 ### Links
