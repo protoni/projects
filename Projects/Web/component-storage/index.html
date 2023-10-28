@@ -2136,17 +2136,17 @@ It's probably not going to be very fancy, just a simple website that supports th
 <hr />
 <h3 id="current-system">Current system</h3>
 <p><strong>Old component management system (.csv file)</strong></p>
-<p><a class="glightbox" href="components.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="csv file" src="components.PNG" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/mFxoMdz.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="csv file" src="https://i.imgur.com/mFxoMdz.png" /></a></p>
 <p><strong>Components labeled with a part number</strong></p>
 <p>I decided on the part numbering system years ago without giving it much of thought and I'm too lazy to change it at this point.
 Basically all the dev boards, shields and so on has a 'A' prefix, electronic components has a 'B' prefix, misc parts has a 'C' prefix.
 The numbers just increment from 1. </p>
 <p>In the component storage system I'll probably add zero padding to the front of the part number to make them all equal lengths.
 So the part numbers will be something like B0000137, B0000007 and so on. The label it self doesn't need the zero padding.
-<a class="glightbox" href="items.JPG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="items" src="items.JPG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/PsGOmSZ.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="items" src="https://i.imgur.com/PsGOmSZ.jpg" /></a></p>
 <p><strong>Storage organizers for the parts</strong></p>
 <p>Bought these storage organizers for this project + theres a bunch of boxes and bags waiting to get in to the system.
-<a class="glightbox" href="lockers.JPG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="lockers" src="lockers.JPG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/L7PI4WB.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="lockers" src="https://i.imgur.com/L7PI4WB.jpg" /></a></p>
 <hr />
 <h3 id="setup">Setup</h3>
 <p><strong>React front end up</strong></p>
@@ -2155,17 +2155,17 @@ Basic routing for the navigation bar was done already and some styles + themes t
 just had to scrap some stuff away to make it a good starting point for
 this project. </p>
 <p>Added some input fields for the component. These field names and component info will most likely change as I develop this further.
-<a class="glightbox" href="website.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="website at the beginning" src="website.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/SN74HMT.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="website at the beginning" src="https://i.imgur.com/SN74HMT.png" /></a></p>
 <p><strong>Backend call</strong></p>
 <p>Got a basic NodeJS backend setup  up and testing the connection with React to the backend.
 Front-end is running on http://localhost:3000/ and Backend on http://localhost:3001/.
-<a class="glightbox" href="websiteBackendCall.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="First backend call" src="websiteBackendCall.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/zYeJm4f.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="First backend call" src="https://i.imgur.com/zYeJm4f.png" /></a></p>
 <p><strong>MySQL database</strong></p>
 <p>Got a database setup for the project. I got the backend code from my old project as well, which also used mysql for a database so after
 a few struggles I got a data flowing from the front end to the database. </p>
 <p>I just noticed that also the database seems to still include a table called 'blog_posts' from the old project, even though I just installed
 the MySQL server 😁 Not sure if old backend code managed to do a backend call or are the databases saved to the same place and the old tables were loaded.
-<a class="glightbox" href="add2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add component to database" src="add2.png" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/wnc6vGU.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add component to database" src="https://i.imgur.com/wnc6vGU.png" /></a></p>
 <p><strong>Raspberry pi</strong></p>
 <p>I flashed a new Linux image to a SD card and booted it with one of the raspberry pi's that I have lying around. I got the React + NodeJS + MySQL setup to run
 on there as well but building the code is so slow so I moved my dev environment to my Windows machine.</p>
@@ -2175,38 +2175,38 @@ on there as well but building the code is so slow so I moved my dev environment 
 <p>Couldn't really decide on what to work on first, so I decided to build a dynamic table to show all the components. 
 There is no pagination yet though, I'll probably do that later when I start to have lots of actual components in the database. 
 I'm using React bootstrap front-end framework for the project and it seemed to have a ready made pagination component so I'll probably use that one.
-<a class="glightbox" href="getAll.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Get all components" src="getAll.png" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/M0ddCm5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Get all components" src="https://i.imgur.com/M0ddCm5.png" /></a></p>
 <h4 id="adding-components">Adding components</h4>
 <p>I decided to hide the 'add component' functionality to a modal. I don't really like to use modals but for this I think it's better than to redirect to another
 page for example. Also some sort of drop downs for long forms are annoying. </p>
 <p>..I really have no idea how to develop websites or what is a good user experience, I just
 try to get things to work first and then make them better (maybe).
-<a class="glightbox" href="addModal.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add components modal" src="addModal.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/dDMzP1H.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add components modal" src="https://i.imgur.com/dDMzP1H.png" /></a></p>
 <p><strong>Component view</strong></p>
 <p>The component listing without any input fields is a bit more clear now I think. Clicking 'Add' button will open the modal that contains input fields to add a component.
-<a class="glightbox" href="withoutTextInputs.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Without text inputs" src="withoutTextInputs.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/yz5roIQ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Without text inputs" src="https://i.imgur.com/yz5roIQ.png" /></a></p>
 <p><strong>New layout</strong></p>
 <p>Native html fields were ugly and the layout was kind of all over the place so I decided to work on that a little. This uses the React bootstrap input forms.
-<a class="glightbox" href="inputFormChange.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="New input forms" src="inputFormChange.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/MYoX0fG.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="New input forms" src="https://i.imgur.com/MYoX0fG.png" /></a></p>
 <h4 id="attachments">Attachments</h4>
 <p>One functionality that wasn't done very well or was missing completely from the free alternatives, is the ability to attach files to a component. For example images,
 datasheets, example code/drives and various zip files.</p>
 <p><strong>Testig drag and drop file upload</strong></p>
 <p>Dragging and dropping a file on the "Try dropping files here.."-text and console logging the file object.
-<a class="glightbox" href="addFile.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add file" src="addFile.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/bWY3NAl.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add file" src="https://i.imgur.com/bWY3NAl.png" /></a></p>
 <p><strong>Preview images when dropped</strong>
-<a class="glightbox" href="dragAndDropPreview.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Preview image" src="dragAndDropPreview.gif" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/Eg6V1nH.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Preview image" src="https://i.imgur.com/Eg6V1nH.gif" /></a></p>
 <p><strong>Sending the files to the backend for storing</strong></p>
 <p>Using <strong>requests</strong> from superagent package to handle the file upload. File storage is a folder on the repository for now ( added in .gitignore).</p>
-<p><a class="glightbox" href="dragAndDropUpload2.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="File upload" src="dragAndDropUpload2.gif" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/1HVlfOM.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="File upload" src="https://i.imgur.com/1HVlfOM.gif" /></a></p>
 <p><strong>Preview support for other file types</strong>
-<a class="glightbox" href="fileTypes.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="File types" src="fileTypes.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/bZTDd4I.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="File types" src="https://i.imgur.com/bZTDd4I.png" /></a></p>
 <p><strong>Styling the drag and drop box</strong>
-<a class="glightbox" href="dragAndDropStyle.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Drag and drop style" src="dragAndDropStyle.gif" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/W1ZC0t8.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Drag and drop style" src="https://i.imgur.com/W1ZC0t8.gif" /></a></p>
 <p><strong>Upload folder structure</strong></p>
 <p>A folder is created to the main filestorage for each component that has file attachments. 
 Folder name is the part number ( ID field in the table ) of the component.
-<a class="glightbox" href="fileStructure.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="File structure" src="fileStructure.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/Igg9RN1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="File structure" src="https://i.imgur.com/Igg9RN1.png" /></a></p>
 <p><strong>Summary</strong></p>
 <p>It was a bit more complex to make this work than I originally thought. Some key notes:
 - Basically when a component is added, the input field data, and all the files are sent as a separate requests to the backend.
@@ -2216,13 +2216,13 @@ for the component data request to arrive.</p>
 <p>The file upload still needs some work, but it's good enough at least for now.</p>
 <h3 id="view-component">View component</h3>
 <p><strong>Part number ( 'ID' column currently ) is a clickable link that is routed to a component's own view</strong>
-<a class="glightbox" href="selectItem.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Select item" src="selectItem.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/8g5xHDv.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Select item" src="https://i.imgur.com/8g5xHDv.png" /></a></p>
 <p><strong>Component view + storage folder</strong></p>
 <p>A placeholder layout for a single component view page + component's file structure
-<a class="glightbox" href="storageItemFiles.PNG" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Storage item files" src="storageItemFiles.PNG" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/kjc3p0N.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Storage item files" src="https://i.imgur.com/kjc3p0N.png" /></a></p>
 <p><strong>Download files</strong></p>
 <p>Attachment file can be downloaded by clicking the filename.
-<a class="glightbox" href="dlFile.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Download a file" src="dlFile.gif" /></a></p>
+<a class="glightbox" href="https://i.imgur.com/bT4Piog.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Download a file" src="https://i.imgur.com/bT4Piog.gif" /></a></p>
 <hr />
 <h3 id="summary">Summary</h3>
 <p>I have been working on this project for a week now, a couple of hours in the evenings and it seems to be moving forward quite nicely, learned a lot so far.
@@ -2262,7 +2262,7 @@ on that in the TODO section.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-23T22:35:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-23</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-28T00:29:23+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-28</span>
       
         <br>
         Created:
