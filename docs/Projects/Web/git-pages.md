@@ -149,4 +149,4 @@ For example, this page is just a markdown file here:
 I have added some notes on my notes/ site on how to setup custom domain and
 email
 
-<https://protoni.github.io/notes/Notes/network/#domains>
+<https://protoni.fi/Notes/network/#domains>

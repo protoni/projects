@@ -15,7 +15,7 @@ will be more useful there. Also it has a simple Wireguard setup so I can
 connect to the garage LAN and monitor/control things remotely.
 
 ## Notes
-<https://protoni.github.io/notes/Notes/home-assistant/>
+<https://protoni.fi/Notes/home-assistant/>
 
 ## Setup
 I have a Raspberry pi 3 running the home assistant distro.
