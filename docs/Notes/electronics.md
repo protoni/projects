@@ -195,6 +195,17 @@ your library -> Right click -> Paste symbol
 # Place components from custom library
 Symbol Editor -> Search for your custom library -> Right click -> Pin
 Then in schematics editor when placing components, library is on top of the list
+
+# Add GND or signal/power plane
+Select B.Cu layer ( or any other layer, B is for bottom plane ) -> Add a filled
+zone -> click to a corner where the plane starts -> Select net ( for example ND )
+-> Ensure layer is correct -> Pad connections -> Thermal reliefs -> Ok -> click
+once for every corner -> double click to finish -> Pres 'B' to fill the zone.
+
+# Set manufacturer design rules ( JLCPCB )
+Open Kicad -> In the main window click 'Plugin And Content Manager' -> Install
+-> Apply pending changes ->
+
 ````
 
 ##### STM32cube IDE

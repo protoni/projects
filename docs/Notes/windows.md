@@ -331,6 +331,61 @@ Hover over an application in the toolbar and press Shift + Left mouse click
 Win + R -> iexpress
 ````
 
+##### Install Docker
+````powershell
+# Check if Docker Desktop is already installed
+if (-not (Get-Command -Name docker -ErrorAction SilentlyContinue)) {
+    # Download the Docker Desktop installer
+    $dockerInstallerUrl = "https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe"
+    $dockerInstallerPath = Join-Path $env:TEMP "DockerDesktopInstaller.exe"
+    #Invoke-WebRequest -Uri $dockerInstallerUrl -OutFile $dockerInstallerPath
+
+    # Install Docker Desktop
+    Start-Process -FilePath $dockerInstallerPath -Wait
+    Remove-Item -Path $dockerInstallerPath -Force
+
+    # Wait for Docker to start
+    Start-Sleep -Seconds 15
+
+    # Check if Docker is running
+    if (Get-Service -Name "com.docker.service" -ErrorAction SilentlyContinue) {
+        Write-Host "Docker Desktop is installed and running."
+    } else {
+        Write-Host "Docker Desktop installation failed."
+    }
+} else {
+    Write-Host "Docker Desktop is already installed."
+}
+````
+
+##### Install Chocolatey
+````powershell
+# Check if terminal is already installed
+$choco_output = Get-Command -Name choco.exe -ErrorAction SilentlyContinue
+if (!$choco_output) {
+    echo "Installing chocolatey.."
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    echo "Chocolatey installed!"
+}
+
+# Install a program using Chocolatey
+function install_program($name) {
+    $program_installed = choco list --localonly | findstr /i $name # Check if the program is already installed
+    if(!$program_installed) {
+        $choco_output = Get-Command -Name choco.exe -ErrorAction SilentlyContinue # Check if chocolatey is installed
+        if($choco_output) {
+            echo "Installing $name.."
+            choco install $name -y
+        }
+    } else {
+        echo "$name installed already!"
+    }
+}
+
+# Install Notepad++
+install_program 'notepadplusplus'
+````
+
 ## Auth
 ##### Check checksum
 ````powershell
