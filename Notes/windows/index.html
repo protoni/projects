@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -1572,6 +1572,8 @@
       
         
       
+        
+      
     
     
     
@@ -1809,6 +1811,61 @@
           <label class="md-nav__title" for="__nav_4_1_4">
             <span class="md-nav__icon md-icon"></span>
             Phone extension
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Projects/Electronics/stm32-breakout-board/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Stm32 breakout board
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Stm32 breakout board
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3939,52 +3996,59 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c"># Check if Docker Desktop is already installed</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="p">(</span><span class="nb">Get-Command</span> <span class="n">-Name</span> <span class="n">docker</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="c"># Download the Docker Desktop installer</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="nv">$dockerInstallerUrl</span> <span class="p">=</span> <span class="s2">&quot;https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe&quot;</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="nv">$dockerInstallerPath</span> <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$env:TEMP</span> <span class="s2">&quot;DockerDesktopInstaller.exe&quot;</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="c">#Invoke-WebRequest -Uri $dockerInstallerUrl -OutFile $dockerInstallerPath</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="c"># Install Docker Desktop</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="nb">Start-Process</span> <span class="n">-FilePath</span> <span class="nv">$dockerInstallerPath</span> <span class="n">-Wait</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="nb">Remove-Item</span> <span class="n">-Path</span> <span class="nv">$dockerInstallerPath</span> <span class="n">-Force</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>    <span class="c"># Wait for Docker to start</span>
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>    <span class="nb">Start-Sleep</span> <span class="n">-Seconds</span> <span class="n">15</span>
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>    <span class="c"># Check if Docker is running</span>
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>    <span class="k">if</span> <span class="p">(</span><span class="nb">Get-Service</span> <span class="n">-Name</span> <span class="s2">&quot;com.docker.service&quot;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>        <span class="nb">Write-Host</span> <span class="s2">&quot;Docker Desktop is installed and running.&quot;</span>
-<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>        <span class="nb">Write-Host</span> <span class="s2">&quot;Docker Desktop installation failed.&quot;</span>
-<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>    <span class="p">}</span>
-<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;Docker Desktop is already installed.&quot;</span>
-<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="p">}</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="nv">$dockerInstallerUrl</span> <span class="p">=</span> <span class="p">`</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="s2">&quot;https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe&quot;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="nv">$dockerInstallerPath</span> <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$env:TEMP</span> <span class="s2">&quot;DockerDesktopInstaller.exe&quot;</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="c">#Invoke-WebRequest -Uri $dockerInstallerUrl -OutFile $dockerInstallerPath</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="c"># Install Docker Desktop</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="nb">Start-Process</span> <span class="n">-FilePath</span> <span class="nv">$dockerInstallerPath</span> <span class="n">-Wait</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>    <span class="nb">Remove-Item</span> <span class="n">-Path</span> <span class="nv">$dockerInstallerPath</span> <span class="n">-Force</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>    <span class="c"># Wait for Docker to start</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>    <span class="nb">Start-Sleep</span> <span class="n">-Seconds</span> <span class="n">15</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>    <span class="c"># Check if Docker is running</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>    <span class="k">if</span> <span class="p">(</span><span class="nb">Get-Service</span> <span class="n">-Name</span> <span class="s2">&quot;com.docker.service&quot;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>        <span class="nb">Write-Host</span> <span class="s2">&quot;Docker Desktop is installed and running.&quot;</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>        <span class="nb">Write-Host</span> <span class="s2">&quot;Docker Desktop installation failed.&quot;</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>    <span class="p">}</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;Docker Desktop is already installed.&quot;</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="p">}</span>
 </code></pre></div>
 <h5 id="install-chocolatey">Install Chocolatey</h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c"># Check if terminal is already installed</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nv">$choco_output</span> <span class="p">=</span> <span class="nb">Get-Command</span> <span class="n">-Name</span> <span class="n">choco</span><span class="p">.</span><span class="n">exe</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">if</span> <span class="p">(!</span><span class="nv">$choco_output</span><span class="p">)</span> <span class="p">{</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="nb">echo </span><span class="s2">&quot;Installing chocolatey..&quot;</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span><span class="p">;</span> <span class="no">[System.Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[System.Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="o">-bor</span> <span class="n">3072</span><span class="p">;</span> <span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://community.chocolatey.org/install.ps1&#39;</span><span class="p">))</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="nb">echo </span><span class="s2">&quot;Chocolatey installed!&quot;</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c"># Install a program using Chocolatey</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="k">function</span> <span class="n">install_program</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    <span class="nv">$program_installed</span> <span class="p">=</span> <span class="n">choco</span> <span class="n">list</span> <span class="p">-</span><span class="n">-localonly</span> <span class="p">|</span> <span class="n">findstr</span> <span class="p">/</span><span class="n">i</span> <span class="nv">$name</span> <span class="c"># Check if the program is already installed</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    <span class="k">if</span><span class="p">(!</span><span class="nv">$program_installed</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>        <span class="nv">$choco_output</span> <span class="p">=</span> <span class="nb">Get-Command</span> <span class="n">-Name</span> <span class="n">choco</span><span class="p">.</span><span class="n">exe</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span> <span class="c"># Check if chocolatey is installed</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$choco_output</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>            <span class="nb">echo </span><span class="s2">&quot;Installing $name..&quot;</span>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>            <span class="n">choco</span> <span class="n">install</span> <span class="nv">$name</span> <span class="n">-y</span>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>        <span class="p">}</span>
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>        <span class="nb">echo </span><span class="s2">&quot;$name installed already!&quot;</span>
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>    <span class="p">}</span>
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="p">}</span>
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="c"># Install Notepad++</span>
-<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="n">install_program</span> <span class="s1">&#39;notepadplusplus&#39;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span><span class="p">;</span> <span class="p">`</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="no">[System.Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="p">`</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="no">[System.Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="o">-bor</span> <span class="n">3072</span><span class="p">;</span> <span class="nb">iex </span><span class="p">`</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    <span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(`</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="s1">&#39;https://community.chocolatey.org/install.ps1&#39;</span><span class="p">))</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    <span class="nb">echo </span><span class="s2">&quot;Chocolatey installed!&quot;</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="p">}</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="c"># Install a program using Chocolatey</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="k">function</span> <span class="n">install_program</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    <span class="c"># Check if the program is already installed</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    <span class="nv">$program_installed</span> <span class="p">=</span> <span class="n">choco</span> <span class="n">list</span> <span class="p">-</span><span class="n">-localonly</span> <span class="p">|</span> <span class="n">findstr</span> <span class="p">/</span><span class="n">i</span> <span class="nv">$name</span> 
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>    <span class="k">if</span><span class="p">(!</span><span class="nv">$program_installed</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>        <span class="nv">$choco_output</span> <span class="p">=</span> <span class="nb">Get-Command</span> <span class="n">-Name</span> <span class="n">choco</span><span class="p">.</span><span class="n">exe</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>        <span class="c"># Check if chocolatey is installed</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$choco_output</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>            <span class="nb">echo </span><span class="s2">&quot;Installing $name..&quot;</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>            <span class="n">choco</span> <span class="n">install</span> <span class="nv">$name</span> <span class="n">-y</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>        <span class="p">}</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>        <span class="nb">echo </span><span class="s2">&quot;$name installed already!&quot;</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>    <span class="p">}</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="p">}</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="c"># Install Notepad++</span>
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="n">install_program</span> <span class="s1">&#39;notepadplusplus&#39;</span>
 </code></pre></div>
 <h2 id="auth">Auth</h2>
 <h5 id="check-checksum">Check checksum</h5>
@@ -4333,7 +4397,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-02T18:42:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-09T16:29:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-09</span>
       
         <br>
         Created:
@@ -4390,7 +4454,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
