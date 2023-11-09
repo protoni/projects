@@ -336,7 +336,8 @@ Win + R -> iexpress
 # Check if Docker Desktop is already installed
 if (-not (Get-Command -Name docker -ErrorAction SilentlyContinue)) {
     # Download the Docker Desktop installer
-    $dockerInstallerUrl = "https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe"
+    $dockerInstallerUrl = `
+    "https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe"
     $dockerInstallerPath = Join-Path $env:TEMP "DockerDesktopInstaller.exe"
     #Invoke-WebRequest -Uri $dockerInstallerUrl -OutFile $dockerInstallerPath
 
@@ -364,15 +365,21 @@ if (-not (Get-Command -Name docker -ErrorAction SilentlyContinue)) {
 $choco_output = Get-Command -Name choco.exe -ErrorAction SilentlyContinue
 if (!$choco_output) {
     echo "Installing chocolatey.."
-    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    Set-ExecutionPolicy Bypass -Scope Process -Force; `
+    [System.Net.ServicePointManager]::SecurityProtocol = `
+    [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex `
+    ((New-Object System.Net.WebClient).DownloadString(`
+    'https://community.chocolatey.org/install.ps1'))
     echo "Chocolatey installed!"
 }
 
 # Install a program using Chocolatey
 function install_program($name) {
-    $program_installed = choco list --localonly | findstr /i $name # Check if the program is already installed
+    # Check if the program is already installed
+    $program_installed = choco list --localonly | findstr /i $name 
     if(!$program_installed) {
-        $choco_output = Get-Command -Name choco.exe -ErrorAction SilentlyContinue # Check if chocolatey is installed
+        $choco_output = Get-Command -Name choco.exe -ErrorAction SilentlyContinue
+        # Check if chocolatey is installed
         if($choco_output) {
             echo "Installing $name.."
             choco install $name -y
