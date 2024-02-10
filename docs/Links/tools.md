@@ -3,12 +3,6 @@
 ##### Show my public IP address
 <https://www.whatismyip.com/>
 
-##### Color picker
-<https://www.w3schools.com/colors/colors_picker.asp>
-
-##### JSON Lint
-<https://jsonlint.com/>
-
 ##### WoW Stuck character service
 <https://eu.battle.net/support/en/help/product/wow/197/834/solution>
 
@@ -20,24 +14,6 @@
 
 ##### Hacker news sorter
 <https://hckrnews.com/>
-
-##### Dev hints
-<https://devhints.io/>
-
-##### Explain linux shell commands
-<https://explainshell.com/>
-
-##### Virtual x86 emulator
-<https://copy.sh/v86/>
-
-##### Benchmark websites
-<https://pagespeed.web.dev/?hl=fi>
-
-##### Check public IPs for what they download
-<https://iknowwhatyoudownload.com/en/peer/>
-
-##### CSS linter
-<https://css-lint.com/>
 
 ##### Convert WEBP to PNG
 <https://cloudconvert.com/webp-to-png>
@@ -66,11 +42,40 @@
 ##### Windows sysadmin tools
 <https://learn.microsoft.com/en-us/sysinternals/downloads/>
 
+##### Check public IPs for what they download
+<https://iknowwhatyoudownload.com/en/peer/>
+
 ##### Privacy & security settings generator
 <https://privacy.sexy/>
 
 ##### Tampere bus location tracker
 <https://nyssetutka.fi/>
+
+## Dev
+
+##### C++ editor with assembly view
+<https://godbolt.org/>
+
+##### Dev hints
+<https://devhints.io/>
+
+##### Color picker
+<https://www.w3schools.com/colors/colors_picker.asp>
+
+##### JSON Lint
+<https://jsonlint.com/>
+
+##### CSS linter
+<https://css-lint.com/>
+
+##### Explain linux shell commands
+<https://explainshell.com/>
+
+##### Virtual x86 emulator
+<https://copy.sh/v86/>
+
+##### Benchmark websites
+<https://pagespeed.web.dev/?hl=fi>
 
 ## Electronics
 
