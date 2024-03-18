@@ -1,0 +1,26 @@
+.commits-container {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    border-radius: 5px;
+    background-color: #161616;
+}
+
+.commit {
+    padding: 10px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+.commit:last-child {
+    border-bottom: none;
+}
+
+.commit-author,
+.commit-message,
+.commit-date {
+    margin: 5px 0;
+}
+
+.commit-date {
+    color: #57A64A;
+}
