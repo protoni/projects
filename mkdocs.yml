@@ -56,6 +56,12 @@ plugins:
 # Use custom css
 extra_css:
   - stylesheets/styles.css
+  - stylesheets/commits.css
+
+# Add custom javascript components
+extra_javascript:
+  - js/commits.js
+
 
 # Set md extensions
 markdown_extensions:
