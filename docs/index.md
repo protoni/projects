@@ -12,13 +12,15 @@ hosted on `imgur`.
 ## Site layout
 ````bash
 docs/
-    Links/      # Links that I find useful sometimes
-    Notes/      # Various notes I have written or copy-pasted from somewhere
-    Projects/   # Personal projects ( finished and unfinished, old and new )
+    Experiments/  # Experiments that are more than notes but less than projects
+    Links/        # Links that I find useful sometimes
+    Notes/        # Various notes I have written or copy-pasted from somewhere
+    Projects/     # Personal projects ( finished and unfinished, old and new )
     ...
 ````
 
-<div id="commits-container">Last 10 commits:</div>
+## Commit history
+<div id="commits-container"></div>
 
 See full commit history at:
 
