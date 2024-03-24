@@ -483,6 +483,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#flashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flashing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shell
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docs" class="md-nav__link">
     <span class="md-ellipsis">
       Docs
@@ -3062,6 +3098,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#flashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flashing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shell
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docs" class="md-nav__link">
     <span class="md-ellipsis">
       Docs
@@ -3141,12 +3213,34 @@
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c"># Build blinky example</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">west</span> <span class="n">build</span> <span class="n">-p</span> <span class="n">always</span> <span class="n">-b</span> <span class="n">stm32f429i_disc1</span> <span class="p">.\</span><span class="n">samples</span><span class="p">\</span><span class="n">basic</span><span class="p">\</span><span class="n">blinky</span><span class="p">\</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c"># Download and install STM32CubeProgrammer</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">https</span><span class="p">://</span><span class="n">www</span><span class="p">.</span><span class="n">st</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">en</span><span class="p">/</span><span class="n">development-tools</span><span class="p">/</span><span class="n">stm32cubeprog</span><span class="p">.</span><span class="n">html</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c"># Flash the device. Connect USB to the board</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">west</span> <span class="n">flash</span> <span class="p">-</span><span class="n">-runner</span> <span class="n">stm32cubeprogrammer</span>
+</code></pre></div>
+<h2 id="flashing">Flashing</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># Install On-Chip Debugger</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">choco</span> <span class="n">install</span> <span class="n">openocd</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c"># OR download and install STM32CubeProgrammer</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">https</span><span class="p">://</span><span class="n">www</span><span class="p">.</span><span class="n">st</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">en</span><span class="p">/</span><span class="n">development-tools</span><span class="p">/</span><span class="n">stm32cubeprog</span><span class="p">.</span><span class="n">html</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c"># Flash the device using openocd. Note that RESET button must be briefly</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c"># held down once the following command is given and immediately released,</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c"># when the program executes</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">west</span> <span class="n">flash</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c"># OR flash the device using stm32cubeprogrammer</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="n">west</span> <span class="n">flash</span> <span class="p">-</span><span class="n">-runner</span> <span class="n">stm32cubeprogrammer</span>
+</code></pre></div>
+<h2 id="debugging">Debugging</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># To debug using GDB. </span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c"># Note: stm32cubeprogrammer doesn&#39;t seem to support debugging</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">west</span> <span class="n">debug</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c"># Example debugging blinky</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="k">break</span> <span class="n">main</span><span class="p">.</span><span class="n">c</span><span class="p">:</span><span class="n">38</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="k">continue</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a> <span class="p">-&gt;</span> <span class="n">LED</span> <span class="n">goes</span> <span class="n">on</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="k">continue</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a> <span class="p">-&gt;</span> <span class="n">LED</span> <span class="n">goes</span> <span class="n">off</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">...</span>
 </code></pre></div>
 <p>LED blinking</p>
 <dl>
@@ -3155,6 +3249,57 @@
   </video>
 </dl>
 
+<p>Serial port
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># This is also outputted to the serial port</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">LED</span> <span class="n">state</span><span class="p">:</span> <span class="n">ON</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">LED</span> <span class="n">state</span><span class="p">:</span> <span class="n">OFF</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">LED</span> <span class="n">state</span><span class="p">:</span> <span class="n">ON</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">LED</span> <span class="n">state</span><span class="p">:</span> <span class="n">OFF</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">putty</span><span class="p">.</span><span class="n">exe</span> <span class="p">-&gt;</span> <span class="n">Serial</span> <span class="p">-&gt;</span> <span class="n">COM3</span> <span class="p">-&gt;</span> <span class="n">115200</span> <span class="n">baud</span>
+</code></pre></div></p>
+<h2 id="notes">Notes</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># List module metadata</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">west</span> <span class="n">list</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">west</span> <span class="n">list</span> <span class="p">-</span><span class="n">-format</span> <span class="s2">&quot;{name} {path} {revision}&quot;</span> <span class="n">net-tools</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c"># Erase disk when flashing the app</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">west</span> <span class="n">flash</span> <span class="p">-</span><span class="n">-erase</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c"># Open kernel config GUI tool</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">west</span> <span class="n">build</span> <span class="p">-</span><span class="n">-target</span> <span class="n">guiconfig</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c"># Connect to running debugger without flashing</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="n">west</span> <span class="n">attach</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c"># Start GDB server and open a socket for external debuggers</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="n">west</span> <span class="n">debugserver</span>
+</code></pre></div>
+<h2 id="shell">Shell</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c"># Build and flash shell</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">west</span> <span class="n">build</span> <span class="n">-p</span> <span class="n">always</span> <span class="n">-b</span> <span class="n">stm32f429i_disc1</span> <span class="p">.\</span><span class="n">samples</span><span class="p">\</span><span class="n">subsys</span><span class="p">\</span><span class="n">shell</span><span class="p">\</span><span class="n">shell_module</span><span class="p">\</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">west</span> <span class="n">flash</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c"># putty.exe -&gt; Serial -&gt; COM3 -&gt; 115200 baud</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">uart</span><span class="p">:~$</span> <span class="n">help</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c"># Also tried to get samples/subsys/shell/fs working but having difficulties with</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c"># the storage:</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="n">error</span><span class="p">:</span> <span class="s1">&#39;DT_N_NODELABEL_storage_partition_PARTITION_ID&#39;</span> <span class="n">undeclared</span> <span class="n">here</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c"># Tried adding to dts\arm\st\f4\stm32f429.dtsi:</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="n">storage_partition</span><span class="p">:</span> <span class="n">partition</span><span class="nv">@8000000</span> <span class="p">{</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="n">label</span> <span class="p">=</span> <span class="s2">&quot;storage&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    <span class="n">reg</span> <span class="p">=</span> <span class="p">&lt;</span><span class="n">0x08000000</span> <span class="n">0x200000</span><span class="p">&gt;;</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="nb">read-only</span><span class="p">;</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">};</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="c"># It does seem to do something but doesn&#39;t fix the issue. Instead giving a new error:</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="n">error</span><span class="p">:</span> <span class="s1">&#39;DT_N_S_soc_S_partition_8000000_PARTITION_ID&#39;</span> <span class="n">undeclared</span> <span class="n">here</span> <span class="p">(</span><span class="n">not</span> <span class="k">in</span> <span class="n">a</span> <span class="k">function</span><span class="p">);</span> <span class="n">did</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="n">you</span> <span class="n">mean</span> <span class="s1">&#39;DT_N_S_soc_S_partition_8000000_PARENT&#39;</span><span class="p">?</span>
+</code></pre></div>
+<p>SOC flash map
+<a class="glightbox" href="https://i.imgur.com/13heLf8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Doc writer" src="https://i.imgur.com/13heLf8.png" /></a></p>
 <h2 id="docs">Docs</h2>
 <p>See the full getting started guide:</p>
 <p><a href="https://docs.zephyrproject.org/latest/develop/getting_started/index.html">https://docs.zephyrproject.org/latest/develop/getting_started/index.html</a></p>
@@ -3162,6 +3307,10 @@
 <p><a href="https://docs.zephyrproject.org/latest/boards/st/stm32f429i_disc1/doc/index.html">https://docs.zephyrproject.org/latest/boards/st/stm32f429i_disc1/doc/index.html</a></p>
 <p>STM32F429I-DISCO overview, pinout etc.</p>
 <p><a href="https://os.mbed.com/platforms/ST-Discovery-F429ZI/">https://os.mbed.com/platforms/ST-Discovery-F429ZI/</a></p>
+<p>STM32F429I-DISCO datasheet</p>
+<p><a href="https://www.farnell.com/datasheets/2309234.pdf">https://www.farnell.com/datasheets/2309234.pdf</a></p>
+<p>STM32F429ZIT6 datasheet</p>
+<p><a href="https://www.st.com/content/ccc/resource/technical/document/datasheet/03/b4/b2/36/4c/72/49/29/DM00071990.pdf/files/DM00071990.pdf/jcr:content/translations/en.DM00071990.pdf">https://www.st.com/content/ccc/resource/technical/document/datasheet/03/b4/b2/36/4c/72/49/29/DM00071990.pdf/files/DM00071990.pdf/jcr:content/translations/en.DM00071990.pdf</a></p>
 <p>Zephyr demos</p>
 <p><a href="https://docs.zephyrproject.org/latest/samples/index.html#samples-and-demos">https://docs.zephyrproject.org/latest/samples/index.html#samples-and-demos</a></p>
 
@@ -3186,7 +3335,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-03-23T18:01:24+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-03-23</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-03-24T00:20:41+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-03-24</span>
   </span>
 
     
