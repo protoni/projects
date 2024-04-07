@@ -32,15 +32,15 @@ theme:
   language: en
   palette:
     - scheme: slate
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+#      toggle:
+#        icon: material/brightness-7
+#        name: Switch to dark mode
       primary: indigo
       accent: purple 
     - scheme: slate 
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode    
+#      toggle:
+#        icon: material/brightness-4
+#        name: Switch to light mode    
       primary: indigo
       accent: lime
 
