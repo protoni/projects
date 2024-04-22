@@ -321,9 +321,9 @@ proto board.
 ## Update 2024.04.23
 Finally was motivated enough to fix my old reflow oven and build the first proto board.
 
-Need to do a second revision to get rid of that 20 pin J-LINK header and move the lower GPIO
-header connector more to the right. The J-Link header incorrectly routed anyway. I used it by
-wiring the SEGGER J-Link to the connector using with jumper wires. It basically only needs 4 pins;
+Need to do a second revision to get rid of that 20 pin J-Link header and move the lower GPIO
+header connector more to the right. The J-Link header incorrectly routed anyway. I tested it by
+wiring the SEGGER J-Link to the connector using jumper wires. It basically only needs 4 pins;
 Vref, SWDIO, SWDCLK and GND.
 
 Also the micro USB port needs to be more closer to the edge of the board.
@@ -334,19 +334,19 @@ Also the micro USB port needs to be more closer to the edge of the board.
 ##### Assembling proto board
 
 Some issues with the solder, for example the micro USB port teared off at one point and seems
-like some of the components are not properly soldered, but it works!. Solder issues are partly
-caused by the old and past expiration day solder paste from 2018.
+like some of the components are not properly soldered, but everything has worked so far!
+The solder issues are partly caused by the old and past expiration day solder paste from 2018.
 
 ![solder paste](https://i.imgur.com/GJPJXWh.jpeg)
 
-Also was able to test my new USB microscope that I bought from Lidl for 20€. It has full hd
-resolution camera and 1000x zoom.
+Also was able to test my new USB microscope that I bought from Lidl for 20€. It has full HD
+resolution camera with 1000x zoom.
 
 ![microscope](https://i.imgur.com/wnyvXjJ.jpeg)
 ![microscope2](https://i.imgur.com/fj24NHe.jpeg)
 
-Reflow profile needs to be adjusted a bit to run around 250c instead of 200c and for a longer
-period of time, I think. Hopefully it would solder the components a bit better.
+I think the reflow profile needs to be adjusted a bit to peak at around 250c instead of 200c and
+maybe for a longer period of time. Hopefully it would solder the components a bit better.
 ![reflowProfile](https://i.imgur.com/Wng1wfV.jpeg)
 
 ##### Flashing
@@ -371,9 +371,9 @@ STM32CubeProgrammer
 
 ![stm32CubeProgrammer](https://i.imgur.com/fAR6xKH.png)
 
-##### Custom bootloader
-
 Both work, but STM32CubeProgrammer is more extensive and I used it more.
+
+##### Custom bootloader
 
 I got a simple custom bootloader working, which jumps to a separate application code:
 <https://github.com/protoni/stm32-template/tree/main/MCU>
