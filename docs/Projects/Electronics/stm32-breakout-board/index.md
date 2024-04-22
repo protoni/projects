@@ -317,3 +317,128 @@ BSS84AK,215             SOT-23        VGSth -1.1 - -2.1V         pFET
 ## Summary
 That's all, hopefully they work once I receive the parts and build the first
 proto board.
+
+## Update 2024.04.23
+Finally was motivated enough to fix my old reflow oven and build the first proto board.
+
+Need to do a second revision to get rid of that 20 pin J-LINK header and move the lower GPIO
+header connector more to the right. The J-Link header incorrectly routed anyway. I used it by
+wiring the SEGGER J-Link to the connector using with jumper wires. It basically only needs 4 pins;
+Vref, SWDIO, SWDCLK and GND.
+
+Also the micro USB port needs to be more closer to the edge of the board.
+
+![breakout board](https://i.imgur.com/52uJBXJ.jpeg)
+![breakout board2](https://i.imgur.com/XO5f7nX.jpeg)
+
+##### Assembling proto board
+
+Some issues with the solder, for example the micro USB port teared off at one point and seems
+like some of the components are not properly soldered, but it works!. Solder issues are partly
+caused by the old and past expiration day solder paste from 2018.
+
+![solder paste](https://i.imgur.com/GJPJXWh.jpeg)
+
+Also was able to test my new USB microscope that I bought from Lidl for 20€. It has full hd
+resolution camera and 1000x zoom.
+
+![microscope](https://i.imgur.com/wnyvXjJ.jpeg)
+![microscope2](https://i.imgur.com/fj24NHe.jpeg)
+
+Reflow profile needs to be adjusted a bit to run around 250c instead of 200c and for a longer
+period of time, I think. Hopefully it would solder the components a bit better.
+![reflowProfile](https://i.imgur.com/Wng1wfV.jpeg)
+
+##### Flashing
+
+Programming can be done by a few different ways. Using built-in UART bootloader or SWD ( J-Link ).
+For me, the SWD is not really easy to use so I use a UART-USB adapter connected to the GPIO
+headers that are routed to the MCU. Also a third method would be to flash a USB bootloader,
+same bootloader that Arduino boards use, but I had some difficulties getting that to work.
+I'll continue looking into it at some point. I might need to modify the arduino bootloader
+to handle my external USB reset circuit.
+
+Currently I have added a jumper wire to pull the D+ straight to 3.3V through a 1.5kOhm resistor.
+This will passes by the pFET USB enumeration circuit.
+
+![usbJumperWire](https://i.imgur.com/sFsSr6m.jpeg)
+
+Flash Loader Demonstrator from ST
+
+![flashLoaderDemonstrator](https://i.imgur.com/Qsj8CBD.png)
+
+STM32CubeProgrammer
+
+![stm32CubeProgrammer](https://i.imgur.com/fAR6xKH.png)
+
+##### Custom bootloader
+
+Both work, but STM32CubeProgrammer is more extensive and I used it more.
+
+I got a simple custom bootloader working, which jumps to a separate application code:
+<https://github.com/protoni/stm32-template/tree/main/MCU>
+
+It's blinking every 50ms for 50 times when the bootloader code executes and then starts
+blinking every second when it jumps to the application.
+<dl>
+  <video width="1024" height="480" controls>
+    <source src="https://i.imgur.com/52OctLg.mp4" type="video/mp4">
+  </video>
+</dl>
+
+````bash
+Bootloader version 0.1 started!
+Jump to application code
+Jumping..
+Application version 0.1 started!
+````
+
+##### Zephyr project
+Also tested a LED blinking example from Zephyr project, with slight modification to the
+similar supported STM32 board ( stm32_min_dev ) configs.
+
+I edited the board's device tree and changed the LED pin from PC13 to PC3
+````bash
+# Board device tree
+zephyr\boards\others\stm32_min_dev\stm32_min_dev_stm32f103xb_blue.overlay
+
+# Change &gpioc 13 -> &gpioc 3
+{
+	model = "STM32 Minimum Development Board (Blue)";
+	compatible = "stm32_min_dev_blue", "st,stm32f103c8";
+
+	leds {
+		led: led {
+			gpios = <&gpioc 3 GPIO_ACTIVE_LOW>;
+		};
+	};
+};
+
+# Build
+west build -b stm32_min_dev samples/basic/blinky --pristine
+
+# Check compiled device tree
+zephyr\build\zephyr\zephyr.dts
+
+# LED node
+leds {
+		compatible = "gpio-leds";
+		led: led {
+			gpios = < &gpioc 0x3 0x1 >;
+			label = "LD";
+		};
+};
+
+# Flash to board
+STM32CubeProgrammer -> UART -> flash zephyr\build\zephyr\zephyr.bin
+````
+
+Need to continue with testing the USB example
+
+##### Links
+
+Github
+<https://github.com/protoni/stm32-template/>
+
+Custom bootloader tutorial
+<https://embetronicx.com/tutorials/microcontrollers/stm32/stm32f1-bootloader/simple-stm32f103-bootloader-tutorial/>

@@ -18,6 +18,9 @@
 ##### Convert WEBP to PNG
 <https://cloudconvert.com/webp-to-png>
 
+##### Handy GIF maker/editor
+<https://ezgif.com/maker>
+
 ##### Timezone converter
 <https://www.worldtimebuddy.com/>
 
