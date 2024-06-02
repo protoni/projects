@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://protoni.github.io/projects/Notes/embedded-linux/beaglebone/">
+        <link rel="canonical" href="https://protoni.github.io/projects/Experiments/spotify-cli/">
       
       
-        <link rel="prev" href="../../wsl/">
+        <link rel="prev" href="../raylib-wasm/">
       
       
-        <link rel="next" href="../beaglebone_yocto/">
+        <link rel="next" href="../stm32f4-zephyr/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
     
     
       
-        <title>Beaglebone - Protoni's site</title>
+        <title>Spotify CLI - Protoni's site</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,20 +48,20 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/timeago.css">
+      <link rel="stylesheet" href="../../css/timeago.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/styles.css">
+      <link rel="stylesheet" href="../../stylesheets/styles.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/commits.css">
+      <link rel="stylesheet" href="../../stylesheets/commits.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -70,7 +70,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#beaglebone" class="md-skip">
+        <a href="#spotify-cli" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Protoni&#39;s site" class="md-header__button md-logo" aria-label="Protoni's site" data-md-component="logo">
+    <a href="../.." title="Protoni&#39;s site" class="md-header__button md-logo" aria-label="Protoni's site" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Beaglebone
+              Spotify CLI
             
           </span>
         </div>
@@ -232,7 +232,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Protoni&#39;s site" class="md-nav__button md-logo" aria-label="Protoni's site" data-md-component="logo">
+    <a href="../.." title="Protoni&#39;s site" class="md-nav__button md-logo" aria-label="Protoni's site" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -262,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -279,8 +279,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -297,11 +299,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -315,7 +317,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Experiments
@@ -329,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Experiments/audio-visualizer/" class="md-nav__link">
+      <a href="../audio-visualizer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -350,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Experiments/md-tools/" class="md-nav__link">
+      <a href="../md-tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -371,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Experiments/raylib-wasm/" class="md-nav__link">
+      <a href="../raylib-wasm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -389,10 +391,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../Experiments/spotify-cli/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Spotify CLI
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -401,6 +423,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Github
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      More commands:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -413,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Experiments/stm32f4-zephyr/" class="md-nav__link">
+      <a href="../stm32f4-zephyr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -482,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Links/resources/" class="md-nav__link">
+      <a href="../../Links/resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -503,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Links/tools/" class="md-nav__link">
+      <a href="../../Links/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -528,10 +615,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -570,11 +655,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -588,7 +673,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Notes
@@ -602,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android/" class="md-nav__link">
+      <a href="../../Notes/android/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -623,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bash/" class="md-nav__link">
+      <a href="../../Notes/bash/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -644,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cryptocurrency/" class="md-nav__link">
+      <a href="../../Notes/cryptocurrency/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -665,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../databases/" class="md-nav__link">
+      <a href="../../Notes/databases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -686,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../editors/" class="md-nav__link">
+      <a href="../../Notes/editors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -707,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electronics/" class="md-nav__link">
+      <a href="../../Notes/electronics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -728,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../git/" class="md-nav__link">
+      <a href="../../Notes/git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -749,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../home-assistant/" class="md-nav__link">
+      <a href="../../Notes/home-assistant/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -770,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/" class="md-nav__link">
+      <a href="../../Notes/linux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -791,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../network/" class="md-nav__link">
+      <a href="../../Notes/network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../random/" class="md-nav__link">
+      <a href="../../Notes/random/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -833,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-dev/" class="md-nav__link">
+      <a href="../../Notes/web-dev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -854,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../windows/" class="md-nav__link">
+      <a href="../../Notes/windows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -875,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wsl/" class="md-nav__link">
+      <a href="../../Notes/wsl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -893,10 +978,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -915,11 +998,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_15" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_15" >
         
           
           <label class="md-nav__link" for="__nav_4_15" id="__nav_4_15_label" tabindex="0">
@@ -933,7 +1016,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_15_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_15_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_15">
             <span class="md-nav__icon md-icon"></span>
             Embedded linux
@@ -944,28 +1027,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Beaglebone
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Notes/embedded-linux/beaglebone/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -974,33 +1039,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#beaglebone" class="md-nav__link">
-    <span class="md-ellipsis">
-      Beaglebone
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1013,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../beaglebone_yocto/" class="md-nav__link">
+      <a href="../../Notes/embedded-linux/beaglebone_yocto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1034,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../diy-setup/" class="md-nav__link">
+      <a href="../../Notes/embedded-linux/diy-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1055,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../osd3358/" class="md-nav__link">
+      <a href="../../Notes/embedded-linux/osd3358/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1076,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../raspberry-pi/" class="md-nav__link">
+      <a href="../../Notes/embedded-linux/raspberry-pi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1097,7 +1135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../yocto/" class="md-nav__link">
+      <a href="../../Notes/embedded-linux/yocto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1171,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../game-dev/blender/" class="md-nav__link">
+      <a href="../../Notes/game-dev/blender/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1192,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../game-dev/houdini/" class="md-nav__link">
+      <a href="../../Notes/game-dev/houdini/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1213,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../game-dev/servers/" class="md-nav__link">
+      <a href="../../Notes/game-dev/servers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1234,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../game-dev/unreal-engine/" class="md-nav__link">
+      <a href="../../Notes/game-dev/unreal-engine/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1384,7 +1422,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Electronics/led-display/" class="md-nav__link ">
+            <a href="../../Projects/Electronics/led-display/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1438,7 +1476,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Electronics/osd3358-linux/" class="md-nav__link ">
+            <a href="../../Projects/Electronics/osd3358-linux/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1492,7 +1530,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Electronics/osd3358-linux-and-click-boards/" class="md-nav__link ">
+            <a href="../../Projects/Electronics/osd3358-linux-and-click-boards/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1546,7 +1584,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Electronics/phone-extension/" class="md-nav__link ">
+            <a href="../../Projects/Electronics/phone-extension/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1600,7 +1638,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Electronics/stm32-breakout-board/" class="md-nav__link ">
+            <a href="../../Projects/Electronics/stm32-breakout-board/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1707,7 +1745,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Graphics/custom-graphics-renderer/" class="md-nav__link ">
+            <a href="../../Projects/Graphics/custom-graphics-renderer/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1761,7 +1799,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Graphics/opengl-experiments/" class="md-nav__link ">
+            <a href="../../Projects/Graphics/opengl-experiments/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1815,7 +1853,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Graphics/vulkan-experiments/" class="md-nav__link ">
+            <a href="../../Projects/Graphics/vulkan-experiments/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1869,7 +1907,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Graphics/wow-model-export/" class="md-nav__link ">
+            <a href="../../Projects/Graphics/wow-model-export/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1956,7 +1994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Projects/Linux/beaglebone_yocto/" class="md-nav__link">
+      <a href="../../Projects/Linux/beaglebone_yocto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1977,7 +2015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Projects/Linux/diy-setup/" class="md-nav__link">
+      <a href="../../Projects/Linux/diy-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2016,7 +2054,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Linux/install-arch-linux/" class="md-nav__link ">
+            <a href="../../Projects/Linux/install-arch-linux/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2125,7 +2163,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Misc/all-the-mods/" class="md-nav__link ">
+            <a href="../../Projects/Misc/all-the-mods/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2179,7 +2217,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Misc/home-assistant/" class="md-nav__link ">
+            <a href="../../Projects/Misc/home-assistant/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2233,7 +2271,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Misc/old-projects/" class="md-nav__link ">
+            <a href="../../Projects/Misc/old-projects/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2308,7 +2346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Projects/Misc/test-pages/page2/" class="md-nav__link">
+      <a href="../../Projects/Misc/test-pages/page2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2355,7 +2393,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Misc/wow-addons/" class="md-nav__link ">
+            <a href="../../Projects/Misc/wow-addons/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2456,7 +2494,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Motorcycles/rd350/" class="md-nav__link ">
+            <a href="../../Projects/Motorcycles/rd350/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2545,7 +2583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Projects/Web/git-pages/" class="md-nav__link">
+      <a href="../../Projects/Web/git-pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2584,7 +2622,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Web/component-storage/" class="md-nav__link ">
+            <a href="../../Projects/Web/component-storage/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2638,7 +2676,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Web/component-storage-update/" class="md-nav__link ">
+            <a href="../../Projects/Web/component-storage-update/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2737,7 +2775,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Web/old-gatsby-site/initial-commit/" class="md-nav__link ">
+            <a href="../../Projects/Web/old-gatsby-site/initial-commit/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2791,7 +2829,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Web/old-gatsby-site/setup-gatsby-site/" class="md-nav__link ">
+            <a href="../../Projects/Web/old-gatsby-site/setup-gatsby-site/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2845,7 +2883,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Web/old-gatsby-site/site-in-development/" class="md-nav__link ">
+            <a href="../../Projects/Web/old-gatsby-site/site-in-development/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2899,7 +2937,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Projects/Web/old-gatsby-site/website-update/" class="md-nav__link ">
+            <a href="../../Projects/Web/old-gatsby-site/website-update/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2968,6 +3006,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2976,9 +3016,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#beaglebone" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Beaglebone
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Github
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      More commands:
     </span>
   </a>
   
@@ -2999,7 +3075,7 @@
                   
 
   
-    <a href="https://github.com/protoni/projects/edit/main/docs/Notes/embedded-linux/beaglebone.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/protoni/projects/edit/main/docs/Experiments/spotify-cli.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -3007,51 +3083,64 @@
   
 
 
-  <h1>Beaglebone</h1>
-
-<h5 id="beaglebone">Beaglebone</h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Default login user</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>user:<span class="w"> </span>debian
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>pw:<span class="w">   </span>temppwd
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">## Powering on/off</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Boot linux from the eMMC</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Remove<span class="w"> </span>SD<span class="w"> </span>card<span class="w"> </span>and<span class="w"> </span>boot
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Boot linux from the SD card</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Add<span class="w"> </span>SD<span class="w"> </span>card,<span class="w"> </span>hold<span class="w"> </span>USER<span class="w"> </span>button<span class="w"> </span>down<span class="w"> </span>and<span class="w"> </span>apply<span class="w"> </span>power
+<h1 id="spotify-cli">Spotify CLI</h1>
+<h2 id="description">Description</h2>
+<p>A tool to control Spotify via the API on command line.</p>
+<h2 id="github">Github</h2>
+<p><a href="https://github.com/protoni/spotify-cli-test/">https://github.com/protoni/spotify-cli-test/</a></p>
+<h2 id="setup">Setup</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Note! Spotify premium is required for the API</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c"># Developer account is needed</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">https</span><span class="p">://</span><span class="n">developer</span><span class="p">.</span><span class="n">spotify</span><span class="p">.</span><span class="n">com</span><span class="p">/</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">Create</span> <span class="n">new</span> <span class="n">project</span><span class="p">,</span> <span class="n">get</span> <span class="n">the</span> <span class="n">client</span> <span class="n">ID</span> <span class="n">and</span> <span class="n">client</span> <span class="n">secret</span> <span class="n">and</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">save</span> <span class="n">them</span> <span class="n">to</span> <span class="n">credentials</span><span class="p">.</span><span class="n">txt</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c"># Create virtual environment</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="n">venv</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">.\</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Flash eMMC with SD card</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Insert<span class="w"> </span>SD<span class="w"> </span>card
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Hold<span class="w"> </span>USER<span class="w"> </span>button<span class="w"> </span>and<span class="w"> </span>connect<span class="w"> </span>power
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Hold<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">5</span>-7seconds
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># User LEDs</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>-<span class="w"> </span>USR0<span class="w"> </span>is<span class="w"> </span>configured<span class="w"> </span>at<span class="w"> </span>boot<span class="w"> </span>to<span class="w"> </span>blink<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>heartbeat<span class="w"> </span>pattern
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>-<span class="w"> </span>USR1<span class="w"> </span>is<span class="w"> </span>configured<span class="w"> </span>at<span class="w"> </span>boot<span class="w"> </span>to<span class="w"> </span>light<span class="w"> </span>during<span class="w"> </span>microSD<span class="w"> </span>card<span class="w"> </span>accesses
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>-<span class="w"> </span>USR2<span class="w"> </span>is<span class="w"> </span>configured<span class="w"> </span>at<span class="w"> </span>boot<span class="w"> </span>to<span class="w"> </span>light<span class="w"> </span>during<span class="w"> </span>CPU<span class="w"> </span>activity
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>-<span class="w"> </span>USR3<span class="w"> </span>is<span class="w"> </span>configured<span class="w"> </span>at<span class="w"> </span>boot<span class="w"> </span>to<span class="w"> </span>light<span class="w"> </span>during<span class="w"> </span>eMMC<span class="w"> </span>accesses
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>USR0<span class="w"> </span>is<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>edge<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>board
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="c1"># Setup beaglebone</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>http://beagleboard.org/getting-started
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="c1"># Resolve error &#39;the current language is not supported by the device driver installation wizard beaglebone&#39;</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>when<span class="w"> </span>trying<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>beaglebone<span class="w"> </span>drivers
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="m">1</span>.<span class="w"> </span>Download<span class="w"> </span>and<span class="w"> </span>setup<span class="w"> </span>7zip
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="m">2</span>.<span class="w"> </span>Right<span class="w"> </span>click<span class="w"> </span>BONE_D64.exe<span class="w"> </span>-&gt;<span class="w"> </span>7zip<span class="w"> </span>-&gt;<span class="w"> </span>Extract<span class="w"> </span>to<span class="w"> </span>BONE_D64<span class="se">\</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="m">3</span>.<span class="w"> </span>Edit<span class="w"> </span>dpinst.xml
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="m">4</span>.<span class="w"> </span>Add<span class="w"> </span>below<span class="w"> </span>first<span class="w"> </span>&lt;<span class="se">\l</span>anguage&gt;<span class="w"> </span>tag:
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">  </span>&lt;!--<span class="w"> </span>English<span class="w"> </span><span class="o">(</span>Finland<span class="o">)</span><span class="w"> </span>--&gt;
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">  </span>&lt;language<span class="w"> </span><span class="nv">code</span><span class="o">=</span><span class="s2">&quot;0x1000&quot;</span>&gt;&lt;/language&gt;
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="m">5</span>.<span class="w"> </span>Run<span class="w"> </span>dpinst.exe
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>This<span class="w"> </span>adds<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>OS<span class="w"> </span>language<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>supported<span class="w"> </span>languages<span class="w"> </span>list.
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>See<span class="w"> </span>all<span class="w"> </span>the<span class="w"> </span>language<span class="w"> </span>codes<span class="w"> </span>here:
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>https://www.ryadel.com/en/microsoft-windows-lcid-list-decimal-and-hex-all-locale-codes-ids/
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c"># Install dependencies</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">click</span> <span class="n">requests</span> <span class="n">spotipy</span> <span class="n">rich</span>
+</code></pre></div>
+<h2 id="usage">Usage</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># Note!</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">Spotify</span> <span class="n">client</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">running</span><span class="p">.</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">Alternatively</span> <span class="n">to</span> <span class="n">running</span> <span class="n">the</span> <span class="n">Spotify</span> <span class="n">client</span><span class="p">,</span> <span class="n">a</span> <span class="n">more</span> <span class="n">lightweight</span> <span class="n">spotifyd</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">could</span> <span class="n">be</span> <span class="n">used</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c"># Login</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">python</span> <span class="p">.\</span><span class="n">spotify-cli</span><span class="p">.</span><span class="n">py</span> <span class="n">login</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c"># Test Spotify connection</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c"># Ensure that &#39;Active: &#39; is true</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">python</span> <span class="p">.\</span><span class="n">spotify-cli</span><span class="p">.</span><span class="n">py</span> <span class="n">devices</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c"># Search something</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">python</span> <span class="p">.\</span><span class="n">spotify-cli</span><span class="p">.</span><span class="n">py</span> <span class="n">search</span> <span class="n">Fuel</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">1</span><span class="p">.</span> <span class="n">Fuel</span> <span class="n">by</span> <span class="n">Metallica</span> <span class="p">(</span><span class="n">URI</span><span class="p">:</span> <span class="n">spotify</span><span class="p">:</span><span class="n">track</span><span class="p">:</span><span class="n">6FUwPb4mGlUDbx42uspXaZ</span><span class="p">)</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="p">...</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c"># Play a song</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">python</span> <span class="n">spotify-cli</span><span class="p">.</span><span class="n">py</span> <span class="n">play</span> <span class="n">spotify</span><span class="p">:</span><span class="n">track</span><span class="p">:</span><span class="n">6FUwPb4mGlUDbx42uspXaZ</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">Playing</span> <span class="n">track</span><span class="p">:</span> <span class="n">spotify</span><span class="p">:</span><span class="n">track</span><span class="p">:</span><span class="n">6FUwPb4mGlUDbx42uspXaZ</span> <span class="n">on</span> <span class="n">device</span> <span class="p">..</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="n">Playing</span> <span class="n">Fuel</span> <span class="n">by</span> <span class="n">Metallica</span> <span class="err">━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>   <span class="n">5</span><span class="p">%</span>
+</code></pre></div>
+<h2 id="more-commands">More commands:</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">python</span> <span class="p">.\</span><span class="n">spotify-cli</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-help</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Usage</span><span class="p">:</span> <span class="n">spotify-cli</span><span class="p">.</span><span class="n">py</span> <span class="no">[OPTIONS] COMMAND [ARGS]</span><span class="p">...</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">Options</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  <span class="p">-</span><span class="n">-help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="n">and</span> <span class="n">exit</span><span class="p">.</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">Commands</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  <span class="n">devices</span>  <span class="n">List</span> <span class="n">available</span> <span class="n">Spotify</span> <span class="n">devices</span><span class="p">.</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  <span class="n">login</span>    <span class="n">Log</span> <span class="k">in</span> <span class="n">to</span> <span class="n">Spotify</span><span class="p">.</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  <span class="n">pause</span>    <span class="n">Pause</span> <span class="n">playback</span> <span class="n">on</span> <span class="n">Spotify</span><span class="p">.</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  <span class="n">play</span>     <span class="n">Play</span> <span class="n">a</span> <span class="n">track</span> <span class="n">on</span> <span class="n">Spotify</span><span class="p">.</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  <span class="n">resume</span>   <span class="n">Resume</span> <span class="n">playback</span> <span class="n">on</span> <span class="n">Spotify</span><span class="p">.</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  <span class="n">search</span>   <span class="n">Search</span> <span class="k">for</span> <span class="n">a</span> <span class="n">track</span> <span class="n">on</span> <span class="n">Spotify</span><span class="p">.</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  <span class="n">volume</span>   <span class="nb">Set </span><span class="n">the</span> <span class="n">volume</span> <span class="p">(</span><span class="n">0</span><span class="p">-</span><span class="n">100</span><span class="p">)</span> <span class="n">on</span> <span class="n">Spotify</span><span class="p">.</span>
 </code></pre></div>
 
 
@@ -3075,7 +3164,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-28T00:37:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-06-02T17:45:27+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-02</span>
   </span>
 
     
@@ -3085,7 +3174,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-03-28T23:16:32+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-03-28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-06-02T17:45:27+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-02</span>
   </span>
 
     
@@ -3138,16 +3227,16 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
       
-        <script src="../../../js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="../../../js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
-        <script src="../../../js/commits.js"></script>
+        <script src="../../js/commits.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
