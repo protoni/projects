@@ -26,7 +26,7 @@ source venv/Scripts/activate
 mkdocs serve
 
 # Open the browser and navigate to:
-http://127.0.0.1:8000/projects/
+http://localhost:8000/projects/
 
 ````
 

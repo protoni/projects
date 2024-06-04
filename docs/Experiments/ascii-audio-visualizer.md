@@ -1,4 +1,4 @@
-# Audio visualizer
+# ASCII Audio visualizer
 
 ## Description
 CLI Tools to test different methods of reading audio devices and visualizing the data.
