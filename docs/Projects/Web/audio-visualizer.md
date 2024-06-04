@@ -38,7 +38,7 @@ Here's some clips
 
 <dl>
   <video width="1024" height="480" controls>
-    <source src="https://i.imgur.com/TqTl0LP.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/bg24Oq4.mp4" type="video/mp4">
   </video>
 </dl>
 
