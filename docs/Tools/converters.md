@@ -1,4 +1,3 @@
-## Converter tools
 
 <div class="converter">
 
