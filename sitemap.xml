@@ -291,6 +291,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://protoni.github.io/projects/Tools/audio-visualizer/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://protoni.github.io/projects/Tools/converters/</loc>
          <lastmod>2024-06-05</lastmod>
          <changefreq>daily</changefreq>
