@@ -57,10 +57,12 @@ plugins:
 extra_css:
   - stylesheets/styles.css
   - stylesheets/commits.css
+  - stylesheets/converter.css
 
 # Add custom javascript components
 extra_javascript:
   - js/commits.js
+  - js/converter.js
 
 
 # Set md extensions

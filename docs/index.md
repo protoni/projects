@@ -16,6 +16,7 @@ docs/
     Links/        # Links that I find useful sometimes
     Notes/        # Various notes I have written or copy-pasted from somewhere
     Projects/     # Personal projects ( finished and unfinished, old and new )
+    Tools/        # Tools embedded into the website
     ...
 ````
 
