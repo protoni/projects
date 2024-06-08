@@ -58,12 +58,16 @@ extra_css:
   - stylesheets/styles.css
   - stylesheets/commits.css
   - stylesheets/converter.css
+  - stylesheets/threejs.css
 
 # Add custom javascript components
 extra_javascript:
   - js/commits.js
   - js/converter.js
-
+  - js/spectrogram.js
+  - https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js
+  - https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js
+  
 
 # Set md extensions
 markdown_extensions:
