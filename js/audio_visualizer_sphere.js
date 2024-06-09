@@ -4,6 +4,7 @@ uniform mat4 modelViewMatrix;
 uniform mat4 projectionMatrix;
 uniform float time;
 uniform sampler2D audioDataTexture;
+uniform float amplitudeFactor; // Add amplitudeFactor to uniforms
 
 attribute vec3 position;
 attribute vec2 uv;
@@ -24,20 +25,22 @@ void main() {
 
     // Ensure minimum scale value
     float minScale = 1.0; // Set your minimum scale value here
-    float finalScale = max(scale * (audioValue * 5.0), minScale);
+    float finalScale = max(scale * (audioValue * amplitudeFactor), minScale); // Use amplitudeFactor
 
-    mvPosition.xyz += position * finalScale; //scale * ( audioValue * 5.0 );
+    mvPosition.xyz += position * finalScale * amplitudeFactor;
     vUv = uv;
     vTranslateX = translate.x; // Pass translate X to the fragment shader
     gl_Position = projectionMatrix * mvPosition;
 }
 `;
 
+
 const fShader = `
 precision highp float;
 uniform sampler2D map;
 uniform sampler2D audioDataTexture;
-uniform bool hue;
+uniform bool useRgb;
+uniform float amplitudeFactor;
 
 varying vec2 vUv;
 varying float vScale;
@@ -64,7 +67,7 @@ void main() {
     // Sample audio data from the texture using vTranslateX to ensure uniqueness
     float audioIndex = mod(vTranslateX * 0.5 + 0.5, 1.0); // Map translate.x to [0, 1]
     float audioValue = texture2D(audioDataTexture, vec2(audioIndex, 0.0)).r;
-    audioValue *= 5.0;
+    audioValue *= 5.0 * amplitudeFactor;
 
     // Smooth transition by sampling neighboring audio values
     float leftValue = texture2D(audioDataTexture, vec2(max(audioIndex - 0.01, 0.0), 0.0)).r;
@@ -75,7 +78,7 @@ void main() {
     
     vec3 color = vec3(0.6667 - smoothedValue * 0.6667, 1.0, 0.5); 
 
-    if(hue) {
+    if(useRgb) {
         color = HSLtoRGB(color);
     }
 
@@ -85,20 +88,25 @@ void main() {
 }
 `;
 
-
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
     const container = document.getElementById("sphere-audio-container");
+    const overlayText = document.getElementById("overlay-text");
+    const audioInputText = document.getElementById("audio-input-text");
     const fullscreenButton = document.getElementById("fullscreen-button");
-    const useHueButton = document.getElementById("hue-button");
+    const useRgbButton = document.getElementById("rgb-button");
+    const increaseAmplitudeButton = document.getElementById("increase-amplitude");
+    const decreaseAmplitudeButton = document.getElementById("decrease-amplitude");
+    const audioInputSelect = document.getElementById("audio-input-select");
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 5000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
     camera.position.set(0, 25, 500);  // Increased distance for better view
     camera.lookAt(0, 0, 0);
-    var useHue = false;
+    let useRgb = false;
+    let amplitudeFactor = 1.0; // Initial amplitude factor
     const circleGeometry = new THREE.CircleGeometry(1, 6);
     const geometry = new THREE.InstancedBufferGeometry();
     geometry.index = circleGeometry.index;
@@ -131,7 +139,8 @@ document.addEventListener("DOMContentLoaded", function () {
             'map': { value: new THREE.TextureLoader().load('https://i.imgur.com/Fal8Boz.png') },
             'time': { value: 0.0 },
             'audioDataTexture': { value: audioDataTexture },
-            'hue': { value: useHue }
+            'useRgb': { value: useRgb },
+            'amplitudeFactor': { value: amplitudeFactor }
         },
         vertexShader: vShader,
         fragmentShader: fShader,
@@ -145,17 +154,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-    async function startAudioContext() {
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        const analyzer = audioContext.createAnalyser();
+    let audioContext, analyzer, dataArray, audioSource;
+
+    async function getAudioInputDevices() {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            stream.getTracks().forEach(track => track.stop());
+        } catch (err) {
+            console.error('Error accessing microphone for device enumeration:', err);
+        }
+
+        const devices = await navigator.mediaDevices.enumerateDevices();
+        const audioInputDevices = devices.filter(device => device.kind === 'audioinput');
+        console.log("devices: " + devices); // Debugging line to see available devices
+        audioInputSelect.innerHTML = audioInputDevices.map(device => `<option value="${device.deviceId}">${device.label || 'Unnamed Device'}</option>`).join('');
+        if (audioInputDevices.length > 0) {
+            audioInputText.style.display = 'none';
+        }
+    }
+
+    async function startAudioContext(deviceId) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        analyzer = audioContext.createAnalyser();
         analyzer.fftSize = 256;
 
         const bufferLength = analyzer.frequencyBinCount;
-        const dataArray = new Uint8Array(bufferLength);
+        dataArray = new Uint8Array(bufferLength);
 
         try {
-            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-            const audioSource = audioContext.createMediaStreamSource(stream);
+            const constraints = {
+                audio: {
+                    deviceId: deviceId ? { exact: deviceId } : undefined,
+                    echoCancellation: false,
+                    noiseSuppression: false,
+                    autoGainControl: false
+                }
+            };
+            const stream = await navigator.mediaDevices.getUserMedia(constraints);
+            audioSource = audioContext.createMediaStreamSource(stream);
             audioSource.connect(analyzer);
         } catch (err) {
             console.error('Error accessing the microphone', err);
@@ -202,18 +238,39 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Hue functionality
-    function toggleHue() {
-        useHue = !useHue;
-        material.uniforms['hue'].value = !material.uniforms['hue'].value;
-        audioDataTexture.needsUpdate = true;
-        console.log(useHue);
+    function toggleRgb() {
+        useRgb = !useRgb;
+        material.uniforms['useRgb'].value = useRgb;
+        console.log("Use rgb: " + useRgb);
     }
 
-    container.addEventListener('click', () => {
-        startAudioContext();
+    // Increase amplitude
+    function increaseAmplitude() {
+        amplitudeFactor += 0.1;
+        material.uniforms['amplitudeFactor'].value = amplitudeFactor;
+        console.log("New amplitudeFactor: " + amplitudeFactor);
+    }
+
+    // Decrease amplitude
+    function decreaseAmplitude() {
+        amplitudeFactor = Math.max(0.1, amplitudeFactor - 0.1); // Ensure amplitudeFactor doesn't go below 0.1
+        material.uniforms['amplitudeFactor'].value = amplitudeFactor;
+        console.log("New amplitudeFactor: " + amplitudeFactor);
+    }
+
+    container.addEventListener('click', async () => {
+        if (!audioContext) {
+            const selectedDeviceId = audioInputSelect.value;
+            await startAudioContext(selectedDeviceId);
+            overlayText.style.display = 'none';
+        }
     });
 
     fullscreenButton.addEventListener('click', toggleFullScreen);
-    useHueButton.addEventListener('click', toggleHue);
-    console.log("Click on the canvas to start the audio context.");
+    useRgbButton.addEventListener('click', toggleRgb);
+    increaseAmplitudeButton.addEventListener('click', increaseAmplitude);
+    decreaseAmplitudeButton.addEventListener('click', decreaseAmplitude);
+
+    // Populate audio input devices
+    await getAudioInputDevices();
 });
