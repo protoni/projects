@@ -1,0 +1,81 @@
+.inputs-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+textarea {
+    height: 300px; /* Match the height of the minimap */
+    width: 300px; /* Set a fixed width for the textarea */
+    margin-right: 20px;
+    font-family: monospace;
+    white-space: pre; /* Prevent auto-wrap */
+    overflow: auto; /* Add scrollbars */
+    background-color: #161616;
+}
+.diff-container {
+    display: flex;
+    font-family: monospace;
+    white-space: pre;
+    background-color: #161616;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+    max-height: 400px;
+    max-width: 800px;
+}
+.line-numbers {
+    text-align: right;
+    padding-right: 10px;
+    border-right: 1px solid #ccc;
+    margin-right: 10px;
+    color: #888;
+}
+.line-numbers div,
+.diff-lines div {
+    height: 1.2em;
+    line-height: 1.2em; /* Ensure line-height matches */
+}
+.diff-lines {
+    display: flex;
+    flex-direction: column;
+}
+.diff-line-added {
+    background-color: rgba(96, 224, 96, 0.2);
+    color: #3a7a3b;
+    display: block;
+}
+.diff-line-removed {
+    background-color:  rgba(224, 96, 96, 0.2);
+    color: #b31d28;
+    display: block;
+}
+.diff-line-unchanged {
+    display: block;
+}
+.minimap-container {
+    position: relative;
+    height: 300px; /* Fixed height */
+    width: 100px;
+    background-color: #a8a5a5;
+    overflow: hidden;
+    border: 1px solid #a8a5a5;
+    border-radius: 5px;
+    cursor: pointer; /* Change cursor to pointer */
+}
+.minimap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+.minimap-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+    pointer-events: none; /* Prevent interaction */
+    z-index: 1; /* Ensure overlay is below lines */
+}
