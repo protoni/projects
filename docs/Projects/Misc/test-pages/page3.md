@@ -1,6 +1,7 @@
-# Test page 1
+# Test page 2
 
-<div id="terrain-container"></div>
+
+
 
 ![Imgur](https://i.imgur.com/MuHssyw.jpg)
 <img src="https://i.imgur.com/lGGh4S6.jpg" alt="Description of image">

@@ -59,14 +59,19 @@ extra_css:
   - stylesheets/commits.css
   - stylesheets/converter.css
   - stylesheets/threejs.css
+  - stylesheets/terrain.css
+  - stylesheets/audio_visualizer_sphere.css
 
 # Add custom javascript components
 extra_javascript:
+  - js/terrain.js
   - js/commits.js
   - js/converter.js
   - js/spectrogram.js
+  - js/audio_visualizer_sphere.js
   - https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js
   - https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js
+  - https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js
   
 
 # Set md extensions
