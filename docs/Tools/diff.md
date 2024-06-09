@@ -1,5 +1,3 @@
-
-<h2>Statistics</h2>
 <div id="diffStats"></div>
 <div class="inputs-container">
     <textarea id="text1" placeholder="Enter first text..." rows="10" cols="50"></textarea>

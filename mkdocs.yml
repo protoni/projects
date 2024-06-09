@@ -52,7 +52,6 @@ plugins:
       enable_creation_date: true
       fallback_to_build_date: false
       type: timeago
-  - macros
 
 # Use custom css
 extra_css:
