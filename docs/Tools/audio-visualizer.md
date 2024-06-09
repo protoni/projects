@@ -12,10 +12,10 @@ Input device:
 <select id="audio-input-select"></select>
 <div id="audio-input-text">( Refresh page, if no input device is found. )</div>
 
-<button id="fullscreen-button">Toggle Fullscreen</button>
-<button id="rgb-button">Toggle RGB effect</button>
-<button id="increase-amplitude">Increase Amplitude</button>
-<button id="decrease-amplitude">Decrease Amplitude</button>
+<button id="fullscreen-button" class="control-button">Toggle Fullscreen</button>
+<button id="rgb-button" class="control-button">Toggle RGB effect</button>
+<button id="increase-amplitude" class="control-button">Increase Amplitude</button>
+<button id="decrease-amplitude" class="control-button">Decrease Amplitude</button>
 
 <div id="sphere-audio-container"></div>
 

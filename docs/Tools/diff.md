@@ -7,7 +7,7 @@
         <div id="minimapOverlay" class="minimap-overlay"></div>
     </div>
 </div>
-<button onclick="checkDiff()">Check Diff</button>
+<button onclick="checkDiff()" class="control-button">Check Diff</button>
 <div id="diffOutput" class="diff-container">
     <div class="line-numbers" id="lineNumbers"></div>
     <div class="diff-lines" id="diffLines"></div>
