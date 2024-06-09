@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const container = document.getElementById("threejs-container");
+    if (!container) {
+        console.log("No threejs-container found, skipping script execution.");
+        return; // Exit if the container is not found
+    }
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer();
@@ -138,11 +143,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             label.position.set((i / 4) * width - width / 2, -20, 0); // Position the label along the X-axis
             labels.add(label);
         }
-
-        // Add a time label
-        //const timeLabel = createTextLabel('Time', font);
-        //timeLabel.position.set(0, -20, -depth); // Position along the Z-axis
-        //labels.add(timeLabel);
 
         // Add an amplitude label
         const amplitudeLabel = createTextLabel('Amplitude', font);

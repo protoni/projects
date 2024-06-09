@@ -4,7 +4,7 @@ uniform mat4 modelViewMatrix;
 uniform mat4 projectionMatrix;
 uniform float time;
 uniform sampler2D audioDataTexture;
-uniform float amplitudeFactor; // Add amplitudeFactor to uniforms
+uniform float amplitudeFactor;
 
 attribute vec3 position;
 attribute vec2 uv;
@@ -12,7 +12,7 @@ attribute vec3 translate;
 
 varying vec2 vUv;
 varying float vScale;
-varying float vTranslateX; // Add varying for the translate X
+varying float vTranslateX;
 
 void main() {
     vec4 mvPosition = modelViewMatrix * vec4( translate, 1.0 );
@@ -23,17 +23,15 @@ void main() {
     vScale = scale;
     scale = scale * 10.0 + 10.0;
 
-    // Ensure minimum scale value
-    float minScale = 1.0; // Set your minimum scale value here
-    float finalScale = max(scale * (audioValue * amplitudeFactor), minScale); // Use amplitudeFactor
+    float minScale = 1.0;
+    float finalScale = max(scale * (audioValue * amplitudeFactor), minScale);
 
     mvPosition.xyz += position * finalScale * amplitudeFactor;
     vUv = uv;
-    vTranslateX = translate.x; // Pass translate X to the fragment shader
+    vTranslateX = translate.x;
     gl_Position = projectionMatrix * mvPosition;
 }
 `;
-
 
 const fShader = `
 precision highp float;
@@ -46,7 +44,6 @@ varying vec2 vUv;
 varying float vScale;
 varying float vTranslateX;
 
-// HSL to RGB Conversion helpers
 vec3 HUEtoRGB(float H){
     H = mod(H,1.0);
     float R = abs(H * 6.0 - 3.0) - 1.0;
@@ -64,19 +61,15 @@ vec3 HSLtoRGB(vec3 HSL){
 void main() {
     vec4 diffuseColor = texture2D( map, vUv );
 
-    // Sample audio data from the texture using vTranslateX to ensure uniqueness
-    float audioIndex = mod(vTranslateX * 0.5 + 0.5, 1.0); // Map translate.x to [0, 1]
+    float audioIndex = mod(vTranslateX * 0.5 + 0.5, 1.0);
     float audioValue = texture2D(audioDataTexture, vec2(audioIndex, 0.0)).r;
     audioValue *= 5.0 * amplitudeFactor;
 
-    // Smooth transition by sampling neighboring audio values
     float leftValue = texture2D(audioDataTexture, vec2(max(audioIndex - 0.01, 0.0), 0.0)).r;
     float rightValue = texture2D(audioDataTexture, vec2(min(audioIndex + 0.01, 1.0), 0.0)).r;
     float smoothedValue = (audioValue + leftValue + rightValue) / 3.0;
 
-    // Correct mapping from blue to red
-    
-    vec3 color = vec3(0.6667 - smoothedValue * 0.6667, 1.0, 0.5); 
+    vec3 color = vec3(0.6667 - smoothedValue * 0.6667, 1.0, 0.5);
 
     if(useRgb) {
         color = HSLtoRGB(color);
@@ -90,6 +83,11 @@ void main() {
 
 document.addEventListener("DOMContentLoaded", async function () {
     const container = document.getElementById("sphere-audio-container");
+    if (!container) {
+        console.log("No sphere audio container found, skipping script execution.");
+        return; // Exit if the container is not found
+    }
+
     const overlayText = document.getElementById("overlay-text");
     const audioInputText = document.getElementById("audio-input-text");
     const fullscreenButton = document.getElementById("fullscreen-button");
@@ -103,34 +101,32 @@ document.addEventListener("DOMContentLoaded", async function () {
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    camera.position.set(0, 25, 500);  // Increased distance for better view
+    camera.position.set(0, 25, 500);
     camera.lookAt(0, 0, 0);
     let useRgb = false;
-    let amplitudeFactor = 1.0; // Initial amplitude factor
+    let amplitudeFactor = 1.0;
     const circleGeometry = new THREE.CircleGeometry(1, 6);
     const geometry = new THREE.InstancedBufferGeometry();
     geometry.index = circleGeometry.index;
     geometry.attributes = circleGeometry.attributes;
 
-    const particleCount = 750; // Increased particle count
+    const particleCount = 750;
     const translateArray = new Float32Array(particleCount * 3);
 
-    // Distribute particles in a uniform grid with some randomness
     let index = 0;
     const gridSize = Math.cbrt(particleCount);
     for (let x = 0; x < gridSize; x++) {
         for (let y = 0; y < gridSize; y++) {
             for (let z = 0; z < gridSize; z++) {
-                translateArray[index++] = (x / gridSize - 0.5) * 1000 + (Math.random() - 0.5) * 250; // X
-                translateArray[index++] = (y / gridSize - 0.5) * 1000 + (Math.random() - 0.5) * 250; // Y
-                translateArray[index++] = (z / gridSize - 0.5) * 1000 + (Math.random() - 0.5) * 250; // Z
+                translateArray[index++] = (x / gridSize - 0.5) * 1000 + (Math.random() - 0.5) * 250;
+                translateArray[index++] = (y / gridSize - 0.5) * 1000 + (Math.random() - 0.5) * 250;
+                translateArray[index++] = (z / gridSize - 0.5) * 1000 + (Math.random() - 0.5) * 250;
             }
         }
     }
 
     geometry.setAttribute('translate', new THREE.InstancedBufferAttribute(translateArray, 3));
 
-    // Create a texture for audio data
     const audioDataTexture = new THREE.DataTexture(new Uint8Array(128), 128, 1, THREE.LuminanceFormat);
     audioDataTexture.needsUpdate = true;
 
@@ -166,7 +162,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         const devices = await navigator.mediaDevices.enumerateDevices();
         const audioInputDevices = devices.filter(device => device.kind === 'audioinput');
-        console.log("devices: " + devices); // Debugging line to see available devices
+        console.log("devices: " + devices); 
         audioInputSelect.innerHTML = audioInputDevices.map(device => `<option value="${device.deviceId}">${device.label || 'Unnamed Device'}</option>`).join('');
         if (audioInputDevices.length > 0) {
             audioInputText.style.display = 'none';
@@ -202,7 +198,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             analyzer.getByteFrequencyData(dataArray);
 
-            // Update the audio data texture
             audioDataTexture.image.data.set(dataArray);
             audioDataTexture.needsUpdate = true;
 
@@ -226,7 +221,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
-    // Fullscreen functionality
     function toggleFullScreen() {
         if (!document.fullscreenElement) {
             container.requestFullscreen().catch(err => {
@@ -237,23 +231,20 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-    // Hue functionality
     function toggleRgb() {
         useRgb = !useRgb;
         material.uniforms['useRgb'].value = useRgb;
         console.log("Use rgb: " + useRgb);
     }
 
-    // Increase amplitude
     function increaseAmplitude() {
         amplitudeFactor += 0.1;
         material.uniforms['amplitudeFactor'].value = amplitudeFactor;
         console.log("New amplitudeFactor: " + amplitudeFactor);
     }
 
-    // Decrease amplitude
     function decreaseAmplitude() {
-        amplitudeFactor = Math.max(0.1, amplitudeFactor - 0.1); // Ensure amplitudeFactor doesn't go below 0.1
+        amplitudeFactor = Math.max(0.1, amplitudeFactor - 0.1);
         material.uniforms['amplitudeFactor'].value = amplitudeFactor;
         console.log("New amplitudeFactor: " + amplitudeFactor);
     }
@@ -271,6 +262,5 @@ document.addEventListener("DOMContentLoaded", async function () {
     increaseAmplitudeButton.addEventListener('click', increaseAmplitude);
     decreaseAmplitudeButton.addEventListener('click', decreaseAmplitude);
 
-    // Populate audio input devices
     await getAudioInputDevices();
 });
