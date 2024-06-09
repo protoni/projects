@@ -21,7 +21,12 @@ void main() {
     float audioValue = texture2D(audioDataTexture, vec2(audioIndex, 0.0)).r;
     vScale = scale;
     scale = scale * 10.0 + 10.0;
-    mvPosition.xyz += position * scale * ( audioValue * 5.0 );
+
+    // Ensure minimum scale value
+    float minScale = 1.0; // Set your minimum scale value here
+    float finalScale = max(scale * (audioValue * 5.0), minScale);
+
+    mvPosition.xyz += position * finalScale; //scale * ( audioValue * 5.0 );
     vUv = uv;
     vTranslateX = translate.x; // Pass translate X to the fragment shader
     gl_Position = projectionMatrix * mvPosition;
