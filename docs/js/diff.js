@@ -55,6 +55,10 @@ function diffStrings(oldStr, newStr) {
 
 function drawMinimap(lineHeights) {
     const canvas = document.getElementById('minimap');
+    if (!canvas) {
+        return;
+    }
+
     const context = canvas.getContext('2d');
     const minimapContainerHeight = 300;
     const minimapContainerWidth = 100;
@@ -101,6 +105,10 @@ function updateMinimapOverlay() {
     const diffContainer = document.getElementById('diffOutput');
     const minimapContainer = document.getElementById('minimapContainer');
     const minimapOverlay = document.getElementById('minimapOverlay');
+    if (!diffContainer || !minimapContainer || !minimapOverlay) {
+        return;
+    }
+
     const totalLines = diffContainer.scrollHeight;
     const visibleLines = diffContainer.clientHeight;
 
@@ -111,36 +119,50 @@ function updateMinimapOverlay() {
     minimapOverlay.style.top = `${overlayTop}px`;
 }
 
-document.getElementById('diffOutput').addEventListener('scroll', updateMinimapOverlay);
-
-document.getElementById('minimapContainer').addEventListener('mousedown', (e) => {
+document.addEventListener('DOMContentLoaded', function () {
+    const diffOutput = document.getElementById('diffOutput');
     const minimapContainer = document.getElementById('minimapContainer');
-    const diffContainer = document.getElementById('diffOutput');
-    const totalLines = diffContainer.scrollHeight;
-
-    const offsetY = e.clientY - minimapContainer.getBoundingClientRect().top;
-    const newScrollTop = (offsetY / minimapContainer.clientHeight) * totalLines;
-
-    diffContainer.scrollTop = newScrollTop;
-
-    function onMouseMove(e) {
-        const offsetY = e.clientY - minimapContainer.getBoundingClientRect().top;
-        const newScrollTop = (offsetY / minimapContainer.clientHeight) * totalLines;
-        diffContainer.scrollTop = newScrollTop;
+    
+    if (diffOutput) {
+        diffOutput.addEventListener('scroll', updateMinimapOverlay);
     }
 
-    function onMouseUp() {
-        document.removeEventListener('mousemove', onMouseMove);
-        document.removeEventListener('mouseup', onMouseUp);
-    }
+    if (minimapContainer) {
+        minimapContainer.addEventListener('mousedown', (e) => {
+            const diffContainer = document.getElementById('diffOutput');
+            if (!diffContainer) return;
 
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
+            const totalLines = diffContainer.scrollHeight;
+            const offsetY = e.clientY - minimapContainer.getBoundingClientRect().top;
+            const newScrollTop = (offsetY / minimapContainer.clientHeight) * totalLines;
+
+            diffContainer.scrollTop = newScrollTop;
+
+            function onMouseMove(e) {
+                const offsetY = e.clientY - minimapContainer.getBoundingClientRect().top;
+                const newScrollTop = (offsetY / minimapContainer.clientHeight) * totalLines;
+                diffContainer.scrollTop = newScrollTop;
+            }
+
+            function onMouseUp() {
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('mouseup', onMouseUp);
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+        });
+    }
 });
 
 function checkDiff() {
-    const text1 = document.getElementById('text1').value;
-    const text2 = document.getElementById('text2').value;
+    const text1 = document.getElementById('text1');
+    const text2 = document.getElementById('text2');
+    
+    if (!text1 || !text2) {
+        console.log("Textareas for diff check not found");
+        return;
+    }
 
-    diffStrings(text1, text2);
+    diffStrings(text1.value, text2.value);
 }

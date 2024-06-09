@@ -12,6 +12,6 @@
     <div class="line-numbers" id="lineNumbers"></div>
     <div class="diff-lines" id="diffLines"></div>
 </div>
-<script src="../js/diff.js"></script>
-<link rel="stylesheet" href="../stylesheets/diff.css">
+<!--<script src="../js/diff.js"></script>-->
+<!--<link rel="stylesheet" href="../stylesheets/diff.css">-->
 <script src="https://cdn.jsdelivr.net/npm/diff@5.0.0/dist/diff.min.js"></script>

@@ -57,7 +57,22 @@ function clearFields() {
     document.getElementById('unicodeInput').value = '';
 }
 
-document.getElementById('decimalInput').addEventListener('input', updateFromDecimal);
-document.getElementById('hexadecimalInput').addEventListener('input', updateFromHexadecimal);
-document.getElementById('binaryInput').addEventListener('input', updateFromBinary);
-document.getElementById('asciiInput').addEventListener('input', updateFromAscii);
+document.addEventListener('DOMContentLoaded', function() {
+    const decimalInput = document.getElementById('decimalInput');
+    const hexadecimalInput = document.getElementById('hexadecimalInput');
+    const binaryInput = document.getElementById('binaryInput');
+    const asciiInput = document.getElementById('asciiInput');
+
+    if (decimalInput) {
+        decimalInput.addEventListener('input', updateFromDecimal);
+    }
+    if (hexadecimalInput) {
+        hexadecimalInput.addEventListener('input', updateFromHexadecimal);
+    }
+    if (binaryInput) {
+        binaryInput.addEventListener('input', updateFromBinary);
+    }
+    if (asciiInput) {
+        asciiInput.addEventListener('input', updateFromAscii);
+    }
+});
