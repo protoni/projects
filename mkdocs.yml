@@ -52,6 +52,7 @@ plugins:
       enable_creation_date: true
       fallback_to_build_date: false
       type: timeago
+  - macros
 
 # Use custom css
 extra_css:
@@ -61,6 +62,7 @@ extra_css:
   - stylesheets/threejs.css
   - stylesheets/terrain.css
   - stylesheets/audio_visualizer_sphere.css
+  - stylesheets/diff.css
 
 # Add custom javascript components
 extra_javascript:
@@ -69,6 +71,7 @@ extra_javascript:
   - js/converter.js
   - js/spectrogram.js
   - js/audio_visualizer_sphere.js
+  - js/diff.js
   - https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js
   - https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js
   - https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js
