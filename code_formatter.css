@@ -1,0 +1,147 @@
+.formatter-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.formatter-container .controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.formatter-container .controls select,
+.formatter-container .controls label,
+.formatter-container .controls input[type="number"],
+.formatter-container .controls button {
+    margin-right: 10px;
+}
+
+.formatter-container .file-drop {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+.formatter-container .file-drop input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.formatter-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.formatter-container {
+    width: 100%;
+    overflow: auto;
+}
+
+.formatted-code-container {
+    width: 100%;
+    overflow: auto;
+    background-color: #161616;
+    border: none;
+}
+
+#formattedCodeBlock {
+    background-color: #161616;
+    font-family: monospace;
+    text-shadow: 0 0 0.5em #000;
+    border: none;
+}
+
+#__code_0 {
+    background-color: #161616;
+    border: none;
+    font-family: monospace;
+    text-shadow: 0 0 0.5em #000;
+}
+
+.line-numbers {
+    text-align: right;
+    padding-right: 10px;
+    border-right: 1px solid #ccc;
+    margin-right: 10px;
+    color: #888;
+    border: none;
+}
+
+.formatter-container {
+    padding: 10px;
+}
+
+.formatter-container pre {
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 16px;
+    position: relative;
+    counter-reset: linenumber;
+}
+
+.formatter-container .line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+.formatter-container .line-numbers > code {
+    position: relative;
+}
+
+.formatter-container .line-numbers > code > .line-highlight {
+    display: block;
+    counter-increment: linenumber;
+}
+
+.formatter-container .line-numbers > code > .line-highlight::before {
+    content: counter(linenumber);
+    position: absolute;
+    left: -3.8em;
+    width: 3em;
+    text-align: right;
+    color: #888;
+    border-right: 1px solid #ddd;
+    padding-right: 0.8em;
+    user-select: none;
+}
+
+/* Visualize spaces and tabs */
+.formatter-container code .space::before {
+    content: '•';
+    color: #ccc;
+    font-size: 0.8em;
+}
+
+.formatter-container code .tab::before {
+    content: '→';
+    color: #ccc;
+    font-size: 1.2em;
+}
+
+#codeInput {
+    width: 100%;
+    height: 400px;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

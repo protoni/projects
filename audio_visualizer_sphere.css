@@ -13,7 +13,7 @@ canvas {
     height: 100%;
 }
 
-button {
+.control-button {
     padding: 1px 1px;
     margin: 5px;
     font-size: 12px;
