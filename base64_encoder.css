@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 10;
     background-color: #1E1E1E;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .base64-encoder-decoder button {
-    padding: 10px 20px;
+    padding: 10px;
     font-size: 16px;
     cursor: pointer;
     border: none;
@@ -69,7 +69,7 @@
 
 .base64-encoder-decoder .file-drop {
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     border: 1px dashed #ccc;
     border-radius: 5px;
     text-align: center;
