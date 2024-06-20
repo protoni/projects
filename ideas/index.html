@@ -1,0 +1,5620 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://protoni.github.io/projects/ideas/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Experiments/ascii-audio-visualizer/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Ideas - Protoni's site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/timeago.css">
+    
+      <link rel="stylesheet" href="../stylesheets/styles.css">
+    
+      <link rel="stylesheet" href="../stylesheets/commits.css">
+    
+      <link rel="stylesheet" href="../stylesheets/converter.css">
+    
+      <link rel="stylesheet" href="../stylesheets/threejs.css">
+    
+      <link rel="stylesheet" href="../stylesheets/terrain.css">
+    
+      <link rel="stylesheet" href="../stylesheets/audio_visualizer_sphere.css">
+    
+      <link rel="stylesheet" href="../stylesheets/diff.css">
+    
+      <link rel="stylesheet" href="../stylesheets/code_formatter.css">
+    
+      <link rel="stylesheet" href="../stylesheets/base64_encoder.css">
+    
+      <link rel="stylesheet" href="../stylesheets/generators.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-coy.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#description" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Protoni&#39;s site" class="md-header__button md-logo" aria-label="Protoni's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Protoni's site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ideas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="lime"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/protoni/projects" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    protoni/projects
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Protoni&#39;s site" class="md-nav__button md-logo" aria-label="Protoni's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Protoni's site
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/protoni/projects" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    protoni/projects
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Ideas
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Ideas
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of Ideas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="List of Ideas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electronics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electronics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Games
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vehicles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vehicles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-audio-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web audio visualizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ascii-audio-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ASCII audio visualizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-base64-encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Base64 encoder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-code-formatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web code formatter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-diff-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web diff tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-generator-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web generator tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-gpg-checker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web gpg checker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-binary-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web binary converter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-zip-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web zip tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-shared-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web shared canvas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-raylib" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web raylib
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-3d-image-showroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web 3d image showroom
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-component-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web component storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-item-storage-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web item storage v2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-info-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web info page
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-project-creator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web project creator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-ideas-git-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web ideas GIT page
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trello-power-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trello power-up
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gatsby-static-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gatsby static website
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electronics-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electronics visualizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-3d-commit-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web 3d commit view
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-landing-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web landing page
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dead-link-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dead link finder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-setup-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      OS setup scripts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spotify-cli-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spotify CLI tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markdown tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binance-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binance analyzer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crypto-tax-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crypto tax tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binance-trader-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binance trader bot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpaca-trader-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alpaca trader bot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-crawler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web crawler
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-sonarqube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker sonarqube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-cpp-cmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker cpp cmake
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-opengl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker OpenGL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-opengl-x-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker OpenGL x-build
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GUI Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gui-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-port-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local port monitor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Window renderer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crop-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crop tool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electronics-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electronics Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Electronics Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stm32f4-zephyr-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      STM32F4 Zephyr setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacitive-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capacitive keyboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp32-handheld-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP32 handheld console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kicad-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kicad API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homeassistant-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homeassistant setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osd3358-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      OSD3358 board
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osd3358-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      OSD3358 interfaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phone-hw-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phone HW extension
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp32-bus-sniffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP32 BUS sniffer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-matrix-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED matrix display
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-matrix-display-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED matrix display v2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-sphere-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED sphere display
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arduino-usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino USB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smart-watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smart watch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflow-oven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflow oven
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stm32-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      STM32 template
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphics-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphics Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom renderer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-opengl-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test OpenGL API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-vulkan-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Vulkan API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-wow-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export WoW models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#firebase-realtime-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firebase realtime DB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nakama-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nakama backend
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beaglebone-yocto" class="md-nav__link">
+    <span class="md-ellipsis">
+      BeagleBone Yocto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diy-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      DIY Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arch Linux
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#games-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Games Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Games Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wow-dispel-addon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wow dispel addon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wow-gui-addon-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wow GUI addon template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feldewar-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feldewar game
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vehicles-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vehicles Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vehicles Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rd350-restoration" class="md-nav__link">
+    <span class="md-ellipsis">
+      RD350 restoration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rd350-hybrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      RD350 hybrid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#car-ev-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Car EV conversion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ev-atv" class="md-nav__link">
+    <span class="md-ellipsis">
+      EV ATV
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Experiments
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Experiments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiments/ascii-audio-visualizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASCII Audio visualizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiments/md-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiments/raylib-wasm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raylib wasm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiments/spotify-cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spotify CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiments/stm32f4-zephyr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STM32f4 Zephyr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Links
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Links
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Links/resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Links/tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Android
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/cryptocurrency/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptocurrency
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/databases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/editors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Editors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/electronics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electronics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/home-assistant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home assistant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/web-dev/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web dev
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/wsl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wsl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_15" id="__nav_5_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Embedded linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_15">
+            <span class="md-nav__icon md-icon"></span>
+            Embedded linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/embedded-linux/beaglebone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beaglebone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/embedded-linux/beaglebone_yocto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yocto kirkstone image for BeagleBone Black
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/embedded-linux/diy-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DIY Linux for BeagleBone Black
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/embedded-linux/osd3358/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Osd3358
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/embedded-linux/raspberry-pi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry pi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/embedded-linux/yocto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yocto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_16" id="__nav_5_16_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Game dev
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_16">
+            <span class="md-nav__icon md-icon"></span>
+            Game dev
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/game-dev/blender/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blender
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/game-dev/houdini/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Houdini
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/game-dev/servers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Servers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/game-dev/unreal-engine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unreal engine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Electronics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Electronics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Electronics/led-display/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Led display
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Led display
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Electronics/osd3358-linux/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Osd3358 linux
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Osd3358 linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Electronics/osd3358-linux-and-click-boards/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Osd3358 linux and click boards
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Osd3358 linux and click boards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Electronics/phone-extension/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Phone extension
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Phone extension
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Electronics/stm32-breakout-board/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Stm32 breakout board
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Stm32 breakout board
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Graphics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Graphics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Graphics/custom-graphics-renderer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Custom graphics renderer
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Custom graphics renderer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Graphics/opengl-experiments/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Opengl experiments
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Opengl experiments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Graphics/vulkan-experiments/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Vulkan experiments
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vulkan experiments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Graphics/wow-model-export/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Wow model export
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Wow model export
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projects/Linux/beaglebone_yocto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yocto Linux for BeagleBone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projects/Linux/diy-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DIY Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Linux/install-arch-linux/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Install arch linux
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Install arch linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Misc/all-the-mods/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    All the mods
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            All the mods
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Misc/home-assistant/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home assistant
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Home assistant
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Misc/old-projects/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Old projects
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Old projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_4" id="__nav_6_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Test pages
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Test pages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projects/Misc/test-pages/page2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test page 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projects/Misc/test-pages/page3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test page 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Misc/wow-addons/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Wow addons
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Wow addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Motorcycles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Motorcycles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Motorcycles/rd350/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Rd350
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Rd350
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projects/Web/audio-visualizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Audio visualizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projects/Web/git-pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Web/component-storage/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Component storage
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Component storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Web/component-storage-update/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Component storage update
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Component storage update
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6_5" id="__nav_6_6_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Old gatsby site
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Old gatsby site
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_5_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Web/old-gatsby-site/initial-commit/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Initial commit
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_6_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Initial commit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_5_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Web/old-gatsby-site/setup-gatsby-site/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Setup gatsby site
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_6_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Setup gatsby site
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_5_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Web/old-gatsby-site/site-in-development/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Site in development
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_6_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Site in development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_5_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Projects/Web/old-gatsby-site/website-update/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Website update
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_6_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Website update
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/audio-visualizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Audio visualizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/base64-encoder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base64 encoder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/code-formatter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code formatter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/converters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Converters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/diff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/generators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of Ideas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="List of Ideas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electronics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electronics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Games
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vehicles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vehicles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-audio-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web audio visualizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ascii-audio-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ASCII audio visualizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-base64-encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Base64 encoder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-code-formatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web code formatter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-diff-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web diff tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-generator-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web generator tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-gpg-checker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web gpg checker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-binary-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web binary converter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-zip-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web zip tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-shared-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web shared canvas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-raylib" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web raylib
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-3d-image-showroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web 3d image showroom
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-component-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web component storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-item-storage-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web item storage v2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-info-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web info page
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-project-creator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web project creator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-ideas-git-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web ideas GIT page
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trello-power-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trello power-up
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gatsby-static-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gatsby static website
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electronics-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electronics visualizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-3d-commit-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web 3d commit view
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-landing-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web landing page
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dead-link-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dead link finder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-setup-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      OS setup scripts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spotify-cli-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spotify CLI tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markdown tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binance-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binance analyzer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crypto-tax-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crypto tax tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binance-trader-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binance trader bot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpaca-trader-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alpaca trader bot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-crawler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web crawler
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-sonarqube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker sonarqube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-cpp-cmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker cpp cmake
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-opengl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker OpenGL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-opengl-x-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker OpenGL x-build
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GUI Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gui-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-port-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local port monitor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Window renderer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crop-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crop tool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electronics-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electronics Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Electronics Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stm32f4-zephyr-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      STM32F4 Zephyr setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacitive-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capacitive keyboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp32-handheld-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP32 handheld console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kicad-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kicad API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homeassistant-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homeassistant setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osd3358-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      OSD3358 board
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osd3358-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      OSD3358 interfaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phone-hw-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phone HW extension
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp32-bus-sniffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP32 BUS sniffer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-matrix-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED matrix display
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-matrix-display-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED matrix display v2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-sphere-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED sphere display
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arduino-usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino USB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smart-watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smart watch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflow-oven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflow oven
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stm32-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      STM32 template
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphics-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphics Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom renderer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-opengl-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test OpenGL API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-vulkan-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Vulkan API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-wow-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export WoW models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#firebase-realtime-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firebase realtime DB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nakama-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nakama backend
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beaglebone-yocto" class="md-nav__link">
+    <span class="md-ellipsis">
+      BeagleBone Yocto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diy-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      DIY Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arch Linux
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#games-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Games Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Games Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wow-dispel-addon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wow dispel addon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wow-gui-addon-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wow GUI addon template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feldewar-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feldewar game
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vehicles-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vehicles Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vehicles Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rd350-restoration" class="md-nav__link">
+    <span class="md-ellipsis">
+      RD350 restoration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rd350-hybrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      RD350 hybrid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#car-ev-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Car EV conversion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ev-atv" class="md-nav__link">
+    <span class="md-ellipsis">
+      EV ATV
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/protoni/projects/edit/main/docs/ideas.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Ideas</h1>
+
+<h2 id="description">Description</h2>
+<p>New, started and finished project ideas. Some are realistic, some aren't. Could be original 
+ideas or ideas to modify/expand existing projects</p>
+<p>Use ( + ) sign on the left to skip to description at the bottom of the page</p>
+<h2 id="list-of-ideas">List of Ideas</h2>
+<!--<span style="color: red;">[Project Idea 1](#project-idea-1) - description.</span>-->
+
+<h5 id="web">Web</h5>
+<p><a href="#idea-0001">+</a> Web audio visualizer ... ( <a href="https://protoni.fi/Tools/audio-visualizer/">https://protoni.fi/Tools/audio-visualizer/</a> )</p>
+<p><a href="#idea-0002">+</a> ASCII audio visualizer . ( <a href="https://protoni.fi/Projects/Web/audio-visualizer/">https://protoni.fi/Projects/Web/audio-visualizer/</a> )</p>
+<p><a href="#idea-0003">+</a> Web Base64 encoder ..... ( <a href="https://protoni.fi/Tools/base64-encoder/">https://protoni.fi/Tools/base64-encoder/</a> )</p>
+<p><a href="#idea-0004">+</a> Web code formatter ..... ( <a href="https://protoni.fi/Tools/code-formatter/">https://protoni.fi/Tools/code-formatter/</a> )</p>
+<p><a href="#idea-0005">+</a> Web diff tool .......... ( <a href="https://protoni.fi/Tools/diff/">https://protoni.fi/Tools/diff/</a> )</p>
+<p><a href="#idea-0006">+</a> Web generator tools .... ( <a href="https://protoni.fi/Tools/generators/">https://protoni.fi/Tools/generators/</a> )</p>
+<p><a href="#idea-0007">+</a> Web gpg checker ........ ( Exists locally somewhere )</p>
+<p><a href="#idea-0008">+</a> Web binary converter ... ( <a href="https://protoni.fi/Tools/converters/">https://protoni.fi/Tools/converters/</a> )</p>
+<p><a href="#idea-0009">+</a> Web zip tool ........... ( Exists locally somewhere )</p>
+<p><a href="#idea-0010">+</a> Web shared canvas ...... ( Exists locally somewhere )</p>
+<p><a href="#idea-0011">+</a> Web raylib ............. ( <a href="https://protoni.fi/Experiments/raylib-wasm/">https://protoni.fi/Experiments/raylib-wasm/</a> )</p>
+<p><a href="#idea-0012">+</a> Web 3d image showroom .. ( Exists locally somewhere )</p>
+<p><a href="#idea-0013">+</a> Web component storage .. ( <a href="https://protoni.fi/Projects/Web/component-storage/">https://protoni.fi/Projects/Web/component-storage/</a> )</p>
+<p><a href="#idea-0014">+</a> Web item storage v2 .... ( Exists locally somewhere )</p>
+<p><a href="#idea-0015">+</a> Web info page .......... ( <a href="https://github.com/protoni/info-screen">https://github.com/protoni/info-screen</a> )</p>
+<p><a href="#idea-0016">+</a> Web project creator .... ( )</p>
+<p><a href="#idea-0017">+</a> Web ideas GIT page ..... ( )</p>
+<p><a href="#idea-0018">+</a> Trello power-up ........ ( <a href="https://github.com/protoni/progress-power-up">https://github.com/protoni/progress-power-up</a> )</p>
+<p><a href="#idea-0019">+</a> Gatsby static website .. ( offline )</p>
+<p><a href="#idea-0020">+</a> Electronics visualizer . ( )</p>
+<p><a href="#idea-0021">+</a> Web 3d commit view ..... ( <a href="https://protoni.fi/Projects/Misc/test-pages/page2/">https://protoni.fi/Projects/Misc/test-pages/page2/</a> )</p>
+<p><a href="#idea-0022">+</a> Web landing page ....... ( <a href="https://github.com/protoni/landing-page">https://github.com/protoni/landing-page</a> )</p>
+<h5 id="cli">CLI</h5>
+<p><a href="#idea-0100">+</a> Dead link finder ....... ( Exists locally somewhere )</p>
+<p><a href="#idea-0101">+</a> OS setup scripts ....... ( <a href="https://github.com/protoni/configs">https://github.com/protoni/configs</a> )</p>
+<p><a href="#idea-0102">+</a> Spotify CLI tool ....... ( Exists locally somewhere )</p>
+<p><a href="#idea-0103">+</a> Markdown tools ......... ( <a href="https://github.com/protoni/md-converter">https://github.com/protoni/md-converter</a> )</p>
+<p><a href="#idea-0104">+</a> Binance analyzer ....... ( <a href="https://github.com/protoni/binance-market-analyzer">https://github.com/protoni/binance-market-analyzer</a> )</p>
+<p><a href="#idea-0105">+</a> Crypto tax tools ....... ( <a href="https://github.com/protoni/crypto-tax-tools">https://github.com/protoni/crypto-tax-tools</a> )</p>
+<p><a href="#idea-0106">+</a> Binance trader bot ..... ( <a href="https://github.com/protoni/binance-trader">https://github.com/protoni/binance-trader</a> )</p>
+<p><a href="#idea-0107">+</a> Alpaca trader bot ...... ( <a href="https://github.com/protoni/alpaca-trading-bot">https://github.com/protoni/alpaca-trading-bot</a> )</p>
+<p><a href="#idea-0108">+</a> Web crawler ............ ( <a href="https://github.com/protoni/crawler">https://github.com/protoni/crawler</a> )</p>
+<h5 id="docker">Docker</h5>
+<p><a href="#idea-0200">+</a> Docker sonarqube ....... ( <a href="https://github.com/protoni/sonarqube-docker">https://github.com/protoni/sonarqube-docker</a> )</p>
+<p><a href="#idea-0201">+</a> Docker cpp cmake ....... ( <a href="https://github.com/protoni/cpp-cmake-devcontainer">https://github.com/protoni/cpp-cmake-devcontainer</a> )</p>
+<p><a href="#idea-0202">+</a> Docker OpenGL .......... ( Exists locally somewhere )</p>
+<p><a href="#idea-0203">+</a> Docker OpenGL x-build .. ( Exists locally somewhere )</p>
+<h5 id="gui">GUI</h5>
+<p><a href="#idea-0300">+</a> GUI editor ............. ( Exists locally somewhere )</p>
+<p><a href="#idea-0301">+</a> Local port monitor ..... ( Exists locally somewhere )</p>
+<p><a href="#idea-0302">+</a> Window renderer ........ ( <a href="https://github.com/protoni/window-renderer">https://github.com/protoni/window-renderer</a> )</p>
+<p><a href="#idea-0303">+</a> Crop tool .............. ( <a href="https://github.com/protoni/crop-tool">https://github.com/protoni/crop-tool</a> )</p>
+<h5 id="electronics">Electronics</h5>
+<p><a href="#idea-0400">+</a> STM32F4 Zephyr setup ... ( Not started )</p>
+<p><a href="#idea-0401">+</a> Capacitive keyboard .... ( Exists locally somewhere )</p>
+<p><a href="#idea-0402">+</a> ESP32 handheld console . ( )</p>
+<p><a href="#idea-0403">+</a> Kicad API .............. ( Not started )</p>
+<p><a href="#idea-0404">+</a> Homeassistant setup .... ( Not started )</p>
+<p><a href="#idea-0405">+</a> OSD3358 board .......... ( <a href="https://protoni.fi/Projects/Electronics/osd3358-linux/">https://protoni.fi/Projects/Electronics/osd3358-linux/</a> )</p>
+<p><a href="#idea-0406">+</a> OSD3358 interfaces ..... ( <a href="https://protoni.fi/Projects/Electronics/osd3358-linux-and-click-boards/">https://protoni.fi/Projects/Electronics/osd3358-linux-and-click-boards/</a> )</p>
+<p><a href="#idea-0407">+</a> Phone HW extension ..... ( <a href="https://protoni.fi/Projects/Electronics/phone-extension/">https://protoni.fi/Projects/Electronics/phone-extension/</a> )</p>
+<p><a href="#idea-0408">+</a> ESP32 BUS sniffer ...... ( )</p>
+<p><a href="#idea-0409">+</a> LED matrix display ..... ( <a href="https://protoni.fi/Projects/Electronics/led-display/">https://protoni.fi/Projects/Electronics/led-display/</a> )</p>
+<p><a href="#idea-0410">+</a> LED matrix display v2 .. ( )</p>
+<p><a href="#idea-0411">+</a> LED sphere display ..... ( )</p>
+<p><a href="#idea-0412">+</a> Arduino USB ............ ( <a href="https://github.com/protoni/android-usb">https://github.com/protoni/android-usb</a> )</p>
+<p><a href="#idea-0413">+</a> Smart watch ............ ( )</p>
+<p><a href="#idea-0414">+</a> Reflow oven ............ ( )</p>
+<p><a href="#idea-0415">+</a> STM32 template ......... ( <a href="https://protoni.fi/Projects/Electronics/stm32-breakout-board/">https://protoni.fi/Projects/Electronics/stm32-breakout-board/</a> )</p>
+<h5 id="graphics">Graphics</h5>
+<p><a href="#idea-0500">+</a> Custom renderer ........ ( <a href="https://protoni.fi/Projects/Graphics/custom-graphics-renderer/">https://protoni.fi/Projects/Graphics/custom-graphics-renderer/</a> )</p>
+<p><a href="#idea-0501">+</a> Test OpenGL API ........ ( <a href="https://protoni.fi/Projects/Graphics/opengl-experiments/">https://protoni.fi/Projects/Graphics/opengl-experiments/</a> )</p>
+<p><a href="#idea-0502">+</a> Test Vulkan API ........ ( <a href="https://protoni.fi/Projects/Graphics/vulkan-experiments/">https://protoni.fi/Projects/Graphics/vulkan-experiments/</a> )</p>
+<p><a href="#idea-0503">+</a> Export WoW models ...... ( <a href="https://protoni.fi/Projects/Graphics/wow-model-export/">https://protoni.fi/Projects/Graphics/wow-model-export/</a> )</p>
+<h5 id="backend">Backend</h5>
+<p><a href="#idea-0600">+</a> Firebase realtime DB ... ( Exists locally somewhere )</p>
+<p><a href="#idea-0601">+</a> Nakama backend ......... ( Exists locally somewhere )</p>
+<h5 id="linux">Linux</h5>
+<p><a href="#idea-0700">+</a> BeagleBone Yocto ....... ( <a href="https://protoni.fi/Projects/Linux/beaglebone_yocto/">https://protoni.fi/Projects/Linux/beaglebone_yocto/</a> )</p>
+<p><a href="#idea-0701">+</a> DIY Linux .............. ( <a href="https://protoni.fi/Projects/Linux/diy-setup/">https://protoni.fi/Projects/Linux/diy-setup/</a> )</p>
+<p><a href="#idea-0702">+</a> Arch Linux ............. ( <a href="https://protoni.fi/Projects/Linux/install-arch-linux/">https://protoni.fi/Projects/Linux/install-arch-linux/</a> )</p>
+<h5 id="games">Games</h5>
+<p><a href="#idea-0800">+</a> Wow dispel addon ....... ( <a href="https://github.com/protoni/dispel-addon">https://github.com/protoni/dispel-addon</a> )</p>
+<p><a href="#idea-0801">+</a> Wow GUI addon template . ( <a href="https://github.com/protoni/aasi-addon">https://github.com/protoni/aasi-addon</a> )</p>
+<p><a href="#idea-0802">+</a> Feldewar game .......... ( <a href="https://github.com/protoni/feldewar">https://github.com/protoni/feldewar</a> )</p>
+<h5 id="vehicles">Vehicles</h5>
+<p><a href="#idea-0900">+</a> RD350 restoration ...... ( <a href="https://protoni.fi/Projects/Motorcycles/rd350/">https://protoni.fi/Projects/Motorcycles/rd350/</a> )</p>
+<p><a href="#idea-0901">+</a> RD350 hybrid ........... ( )</p>
+<p><a href="#idea-0902">+</a> Car EV conversion ...... ( )</p>
+<p><a href="#idea-0903">+</a> EV ATV ................. ( )</p>
+<!--
+| Link                                  | Description                                             |
+|---------------------------------------|---------------------------------------------------------|
+| [+](#idea-001) Dead link finder       | ( Exists locally somewhere )                            |
+| [+](#idea-002) Web audio visualizer   | ( <https://github.com/protoni/audio-visualizer-web> )   |
+| [+](#idea-003) ASCII audio visualizer | ( <https://protoni.fi/Projects/Web/audio-visualizer/> ) |
+-->
+
+<h2 id="web-descriptions">Web Descriptions</h2>
+<p><a name="idea-0001"></a></p>
+<h3 id="web-audio-visualizer">Web audio visualizer</h3>
+<p>Visualize audio data on a website.</p>
+<ul>
+<li>2D bar graph</li>
+<li>Spectrogram</li>
+<li>Visualize audio using shaders with WebGL/WebGPU</li>
+</ul>
+<p><a name="idea-0002"></a></p>
+<h3 id="ascii-audio-visualizer">ASCII audio visualizer</h3>
+<ul>
+<li>Auto-upload files somewhere</li>
+</ul>
+<p><a name="idea-0003"></a></p>
+<h3 id="web-base64-encoder">Web Base64 encoder</h3>
+<ul>
+<li>Encode/decode base64 data</li>
+</ul>
+<p><a name="idea-0004"></a></p>
+<h3 id="web-code-formatter">Web code formatter</h3>
+<p>-</p>
+<p><a name="idea-0005"></a></p>
+<h3 id="web-diff-tool">Web diff tool</h3>
+<p>-</p>
+<p><a name="idea-0006"></a></p>
+<h3 id="web-generator-tools">Web generator tools</h3>
+<p>-</p>
+<p><a name="idea-0007"></a></p>
+<h3 id="web-gpg-checker">Web gpg checker</h3>
+<p>-</p>
+<p><a name="idea-0008"></a></p>
+<h3 id="web-binary-converter">Web binary converter</h3>
+<p>-</p>
+<p><a name="idea-0009"></a></p>
+<h3 id="web-zip-tool">Web zip tool</h3>
+<ul>
+<li>Drag and drop files to unzip them</li>
+<li>Add .tar.gz, 7z, bz2, .tgz support</li>
+</ul>
+<p><a name="idea-0010"></a></p>
+<h3 id="web-shared-canvas">Web shared canvas</h3>
+<ul>
+<li>Test synchronizing multiple local web pages</li>
+<li>Shake one window to move a sphere to a new window next to it</li>
+</ul>
+<p><a name="idea-0011"></a></p>
+<h3 id="web-raylib">Web raylib</h3>
+<ul>
+<li>Test building raylib projects for a web page</li>
+</ul>
+<p><a name="idea-0012"></a></p>
+<h3 id="web-3d-image-showroom">Web 3d image showroom</h3>
+<ul>
+<li>Create a 3d space and layout images as 'paintings' on a wall.</li>
+<li>Move around with FPS camera.</li>
+<li>Scrape website for images and display them.</li>
+</ul>
+<p><a name="idea-0013"></a></p>
+<h3 id="web-component-storage">Web component storage</h3>
+<ul>
+<li>React based project with React frontend and node/mariadb/mongodb backend</li>
+<li>Backend: <a href="https://github.com/protoni/component-storage-backend">https://github.com/protoni/component-storage-backend</a></li>
+</ul>
+<p><a name="idea-0014"></a></p>
+<h3 id="web-item-storage-v2">Web item storage v2</h3>
+<ul>
+<li>React based project with React frontend and firebase backend</li>
+</ul>
+<p><a name="idea-0015"></a></p>
+<h3 id="web-info-page">Web info page</h3>
+<p>-</p>
+<p><a name="idea-0016"></a></p>
+<h3 id="web-project-creator">Web project creator</h3>
+<ul>
+<li>A Project Creator page and a Project view page</li>
+<li>Git commit history like presentation for the whole project.<ul>
+<li>Each post should be in its own box, kinda like in reddit every post on sub reddit.</li>
+<li>There should be post types like, 'project', 'comment', 'finish product', 'initial idea', 'bug', 'bug fix' etc..</li>
+</ul>
+</li>
+<li>Progress<ul>
+<li>there should be tickable boxes to track the project progress. Figure out some of the
+  universal project steps to track the progress.</li>
+</ul>
+</li>
+<li>Post<ul>
+<li>You can drag and drop files, images, videos to every post. Write text and link stuff.</li>
+<li>You choose which type of post it is. For example when you start the project, you create a 'initial idea'- post
+  where you can write the idea. Post some MS Paint scetches and links etc.</li>
+</ul>
+</li>
+</ul>
+<p><a name="idea-0017"></a></p>
+<h3 id="web-ideas-git-page">Web ideas GIT page</h3>
+<ul>
+<li>Pull project ideas from git and layout them on mkdocs web page.</li>
+</ul>
+<p><a name="idea-0018"></a></p>
+<h3 id="trello-power-up">Trello power-up</h3>
+<p>-</p>
+<p><a name="idea-0019"></a></p>
+<h3 id="gatsby-static-website">Gatsby static website</h3>
+<p>-</p>
+<p><a name="idea-0020"></a></p>
+<h3 id="electronics-visualizer">Electronics visualizer</h3>
+<p>-</p>
+<p><a name="idea-0021"></a></p>
+<h3 id="web-3d-commit-view">Web 3d commit view</h3>
+<p>-</p>
+<p><a name="idea-0022"></a></p>
+<h3 id="web-landing-page">Web landing page</h3>
+<ul>
+<li>3D word to view projects</li>
+</ul>
+<h2 id="cli-descriptions">CLI Descriptions</h2>
+<p><a name="idea-0100"></a></p>
+<h3 id="dead-link-finder">Dead link finder</h3>
+<ul>
+<li>Scrape a mkdocs based website for dead links recursively.</li>
+</ul>
+<p><a name="idea-0101"></a></p>
+<h3 id="os-setup-scripts">OS setup scripts</h3>
+<ul>
+<li>Auto config new systems with shell/powershell scripts</li>
+</ul>
+<p><a name="idea-0102"></a></p>
+<h3 id="spotify-cli-tool">Spotify CLI tool</h3>
+<p>-</p>
+<p><a name="idea-0103"></a></p>
+<h3 id="markdown-tools">Markdown tools</h3>
+<ul>
+<li>Convert markdow files to pdf</li>
+<li>Convert markdow files to html</li>
+<li>GUI markdown editor</li>
+<li>Generate PDFs using python</li>
+</ul>
+<p><a name="idea-0104"></a></p>
+<h3 id="binance-analyzer">Binance analyzer</h3>
+<p>-</p>
+<p><a name="idea-0105"></a></p>
+<h3 id="crypto-tax-tools">Crypto tax tools</h3>
+<p>-</p>
+<p><a name="idea-0106"></a></p>
+<h3 id="binance-trader-bot">Binance trader bot</h3>
+<p>-</p>
+<p><a name="idea-0107"></a></p>
+<h3 id="alpaca-trader-bot">Alpaca trader bot</h3>
+<p>-</p>
+<p><a name="idea-0108"></a></p>
+<h3 id="web-crawler">Web crawler</h3>
+<p>-</p>
+<h2 id="docker-descriptions">Docker Descriptions</h2>
+<p><a name="idea-0200"></a></p>
+<h3 id="docker-sonarqube">Docker sonarqube</h3>
+<ul>
+<li>Template for spawning up sonarqube instance in Docker</li>
+</ul>
+<p><a name="idea-0201"></a></p>
+<h3 id="docker-cpp-cmake">Docker cpp cmake</h3>
+<ul>
+<li>Template for creating cpp cmake build environment in Docker</li>
+<li>Auto run tests and generate output files</li>
+<li>Auto generate doxygen docs</li>
+<li>Valgrind setup and output file</li>
+<li>Devcontainer setup</li>
+<li>index page to point to different build output files</li>
+</ul>
+<p><a name="idea-0202"></a></p>
+<h3 id="docker-opengl">Docker OpenGL</h3>
+<ul>
+<li>Docker setup for OpenGL projects</li>
+</ul>
+<p><a name="idea-0203"></a></p>
+<h3 id="docker-opengl-x-build">Docker OpenGL x-build</h3>
+<ul>
+<li>Docker OpenGL for OpenGL projects with different platform targets</li>
+</ul>
+<h2 id="gui-descriptions">GUI Descriptions</h2>
+<p><a name="idea-0300"></a></p>
+<h3 id="gui-editor">GUI editor</h3>
+<ul>
+<li>Test python's TKinter with customtkinter library.</li>
+</ul>
+<p><a name="idea-0301"></a></p>
+<h3 id="local-port-monitor">Local port monitor</h3>
+<ul>
+<li>Check open ports</li>
+<li>Python TKinter/customtkinter tool to inspect open ports, pull IP info from API somewhere</li>
+</ul>
+<p><a name="idea-0302"></a></p>
+<h3 id="window-renderer">Window renderer</h3>
+<ul>
+<li>Native application to render GUI tools using ImGUI</li>
+<li>Template to setup dev env</li>
+<li>Includes animated dropdown 'console' window</li>
+</ul>
+<p><a name="idea-0303"></a></p>
+<h3 id="crop-tool">Crop tool</h3>
+<p>-</p>
+<h2 id="electronics-descriptions">Electronics Descriptions</h2>
+<p><a name="idea-0400"></a></p>
+<h3 id="stm32f4-zephyr-setup">STM32F4 Zephyr setup</h3>
+<p>-</p>
+<p><a name="idea-0401"></a></p>
+<h3 id="capacitive-keyboard">Capacitive keyboard</h3>
+<ul>
+<li>ESP has some capacitive inputs</li>
+<li>Create a test circuit board that includes capacitive keys and a trackpad</li>
+<li>Dedicated capacitive handler with support for 150+ keys</li>
+<li><a href="https://www.azoteq.com/product/iqs550-b000/">https://www.azoteq.com/product/iqs550-b000/</a></li>
+<li><a href="https://www.azoteq.com/images/stories/pdf/azd128-gamepad-trackpad-design-guide_v1.0.pdf">https://www.azoteq.com/images/stories/pdf/azd128-gamepad-trackpad-design-guide_v1.0.pdf</a></li>
+<li><a href="https://www.azoteq.com/images/stories/pdf/iqs5xx-b000_trackpad_datasheet.pdf">https://www.azoteq.com/images/stories/pdf/iqs5xx-b000_trackpad_datasheet.pdf</a></li>
+</ul>
+<p><a name="idea-0402"></a></p>
+<h3 id="esp32-handheld-console">ESP32 handheld console</h3>
+<ul>
+<li>Create a handheld tool</li>
+<li>capacitive keyboard</li>
+</ul>
+<p><a name="idea-0403"></a></p>
+<h3 id="kicad-api">Kicad API</h3>
+<ul>
+<li>Test Kicad python API for generating schematics and board layouts</li>
+</ul>
+<p><a name="idea-0404"></a></p>
+<h3 id="homeassistant-setup">Homeassistant setup</h3>
+<p>-</p>
+<p><a name="idea-0405"></a></p>
+<h3 id="osd3358-board">OSD3358 board</h3>
+<p>-</p>
+<p><a name="idea-0406"></a></p>
+<h3 id="osd3358-interfaces">OSD3358 interfaces</h3>
+<p>-</p>
+<p><a name="idea-0407"></a></p>
+<h3 id="phone-hw-extension">Phone HW extension</h3>
+<p>-</p>
+<p><a name="idea-0408"></a></p>
+<h3 id="esp32-bus-sniffer">ESP32 BUS sniffer</h3>
+<ul>
+<li>Embedded web server accessible over wifi.</li>
+<li>Display I/Os on a web page</li>
+</ul>
+<p><a name="idea-0409"></a></p>
+<h3 id="led-matrix-display">LED matrix display</h3>
+<p>-</p>
+<p><a name="idea-0410"></a></p>
+<h3 id="led-matrix-display-v2">LED matrix display v2</h3>
+<ul>
+<li>Use non bendable panels &lt; 2mm pitch panels for a higher resolution display</li>
+</ul>
+<p><a name="idea-0411"></a></p>
+<h3 id="led-sphere-display">LED sphere display</h3>
+<ul>
+<li>Salvage v1 LED display for sphere/dome shaped display</li>
+</ul>
+<p><a name="idea-0412"></a></p>
+<h3 id="arduino-usb">Arduino USB</h3>
+<ul>
+<li>Control arduino with a phone over USB</li>
+</ul>
+<p><a name="idea-0413"></a></p>
+<h3 id="smart-watch">Smart watch</h3>
+<ul>
+<li>Forked/custom version from original project <a href="https://fedevel.com/blog/open-source-smartwatch-samson-march">https://fedevel.com/blog/open-source-smartwatch-samson-march</a></li>
+</ul>
+<p><a name="idea-0414"></a></p>
+<h3 id="reflow-oven">Reflow oven</h3>
+<ul>
+<li>Forked/custom version based on existing open source projects</li>
+</ul>
+<p><a name="idea-0415"></a></p>
+<h3 id="stm32-template">STM32 template</h3>
+<p>-</p>
+<h2 id="graphics-descriptions">Graphics Descriptions</h2>
+<p><a name="idea-0500"></a></p>
+<h3 id="custom-renderer">Custom renderer</h3>
+<p>-</p>
+<p><a name="idea-0501"></a></p>
+<h3 id="test-opengl-api">Test OpenGL API</h3>
+<p>-</p>
+<p><a name="idea-0502"></a></p>
+<h3 id="test-vulkan-api">Test Vulkan API</h3>
+<p>-</p>
+<p><a name="idea-0503"></a></p>
+<h3 id="export-wow-models">Export WoW models</h3>
+<p>-</p>
+<h2 id="backend-descriptions">Backend Descriptions</h2>
+<p><a name="idea-0600"></a></p>
+<h3 id="firebase-realtime-db">Firebase realtime DB</h3>
+<p>-</p>
+<p><a name="idea-0601"></a></p>
+<h3 id="nakama-backend">Nakama backend</h3>
+<p>-</p>
+<h2 id="linux-descriptions">Linux Descriptions</h2>
+<p><a name="idea-0700"></a></p>
+<h3 id="beaglebone-yocto">BeagleBone Yocto</h3>
+<p>-</p>
+<p><a name="idea-0701"></a></p>
+<h3 id="diy-linux">DIY Linux</h3>
+<p>-</p>
+<p><a name="idea-0702"></a></p>
+<h3 id="arch-linux">Arch Linux</h3>
+<p>-</p>
+<h2 id="games-descriptions">Games Descriptions</h2>
+<p><a name="idea-0800"></a></p>
+<h3 id="wow-dispel-addon">Wow dispel addon</h3>
+<p>-</p>
+<p><a name="idea-0801"></a></p>
+<h3 id="wow-gui-addon-template">Wow GUI addon template</h3>
+<p>-</p>
+<p><a name="idea-0802"></a></p>
+<h3 id="feldewar-game">Feldewar game</h3>
+<p>-</p>
+<h2 id="vehicles-descriptions">Vehicles Descriptions</h2>
+<p><a name="idea-0900"></a></p>
+<h3 id="rd350-restoration">RD350 restoration</h3>
+<p>-</p>
+<p><a name="idea-0901"></a></p>
+<h3 id="rd350-hybrid">RD350 hybrid</h3>
+<ul>
+<li>Suzuki RGV 250 rear swingarm to RD 350</li>
+</ul>
+<p><a name="idea-0902"></a></p>
+<h3 id="car-ev-conversion">Car EV conversion</h3>
+<ul>
+<li><a href="https://www.evwest.com/catalog/product_info.php?products_id=223">https://www.evwest.com/catalog/product_info.php?products_id=223</a></li>
+<li><a href="https://www.youtube.com/watch?v=yBl-UOexatA">https://www.youtube.com/watch?v=yBl-UOexatA</a></li>
+</ul>
+<p><a name="idea-0903"></a></p>
+<h3 id="ev-atv">EV ATV</h3>
+<ul>
+<li>Electric ATV frame with electric motors</li>
+<li><a href="https://qsmotor.aliexpress.com/store/109978">https://qsmotor.aliexpress.com/store/109978</a></li>
+<li><a href="https://www.aliexpress.com/item/1005005299865126.html?channel=twinner">https://www.aliexpress.com/item/1005005299865126.html?channel=twinner</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-06-20T22:41:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-20</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-06-20T22:41:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-20</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-> Protoni. Contant at &#116;&#111;&#110;&#105;&#032;[&#064;]&#032;&#112;&#114;&#111;&#116;&#111;&#110;&#105;&#046;&#102;&#105;
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../js/timeago.min.js"></script>
+      
+        <script src="../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../js/terrain.js"></script>
+      
+        <script src="../js/commits.js"></script>
+      
+        <script src="../js/converter.js"></script>
+      
+        <script src="../js/spectrogram.js"></script>
+      
+        <script src="../js/audio_visualizer_sphere.js"></script>
+      
+        <script src="../js/diff.js"></script>
+      
+        <script src="../js/code_formatter.js"></script>
+      
+        <script src="../js/base64_encoder.js"></script>
+      
+        <script src="../js/generators.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
