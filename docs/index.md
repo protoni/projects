@@ -12,6 +12,7 @@ hosted on `imgur`.
 ## Site layout
 ````bash
 docs/
+    Ideas/        # New/ongoing/finished project ideas list
     Experiments/  # Experiments that are more than notes but less than projects
     Links/        # Links that I find useful sometimes
     Notes/        # Various notes I have written or copy-pasted from somewhere
