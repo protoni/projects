@@ -1,5 +1,5 @@
 
-##### Cursor and origin dot
+## Cursor and origin dot
 ````powershell
 # Move 3d cursor to the center
 Shift + C
@@ -8,19 +8,22 @@ Shift + C
 Top Left -> Object button -> Set origin -> Origin to 3d cursor
 ````
 
-##### Scaling
+## Scaling
 ````powershell
+# Scale
+Press 'S'
+
 # Scale inwards/outwards only
-Alt + s
+Perss 'Alt' + 'S'
 
 # Scale skin modifier vertices
-Alt + a
+Press'Alt' + 'A'
 ````
 
-##### Extruding
+## Extruding
 ````powershell
 # Extrude to cursor and keep the alignment
-- Press numbad 1 to view from the from side
+- Press numpad 1 to view from the from side
 - Move cursor to the desired position
 - Ctrl + mouse right click
 
@@ -29,7 +32,7 @@ Edit mode -> face mode -> Select multiple faces ( hold shift )
 Alt + e -> Extrude individual faces
 ````
 
-##### Selecting
+## Selecting
 ````powershell
 # Select whole parts individual from an object ( For example only leaves on a tree object )
 Hover over the object part -> Press 'L'
@@ -56,7 +59,7 @@ Alt -> Ctrl -> left click an edge
 Alt -> Left click an edge
 
 # Select the shortest path to another edge
-Edge mode -> Click an adge -> Hold Ctrl and click another edge somewhere else
+Edge mode -> Click an edge -> Hold Ctrl and click another edge somewhere else
 
 # Lasso select
 Ctrl + mouse right
@@ -80,10 +83,13 @@ Face mode -> hover over an object and press L to select all -> F3 -> search for 
 Press 'K' -> Knife out a shape and press enter
 ````
 
-##### Misc
+## Misc
 ````powershell
 # Duplicate an object
-Click object -> Shift + D
+Press 'Shift' + 'D' for normal copy
+Press 'Alt' + 'D' for linked copy ( future edits are copied over as well )
+To unlink, select the object in object mode, Press 'Object' tab on the top right
+-> Relations -> Make single user -> Object & Data
 
 # Toggle X-ray
 Alt + Z
@@ -101,7 +107,7 @@ Press '.' (dot) -> individual origin
 Hold down Ctrl
 
 # Create a low poly rock
-Subdivide ( Ctrl + 3 for example ) -> Edit mode -> Press 'O' -> vertex mode -> Move verteces around -> Object mode -> Add decimate modifier -> Lower ratio
+Subdivide ( Ctrl + 3 for example ) -> Edit mode -> Press 'O' -> vertex mode -> Move vertices around -> Object mode -> Add decimate modifier -> Lower ratio
 
 # Flatten faces
 Edit -> Preferences -> Addons -> Search loop tools -> enable
@@ -128,9 +134,6 @@ Select a face from each object -> F3 -> Bridge edge loops
 # Separate loose parts in to their own objects
 Edit mode -> hover over the object -> Press 'A' to select all -> Press 'P' -> By loose parts
 
-# Merge loose parts in to same object
-Slecet all objects -> Ctrl + J
-
 # Enable auto mirroring
 Object mode -> Edit -> Preferences -> Addons -> auto mirror -> enable
 Press 'N' -> click AutoMirror in the popup top right
@@ -148,7 +151,7 @@ In UV Editing window click douple arrow icon top right -> Press 'B' -> Shift box
 
 ````
 
-##### Problem fixing
+## Problem fixing
 ````powershell
 # Merge all vertices on object
 Press 'A' to select all -> Press 'M' -> by distance
@@ -166,6 +169,83 @@ click vertex -> move on desired axis -> Hold Ctrl -> point to a vertex that is i
 # If scaling is messed up or inset is not uniformed ( to check press 'N' -> Item -> Scale: everything should be 1 )
 Object mode -> Ctrl + A -> Scale
 
-# Move objects to collection
-Press 'M' -> create new or select existing onge
+# Invert face orientation
+Select object
+Go to edit mode
+Press 'Shift' + 'N'
+
+# Check face orientation
+Top right, 2 circles overlapping icon -> Face orientation
+````
+
+## Sculpting
+````powershell
+# Quickly switch between objects in sculpting mode
+Untick Edit -> 'Lock objects mode'
+To select another object; 'Alt' + 'Left click'
+
+# Before sculpting
+In layout view, object mode, select object
+Press 'Ctrl' + 'A' -> Apply transformation/scale/rotation
+````
+
+## Edit mode
+````powershell
+# Merge all nearby vertices
+Press 1 to go to vertex mode
+Press 'm' -> merge by distance
+
+# Move loopcuts along edges
+Press 'G' twice, so gg
+
+# Delete all edges
+Select edge with 'Alt' + 'Mouse Left'
+Press 'Ctrl' + 'X' to delete
+
+# Bevel ( round up an object with edges )
+Select All edges around the object
+Press 'Ctrl' + 'B' and drag with mouse
+
+# Control the border with with inset
+Press 'B' while inseting
+````
+
+## Modifiers
+````powershell
+# Mirror objects using addon
+( Optional ) Edit -> Preferences -> Search 'auto mirror' -> Enable
+Select object -> Press 'N' -> Edit -> Select X axis and orientation: Positive.
+If mirroring to 3 different selections. Add another mirror and select Y axis with Negative orientation.
+
+# Mirror objects
+Click object
+Press wrench icon on the right -> Add modifier -> Search 'Mirror'
+Use the picker tool to select the object which origin to use for the mirror
+
+# Apply subdivision surface ( or any other modifier )
+Select the subdivision modifier
+Press 'Ctrl' + 'A'
+````
+
+## Debug
+````powershell
+# Show vertex / face count
+Right click bottom toolbar -> tick 'Scene Statistics'
+````
+
+## Grouping objects
+
+````powershell
+# Separate parts of object
+Select faces/parts
+Press 'P'
+Separate by selection
+
+# Group objects together
+Select all objects
+Press 'Ctrl' + 'J'
+
+# Group items together in tree view
+Select all objects
+Press 'M' -> New Collection
 ````

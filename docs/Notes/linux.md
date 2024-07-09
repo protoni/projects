@@ -337,6 +337,9 @@ scp tai ssh -o BatchMode=yes
     set ruler laststatus=2 number title hlsearch
     syntax on
 3. ESC -> :wq
+
+# Alternative way to exit vim
+Shift + ZZ
 ````
 
 

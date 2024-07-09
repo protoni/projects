@@ -54,6 +54,8 @@ Use ( + ) sign on the left to skip to description at the bottom of the page
 
 [+](#idea-0022) Web landing page ....... ( <https://github.com/protoni/landing-page> )
 
+[+](#idea-0023) Web productivity tool .. ( <https://protoni.fi/Tools/productivity/> )
+
 
 ##### CLI
 [+](#idea-0100) Dead link finder ....... ( Exists locally somewhere )
@@ -318,7 +320,16 @@ Visualize audio data on a website.
 
 - 3D word to view projects
 
+<a name="idea-0023"></a>
+### Web productivity tool 
 
+- A simple tool to track work time and entertainment consumption. 
+  Idea is to limit how much entertainment can be mindlessly consumed.
+  This is balanced with a ratio value that controls how much entertainment
+  time is earned by working on stuff.
+
+- Saves counter values to browser's local storage. Local storage and timers
+  can be cleared with the red trash icon button.
 
 ## CLI Descriptions
 
