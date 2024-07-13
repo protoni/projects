@@ -92,6 +92,10 @@
     margin-top: 10px;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #a8a5a5;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #0f0f0f;
 }
 
 .productivity-tracker .submenu button {
@@ -106,34 +110,34 @@
     background-color: #218838;
 }
 
-.ratio-input-container-info {
+.productivity-tracker .ratio-input-container-info {
     display: flex;
     align-items: center;
     justify-content: center;
     
 }
 
-.ratio-input-container-info-text {
+.productivity-tracker .ratio-input-container-info-text {
     font-size: .9em;
 }
 
-.ratio-input-container {
+.productivity-tracker .ratio-input-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.ratio-input-container label {
+.productivity-tracker .ratio-input-container label {
     margin-right: 5px;
 }
 
-.info-icon {
+.productivity-tracker .info-icon {
     margin-left: 5px;
     cursor: pointer;
     position: relative;
 }
 
-.info-icon::after {
+.productivity-tracker .info-icon::after {
     content: attr(title);
     position: absolute;
     background: #333;
@@ -148,6 +152,85 @@
     font-size: 0.8em;
 }
 
-.info-icon:hover::after {
+.productivity-tracker .info-icon:hover::after {
     display: block;
+}
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 50%;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+    display: none;
+}
+
+.cookie-banner p {
+    margin: 0;
+}
+
+.productivity-tracker .storage-switch-button {
+    width: auto;
+    max-width: 200px;
+    background-color: #28a745;
+    font-size: .4em;
+    margin: 5px 0;
+}
+
+.productivity-tracker .storage-switch-button:hover {
+    background-color: #0056b3;
+}
+
+.productivity-tracker .cookie-banner button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.productivity-tracker .cookie-banner button:hover {
+    background-color: #0056b3;
+}
+
+.productivity-tracker .settings {
+    margin-top: 20px;
+}
+
+.productivity-tracker .settings-submenu {
+    display: none;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #a8a5a5;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #0f0f0f;
+}
+
+.productivity-tracker .settings-submenu button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: .8em;
+}
+
+.productivity-tracker .settings-submenu button:hover {
+    background-color: #218838;
+}
+
+.productivity-tracker .settings-submenu button {
+    font-size: .8em;
+}
+
+.productivity-tracker .settings button:hover {
+    background-color: #0056b3;
 }

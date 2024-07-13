@@ -1,8 +1,36 @@
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const cname = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(cname) === 0) {
+            return c.substring(cname.length, c.length);
+        }
+    }
+    return "";
+}
+
+function deleteCookie(name) {
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+}
+
 let workSeconds = 0;
 let entertainmentSeconds = 0;
 let allowedEntertainmentSeconds = 0;
 let workInterval, entertainmentInterval;
 let ratio = 4;
+let useCookies = false;
 
 function startWork() {
     if (!workInterval) {
@@ -11,6 +39,7 @@ function startWork() {
             workSeconds++;
             updateTimer('work-time', workSeconds);
             updateAllowedTime();
+            autoSave();
         }, 1000);
     }
 }
@@ -18,6 +47,7 @@ function startWork() {
 function stopWork() {
     clearInterval(workInterval);
     workInterval = null;
+    autoSave();
 }
 
 function startEntertainment() {
@@ -28,6 +58,7 @@ function startEntertainment() {
             allowedEntertainmentSeconds--;
             updateTimer('entertainment-time', entertainmentSeconds);
             updateAllowedTime();
+            autoSave();
         }, 1000);
     }
 }
@@ -35,6 +66,7 @@ function startEntertainment() {
 function stopEntertainment() {
     clearInterval(entertainmentInterval);
     entertainmentInterval = null;
+    autoSave();
 }
 
 function updateTimer(id, seconds) {
@@ -82,6 +114,7 @@ function modifyTime(type, operation) {
             updateTimer('entertainment-time', entertainmentSeconds);
             updateAllowedTime();
         }
+        autoSave();
     }
 }
 
@@ -91,7 +124,7 @@ function toggleSubmenu(id) {
 }
 
 function resetCounters() {
-    if (confirm('Are you sure you want to reset all counters and local storage?')) {
+    if (confirm('Are you sure you want to reset all counters and storage?')) {
         workSeconds = 0;
         entertainmentSeconds = 0;
         allowedEntertainmentSeconds = 0;
@@ -102,18 +135,82 @@ function resetCounters() {
         updateTimer('work-time', workSeconds);
         updateTimer('entertainment-time', entertainmentSeconds);
         updateAllowedTime();
-        localStorage.removeItem('workSeconds');
-        localStorage.removeItem('entertainmentSeconds');
+        if (useCookies) {
+            deleteCookie('workSeconds');
+            deleteCookie('entertainmentSeconds');
+            deleteCookie('ratio');
+        } else {
+            localStorage.removeItem('workSeconds');
+            localStorage.removeItem('entertainmentSeconds');
+            localStorage.removeItem('ratio');
+        }
     }
 }
 
 function updateRatio() {
     ratio = parseInt(document.getElementById('ratio-input').value);
+    if (useCookies) {
+        setCookie('ratio', ratio, 365);
+    } else {
+        localStorage.setItem('ratio', ratio);
+    }
     updateAllowedTime();
+    autoSave();
 }
 
-// Save and load times from localStorage
-window.onload = function() {
+function switchStorage() {
+    if (useCookies) {
+        if (confirm('Are you sure you want to switch to using local storage?')) {
+            useCookies = false;
+            document.getElementById('storage-switch-button').textContent = 'Switch to Cookies';
+            saveToLocalStorage();
+        }
+    } else {
+        if (confirm('Are you sure you want to switch to using cookies for storage?')) {
+            if (!getCookie('cookieConsent')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            } else {
+                useCookies = true;
+                document.getElementById('storage-switch-button').textContent = 'Switch to Local Storage';
+                saveToCookies();
+            }
+        }
+    }
+}
+
+function acceptCookies() {
+    setCookie('cookieConsent', 'true', 365);
+    document.getElementById('cookie-banner').style.display = 'none';
+    useCookies = true;
+    document.getElementById('storage-switch-button').textContent = 'Switch to Local Storage';
+    saveToCookies();
+}
+
+function cancelCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+
+function saveToCookies() {
+    setCookie('workSeconds', workSeconds, 365);
+    setCookie('entertainmentSeconds', entertainmentSeconds, 365);
+    setCookie('ratio', ratio, 365);
+}
+
+function saveToLocalStorage() {
+    localStorage.setItem('workSeconds', workSeconds);
+    localStorage.setItem('entertainmentSeconds', entertainmentSeconds);
+    localStorage.setItem('ratio', ratio);
+}
+
+function autoSave() {
+    if (useCookies) {
+        saveToCookies();
+    } else {
+        saveToLocalStorage();
+    }
+}
+
+function loadFromLocalStorage() {
     if (localStorage.getItem('workSeconds')) {
         workSeconds = parseInt(localStorage.getItem('workSeconds'));
         updateTimer('work-time', workSeconds);
@@ -122,10 +219,38 @@ window.onload = function() {
         entertainmentSeconds = parseInt(localStorage.getItem('entertainmentSeconds'));
         updateTimer('entertainment-time', entertainmentSeconds);
     }
+    if (localStorage.getItem('ratio')) {
+        ratio = parseInt(localStorage.getItem('ratio'));
+        document.getElementById('ratio-input').value = ratio;
+    }
+}
+
+function loadFromCookies() {
+    if (getCookie('workSeconds')) {
+        workSeconds = parseInt(getCookie('workSeconds'));
+        updateTimer('work-time', workSeconds);
+    }
+    if (getCookie('entertainmentSeconds')) {
+        entertainmentSeconds = parseInt(getCookie('entertainmentSeconds'));
+        updateTimer('entertainment-time', entertainmentSeconds);
+    }
+    if (getCookie('ratio')) {
+        ratio = parseInt(getCookie('ratio'));
+        document.getElementById('ratio-input').value = ratio;
+    }
+}
+
+window.onload = function() {
+    if (getCookie('cookieConsent')) {
+        useCookies = true;
+        document.getElementById('storage-switch-button').textContent = 'Switch to Local Storage';
+        loadFromCookies();
+    } else {
+        loadFromLocalStorage();
+    }
     updateAllowedTime(); // Ensure the allowance is updated on load
 }
 
 window.onunload = function() {
-    localStorage.setItem('workSeconds', workSeconds);
-    localStorage.setItem('entertainmentSeconds', entertainmentSeconds);
+    autoSave();
 }
