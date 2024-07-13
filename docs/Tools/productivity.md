@@ -1,4 +1,9 @@
-
+<div class="cookie-banner" id="cookie-banner">
+    <p>We use cookies to ensure you get the best experience on our website. 
+        <button onclick="acceptCookies()">Accept</button>
+        <button onclick="cancelCookies()">Cancel</button>
+    </p>
+</div>
 <div class="productivity-tracker">
     <div class="container">
         <h1>Productivity Tracker</h1>
@@ -66,20 +71,29 @@
             <h2>Allowed Entertainment Time</h2>
             <div id="allowed-time">00:00:00</div>
         </div>
-        <div class="ratio">
-            <div class="ratio-input-container-info">
-            <p class="ratio-input-container-info-text">Set Ratio</p>
-            <span class="info-icon" title="Adjust the ratio of work time to entertainment time. For example, a ratio of 4 means 1 hour of work allows 15 minutes of entertainment.">
-                        <!-- Font Awesome Free 6.5.2 by @fontawesome -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" fill="currentColor">
-                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
-                        </svg>
-                    </span>
-            </div>
-            <div class="ratio-input-container">
+        
+        <div class="settings">
+            <button onclick="toggleSubmenu('settings-submenu')">Settings</button>
+            <div id="settings-submenu" class="settings-submenu">
+                <button id="storage-switch-button" class="storage-switch-button" onclick="switchStorage()">Switch to Cookies</button>
+
+                <div class="ratio">
+                <div class="ratio-input-container-info">
+                <p class="ratio-input-container-info-text">Set Ratio</p>
+                <span class="info-icon" title="Adjust the ratio of work time to entertainment time. For example, a ratio of 4 means 1 hour of work allows 15 minutes of     entertainment.">
+                            <!-- Font Awesome Free 6.5.2 by @fontawesome -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" fill="currentColor">
+                                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24  24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+                            </svg>
+                        </span>
+                </div>
+                <div class="ratio-input-container">
                     <label for="ratio-input">1:</label>
                     <input type="number" id="ratio-input" value="4" onchange="updateRatio()">
                 </div>
+            </div>
+
+            </div>
         </div>
     </div>
 </div>
