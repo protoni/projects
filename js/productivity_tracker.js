@@ -1,36 +1,10 @@
-function setCookie(name, value, days) {
-    const d = new Date();
-    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + d.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
 
-function getCookie(name) {
-    const cname = name + "=";
-    const decodedCookie = decodeURIComponent(document.cookie);
-    const ca = decodedCookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(cname) === 0) {
-            return c.substring(cname.length, c.length);
-        }
-    }
-    return "";
-}
-
-function deleteCookie(name) {
-    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-}
 
 let workSeconds = 0;
 let entertainmentSeconds = 0;
 let allowedEntertainmentSeconds = 0;
 let workInterval, entertainmentInterval;
 let ratio = 4;
-let useCookies = false;
 
 function startWork() {
     if (!workInterval) {
@@ -120,7 +94,14 @@ function modifyTime(type, operation) {
 
 function toggleSubmenu(id) {
     const submenu = document.getElementById(id);
-    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    const button = document.querySelector(`button[onclick="toggleSubmenu('${id}')"]`);
+    if (submenu.style.display === 'block') {
+        submenu.style.display = 'none';
+        button.classList.remove('open');
+    } else {
+        submenu.style.display = 'block';
+        button.classList.add('open');
+    }
 }
 
 function resetCounters() {
@@ -135,65 +116,18 @@ function resetCounters() {
         updateTimer('work-time', workSeconds);
         updateTimer('entertainment-time', entertainmentSeconds);
         updateAllowedTime();
-        if (useCookies) {
-            deleteCookie('workSeconds');
-            deleteCookie('entertainmentSeconds');
-            deleteCookie('ratio');
-        } else {
-            localStorage.removeItem('workSeconds');
-            localStorage.removeItem('entertainmentSeconds');
-            localStorage.removeItem('ratio');
-        }
+        localStorage.removeItem('workSeconds');
+        localStorage.removeItem('entertainmentSeconds');
+        localStorage.removeItem('ratio');
+        
     }
 }
 
 function updateRatio() {
     ratio = parseInt(document.getElementById('ratio-input').value);
-    if (useCookies) {
-        setCookie('ratio', ratio, 365);
-    } else {
-        localStorage.setItem('ratio', ratio);
-    }
+    localStorage.setItem('ratio', ratio);
     updateAllowedTime();
     autoSave();
-}
-
-function switchStorage() {
-    if (useCookies) {
-        if (confirm('Are you sure you want to switch to using local storage?')) {
-            useCookies = false;
-            document.getElementById('storage-switch-button').textContent = 'Switch to Cookies';
-            saveToLocalStorage();
-        }
-    } else {
-        if (confirm('Are you sure you want to switch to using cookies for storage?')) {
-            if (!getCookie('cookieConsent')) {
-                document.getElementById('cookie-banner').style.display = 'block';
-            } else {
-                useCookies = true;
-                document.getElementById('storage-switch-button').textContent = 'Switch to Local Storage';
-                saveToCookies();
-            }
-        }
-    }
-}
-
-function acceptCookies() {
-    setCookie('cookieConsent', 'true', 365);
-    document.getElementById('cookie-banner').style.display = 'none';
-    useCookies = true;
-    document.getElementById('storage-switch-button').textContent = 'Switch to Local Storage';
-    saveToCookies();
-}
-
-function cancelCookies() {
-    document.getElementById('cookie-banner').style.display = 'none';
-}
-
-function saveToCookies() {
-    setCookie('workSeconds', workSeconds, 365);
-    setCookie('entertainmentSeconds', entertainmentSeconds, 365);
-    setCookie('ratio', ratio, 365);
 }
 
 function saveToLocalStorage() {
@@ -203,54 +137,36 @@ function saveToLocalStorage() {
 }
 
 function autoSave() {
-    if (useCookies) {
-        saveToCookies();
-    } else {
-        saveToLocalStorage();
-    }
+    console.log("Auto-saving data...");
+
+    saveToLocalStorage();
 }
 
 function loadFromLocalStorage() {
-    if (localStorage.getItem('workSeconds')) {
+    if (localStorage.getItem('workSeconds') && 
+        localStorage.getItem('entertainmentSeconds')) {
+            
         workSeconds = parseInt(localStorage.getItem('workSeconds'));
-        updateTimer('work-time', workSeconds);
-    }
-    if (localStorage.getItem('entertainmentSeconds')) {
         entertainmentSeconds = parseInt(localStorage.getItem('entertainmentSeconds'));
+        console.log("Loaded workSeconds from localStorage: " + workSeconds);
+        console.log("Loaded entertainmentSeconds from localStorage: " + entertainmentSeconds);
+        updateTimer('work-time', workSeconds);
         updateTimer('entertainment-time', entertainmentSeconds);
     }
+
     if (localStorage.getItem('ratio')) {
         ratio = parseInt(localStorage.getItem('ratio'));
         document.getElementById('ratio-input').value = ratio;
     }
 }
 
-function loadFromCookies() {
-    if (getCookie('workSeconds')) {
-        workSeconds = parseInt(getCookie('workSeconds'));
-        updateTimer('work-time', workSeconds);
-    }
-    if (getCookie('entertainmentSeconds')) {
-        entertainmentSeconds = parseInt(getCookie('entertainmentSeconds'));
-        updateTimer('entertainment-time', entertainmentSeconds);
-    }
-    if (getCookie('ratio')) {
-        ratio = parseInt(getCookie('ratio'));
-        document.getElementById('ratio-input').value = ratio;
-    }
-}
-
 window.onload = function() {
-    if (getCookie('cookieConsent')) {
-        useCookies = true;
-        document.getElementById('storage-switch-button').textContent = 'Switch to Local Storage';
-        loadFromCookies();
-    } else {
-        loadFromLocalStorage();
-    }
-    updateAllowedTime(); // Ensure the allowance is updated on load
+    console.log("Loading data...");
+    loadFromLocalStorage();
+    updateAllowedTime();
 }
 
 window.onunload = function() {
+    console.log("Saving data on unload...");
     autoSave();
 }
