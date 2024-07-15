@@ -1,9 +1,4 @@
-<div class="cookie-banner" id="cookie-banner">
-    <p>We use cookies to ensure you get the best experience on our website. 
-        <button onclick="acceptCookies()">Accept</button>
-        <button onclick="cancelCookies()">Cancel</button>
-    </p>
-</div>
+
 <div class="productivity-tracker">
     <div class="container">
         <h1>Productivity Tracker</h1>
@@ -75,8 +70,6 @@
         <div class="settings">
             <button onclick="toggleSubmenu('settings-submenu')">Settings</button>
             <div id="settings-submenu" class="settings-submenu">
-                <button id="storage-switch-button" class="storage-switch-button" onclick="switchStorage()">Switch to Cookies</button>
-
                 <div class="ratio">
                 <div class="ratio-input-container-info">
                 <p class="ratio-input-container-info-text">Set Ratio</p>
