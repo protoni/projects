@@ -196,6 +196,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://protoni.github.io/projects/Projects/Graphics/3d-modeling/</loc>
+         <lastmod>2024-08-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://protoni.github.io/projects/Projects/Graphics/custom-game-engine/</loc>
          <lastmod>2024-08-10</lastmod>
          <changefreq>daily</changefreq>
