@@ -11,7 +11,7 @@ Custom 3D game engine project in C++/Opengl. Here's some videos and pictures
 
 I've been trying to work on OpenGL renderers in the past, but eventually quit due to the amount of time
 it takes to get basic things working. 
-( <http://localhost:8000/projects/Projects/Graphics/custom-graphics-renderer/> & <https://github.com/protoni/feldewar> 
+( <https://protoni.fi/Projects/Graphics/custom-graphics-renderer/> & <https://github.com/protoni/feldewar> 
 + other stuff in private repos )
 
 Decided to try again in the today's AI era. It has been a huge help here ( Claude 3.5 Sonnet + ChatGPT 4o ), 
